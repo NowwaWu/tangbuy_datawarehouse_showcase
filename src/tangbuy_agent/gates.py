@@ -24,7 +24,7 @@ def review_sql(sql: str) -> list[GateResult]:
         ),
         GateResult(
             "partition-filter",
-            "\${bizdate}" in sql,
+            "${bizdate}" in sql,
             "The business-date partition must be explicit.",
         ),
         GateResult(
