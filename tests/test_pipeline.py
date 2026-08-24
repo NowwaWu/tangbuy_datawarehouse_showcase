@@ -26,8 +26,8 @@ class PipelineTest(unittest.TestCase):
 
     def test_select_star_is_rejected(self):
         results = review_sql(
-            "INSERT OVERWRITE TABLE dws_demo_1d PARTITION(ds='\${bizdate}') "
-            "SELECT * FROM dwd_demo_di WHERE ds='\${bizdate}'"
+            "INSERT OVERWRITE TABLE dws_demo_1d PARTITION(ds='${bizdate}') "
+            "SELECT * FROM dwd_demo_di WHERE ds='${bizdate}'"
         )
         explicit_columns = next(item for item in results if item.name == "explicit-columns")
         self.assertFalse(explicit_columns.passed)
