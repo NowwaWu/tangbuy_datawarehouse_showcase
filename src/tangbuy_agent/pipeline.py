@@ -30,12 +30,12 @@ class DataAgentPipeline:
         source = candidates[0]
         select_dimensions = ",\n    ".join(requirement.dimensions)
         group_by = ", ".join(str(index + 1) for index in range(len(requirement.dimensions)))
-        sql = f"""INSERT OVERWRITE TABLE dws_demo_order_line_1d PARTITION(ds='${bizdate}')
+        sql = f"""INSERT OVERWRITE TABLE dws_demo_order_line_1d PARTITION(ds='${{bizdate}}')
 SELECT
     {select_dimensions},
     SUM({requirement.metric}) AS metric_value
 FROM {source.name}
-WHERE ds = '${bizdate}'
+WHERE ds = '${{bizdate}}'
 GROUP BY {group_by};
 """
         gates = review_sql(sql)
