@@ -1,0 +1,4511 @@
+{
+  "ods_mysql_tang_pay_pay_abnormal_payment_ri": {
+    "comment": "异常支付流水",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "transaction_id",
+        "type": "STRING",
+        "comment": "交易号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "交易时间"
+      },
+      {
+        "name": "ext_info",
+        "type": "STRING",
+        "comment": "扩展信息"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:未处理1:已处理 2:其它"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "处理时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_abnormal_refund_ri": {
+    "comment": "异常退款流水",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "refund_no",
+        "type": "STRING",
+        "comment": "退款单号"
+      },
+      {
+        "name": "refund_id",
+        "type": "STRING",
+        "comment": "退款三方退款编号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "退款时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:未处理1:已处理 2:其它"
+      },
+      {
+        "name": "ext_info",
+        "type": "STRING",
+        "comment": "扩展信息"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "处理时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_account_ri": {
+    "comment": "用户支付账号",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "支付账号"
+      },
+      {
+        "name": "refuse_num",
+        "type": "BIGINT",
+        "comment": "拒付总次数"
+      },
+      {
+        "name": "refuse_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "拒付总金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_activity_detail_ri": {
+    "comment": "活动优惠明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "activity_id",
+        "type": "BIGINT",
+        "comment": "活动ID"
+      },
+      {
+        "name": "activity_name",
+        "type": "STRING",
+        "comment": "活动名称"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "交易号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "关联业务单号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付金额"
+      },
+      {
+        "name": "discount_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠金额"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "0:支付中 1:支付成功"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:已优惠 1:已退回"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_activity_ri": {
+    "comment": "充值优惠活动",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "活动名称"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "conditions",
+        "type": "DECIMAL(38,18)",
+        "comment": "满减金额"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "满减金额"
+      },
+      {
+        "name": "discount_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "账号优惠上限"
+      },
+      {
+        "name": "max_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "活动金额上限"
+      },
+      {
+        "name": "quota_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "剩余活动金额额度"
+      },
+      {
+        "name": "st_time",
+        "type": "TIMESTAMP",
+        "comment": "活动开始时间"
+      },
+      {
+        "name": "et_time",
+        "type": "TIMESTAMP",
+        "comment": "活动结束时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:开启 1：未开启"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "创建人"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0:正常 1:删除"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_balance_detail_ri": {
+    "comment": "余额流水明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易订单号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务关联订单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "交易类型0:收入1:支出"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "付款账付款/收款账户"
+      },
+      {
+        "name": "in_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "收入金额"
+      },
+      {
+        "name": "out_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "支出金额"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "用户余额"
+      },
+      {
+        "name": "withdraw_limit",
+        "type": "DECIMAL(38,18)",
+        "comment": "可提现金额"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "currency_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "quick_pay",
+        "type": "BIGINT",
+        "comment": "免密支付类型"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "refund_freeze",
+        "type": "BIGINT",
+        "comment": "是否和退款冻结有关系：1.有关系"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费"
+      },
+      {
+        "name": "fixed_lose_currency",
+        "type": "STRING",
+        "comment": "当时损失费用币种信息"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bills_bz_order_recycle_bin_ri": {
+    "comment": "账单扩展表回收站",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键非空"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付到账金额(人民币)"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:待付款1:支付中 2:已支付 3:成功 4:退款 5:失败 6:取消 7:订单退款"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bills_bz_order_ri": {
+    "comment": "账单扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付到账金额(人民币)"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:待付款1:支付中 2:已支付 3:成功 4:退款 5:失败 6:取消 7:订单退款"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易id"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bills_fee_ri": {
+    "comment": "账单费用扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "账单交易金额"
+      },
+      {
+        "name": "service_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "账单总的服务费"
+      },
+      {
+        "name": "purchase_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台采购服务费"
+      },
+      {
+        "name": "storage_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台仓储服务费"
+      },
+      {
+        "name": "technology_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台技术服务费"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易id"
+      },
+      {
+        "name": "bill_trade_no",
+        "type": "STRING",
+        "comment": "账单id"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bills_recycle_bin_ri": {
+    "comment": "账单回收站",
+    "columns": [
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易订单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务订单号"
+      },
+      {
+        "name": "prepay_no",
+        "type": "STRING",
+        "comment": "支付机构的预支付订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务关联订单号"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "store_id",
+        "type": "BIGINT",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户账号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "三方回调状态 0:支付中 1:已支付 2:已退款 3：支付失败"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额"
+      },
+      {
+        "name": "currency_off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额(币种金额)"
+      },
+      {
+        "name": "service_amount",
+        "type": "BIGINT",
+        "comment": "服务费"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "当前账户余额"
+      },
+      {
+        "name": "before_balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易前余额"
+      },
+      {
+        "name": "payment_type",
+        "type": "STRING",
+        "comment": "paypal支付方式"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "交易类型0:入账 1:出账"
+      },
+      {
+        "name": "time_expire",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:待付款1:支付中 2:已支付 3:成功 4:退款 5:失败 6:取消 7:订单退款"
+      },
+      {
+        "name": "order_notify_url",
+        "type": "STRING",
+        "comment": "支付中通知回调地址"
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "业务通知地址"
+      },
+      {
+        "name": "payer_id",
+        "type": "STRING",
+        "comment": "付款人ID"
+      },
+      {
+        "name": "payer_account",
+        "type": "STRING",
+        "comment": "付款人账号"
+      },
+      {
+        "name": "quick_pay",
+        "type": "BIGINT",
+        "comment": "免密支付类型 0:国内运费补款授权 1:订单补款授权 2:国际运费授权"
+      },
+      {
+        "name": "refund_valid_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "risk_flag",
+        "type": "BIGINT",
+        "comment": "0:正常订单 1: 风险订单"
+      },
+      {
+        "name": "categories",
+        "type": "STRING",
+        "comment": "敏感商品分类ID"
+      },
+      {
+        "name": "shop_id",
+        "type": "STRING",
+        "comment": "不支持商家ID"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "update_nums",
+        "type": "BIGINT",
+        "comment": "更新次数"
+      },
+      {
+        "name": "pay_nums",
+        "type": "BIGINT",
+        "comment": "订单支付次数"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bills_ri": {
+    "comment": "账单",
+    "columns": [
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易订单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务订单号"
+      },
+      {
+        "name": "prepay_no",
+        "type": "STRING",
+        "comment": "支付机构的预支付订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务关联订单号"
+      },
+      {
+        "name": "store_id",
+        "type": "BIGINT",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户账号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "三方回调状态 0:支付中 1:已支付 2:已退款 3：支付失败"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "fx_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "兑换人民币汇率"
+      },
+      {
+        "name": "fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额"
+      },
+      {
+        "name": "currency_off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额(币种金额)"
+      },
+      {
+        "name": "service_amount",
+        "type": "BIGINT",
+        "comment": "服务费"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "当前账户余额"
+      },
+      {
+        "name": "before_balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易前余额"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "payment_type",
+        "type": "STRING",
+        "comment": "paypal支付方式"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "交易类型0:入账 1:出账"
+      },
+      {
+        "name": "time_expire",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:待付款1:支付中 2:已支付 3:成功 4:退款 5:失败 6:取消"
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "业务通知地址"
+      },
+      {
+        "name": "payer_id",
+        "type": "STRING",
+        "comment": "付款人ID"
+      },
+      {
+        "name": "payer_account",
+        "type": "STRING",
+        "comment": "付款人账号"
+      },
+      {
+        "name": "quick_pay",
+        "type": "BIGINT",
+        "comment": "免密支付类型"
+      },
+      {
+        "name": "refund_valid_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "risk_flag",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "categories",
+        "type": "STRING",
+        "comment": "敏感商品分类ID"
+      },
+      {
+        "name": "shop_id",
+        "type": "STRING",
+        "comment": "不支持商家ID"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "order_notify_url",
+        "type": "STRING",
+        "comment": "支付中通知回调地址"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "update_nums",
+        "type": "BIGINT",
+        "comment": "更新次数"
+      },
+      {
+        "name": "pay_nums",
+        "type": "BIGINT",
+        "comment": "业务单号对应的支付流水数量"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易id"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_blacklist_account_ri": {
+    "comment": "黑名单支付账号",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "支付账号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型 0:系统 1：人工"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_blacklist_address_ri": {
+    "comment": "黑名单地址",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "full_name",
+        "type": "STRING",
+        "comment": "用户名称"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "联系方式"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "邮箱"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "state",
+        "type": "STRING",
+        "comment": "洲"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "address_line1",
+        "type": "STRING",
+        "comment": "地址1"
+      },
+      {
+        "name": "address_line2",
+        "type": "STRING",
+        "comment": "地址2"
+      },
+      {
+        "name": "postal_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_blacklist_operation_ri": {
+    "comment": "黑名单操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "pay_account",
+        "type": "STRING",
+        "comment": "付款账号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "0:添加黑名单 1:删除黑名单"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_bz_order_item_ri": {
+    "comment": "子订单信息",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "主订单号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "子订单号"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "c_id",
+        "type": "BIGINT",
+        "comment": "类目ID"
+      },
+      {
+        "name": "category",
+        "type": "STRING",
+        "comment": "类目"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_channel_ext_ri": {
+    "comment": "支付渠道扩展信息",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "refund_tips",
+        "type": "STRING",
+        "comment": "退款说明"
+      },
+      {
+        "name": "forbid_tips",
+        "type": "STRING",
+        "comment": "禁用话术提醒"
+      },
+      {
+        "name": "dark_icon",
+        "type": "STRING",
+        "comment": "深色支付渠道con图片"
+      },
+      {
+        "name": "dark_sub_icon",
+        "type": "STRING",
+        "comment": "深色支付渠道副icon图片"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "description",
+        "type": "STRING",
+        "comment": "支付通道多语言描述"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_channel_refund_ri": {
+    "comment": "退款流水表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "refund_no",
+        "type": "STRING",
+        "comment": "退款流水编号"
+      },
+      {
+        "name": "record_type",
+        "type": "BIGINT",
+        "comment": "1.退款 2.提现"
+      },
+      {
+        "name": "business_id",
+        "type": "STRING",
+        "comment": "业务id"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易记录id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "支付记录编号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "支付记录三方编号"
+      },
+      {
+        "name": "refund_id",
+        "type": "STRING",
+        "comment": "退款三方退款编号"
+      },
+      {
+        "name": "refund_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "三方接口退款状态 0:退款中2:成功 3:失败"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:待处理1:已处理 2:成功3:失败"
+      },
+      {
+        "name": "refund_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "三方退款返回结果"
+      },
+      {
+        "name": "retry_count",
+        "type": "BIGINT",
+        "comment": "主动查询次数"
+      },
+      {
+        "name": "manual_update_time",
+        "type": "TIMESTAMP",
+        "comment": "手动更新时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "更新人"
+      },
+      {
+        "name": "memo",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_channel_ri": {
+    "comment": "支付渠道",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "name_en",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "支付渠道con图片"
+      },
+      {
+        "name": "sub_icon",
+        "type": "STRING",
+        "comment": "支付渠道副icon图片"
+      },
+      {
+        "name": "desc_cn",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "desc_en",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "title",
+        "type": "STRING",
+        "comment": "标题"
+      },
+      {
+        "name": "title_en",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "partner_id",
+        "type": "STRING",
+        "comment": "商户号"
+      },
+      {
+        "name": "sign_type",
+        "type": "STRING",
+        "comment": "签名方式"
+      },
+      {
+        "name": "secret_key",
+        "type": "STRING",
+        "comment": "商户密钥"
+      },
+      {
+        "name": "encrypt_key",
+        "type": "STRING",
+        "comment": "加密密钥"
+      },
+      {
+        "name": "private_key",
+        "type": "STRING",
+        "comment": "私钥"
+      },
+      {
+        "name": "public_key",
+        "type": "STRING",
+        "comment": "公钥"
+      },
+      {
+        "name": "pay_url",
+        "type": "STRING",
+        "comment": "支付地址"
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "回掉地址"
+      },
+      {
+        "name": "refund_notify_url",
+        "type": "STRING",
+        "comment": "退款回调通知地址"
+      },
+      {
+        "name": "protocol",
+        "type": "STRING",
+        "comment": "请求协议"
+      },
+      {
+        "name": "gateway",
+        "type": "STRING",
+        "comment": "支付网关"
+      },
+      {
+        "name": "pay_code",
+        "type": "STRING",
+        "comment": "支付简码"
+      },
+      {
+        "name": "ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "return_url",
+        "type": "STRING",
+        "comment": "支付成功跳转地址"
+      },
+      {
+        "name": "fail_url",
+        "type": "STRING",
+        "comment": "支付失败调整地址"
+      },
+      {
+        "name": "webhook_id",
+        "type": "STRING",
+        "comment": "回调通知ID"
+      },
+      {
+        "name": "rate_id",
+        "type": "BIGINT",
+        "comment": "汇率ID"
+      },
+      {
+        "name": "cost_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "min_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小交易金额"
+      },
+      {
+        "name": "max_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大交易金额"
+      },
+      {
+        "name": "expiry_days",
+        "type": "BIGINT",
+        "comment": "退款有效天数"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "使用国家"
+      },
+      {
+        "name": "country_type",
+        "type": "STRING",
+        "comment": "国家类型"
+      },
+      {
+        "name": "support_currencies",
+        "type": "STRING",
+        "comment": "支持的币种列表，逗号分隔"
+      },
+      {
+        "name": "categories",
+        "type": "STRING",
+        "comment": "敏感商品分类ID"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "不支持商家ID"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      },
+      {
+        "name": "refund_min_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款最小交易金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_currency_config_ri": {
+    "comment": "支付渠道币种配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "cost_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费比例"
+      },
+      {
+        "name": "exchange_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "兑换手续费比例"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损耗"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_device_ri": {
+    "comment": "用户设备标识",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备标识"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_exchange_rate_record_ri": {
+    "comment": "汇率更新记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "old_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "原来汇率"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_exchange_rate_ri": {
+    "comment": "汇率配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "language",
+        "type": "STRING",
+        "comment": "语言"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "exchange_currency",
+        "type": "STRING",
+        "comment": "兑换的币种"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "综合汇率"
+      },
+      {
+        "name": "follow_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "财务设置汇率"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "public_fx_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "银行间公开汇率"
+      },
+      {
+        "name": "system_update_time",
+        "type": "TIMESTAMP",
+        "comment": "银行间公开汇率更新时间"
+      },
+      {
+        "name": "symbol",
+        "type": "STRING",
+        "comment": "币种符号"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "币种排序"
+      },
+      {
+        "name": "show_location",
+        "type": "BIGINT",
+        "comment": "币种和数字展示位置：0,数字在前；1符号在前"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0，禁用；1，启用"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_feedback_ri": {
+    "comment": "问题反馈",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户Id"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备类型"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "图片"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "反馈内容"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "处理状态 0:未处理 1:已处理"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_fixed_loss_config_ri": {
+    "comment": "不同渠道和币种的固定损耗配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "currency_code",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付时固定损耗"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_funds_config_ri": {
+    "comment": "用户授权支付配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "资金扣费类型 0:国内运费补款授权 1:订单补款授权 2:国际运费授权"
+      },
+      {
+        "name": "single_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "单笔上限金额"
+      },
+      {
+        "name": "day_limt_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "单日上限金额"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_history_ri": {
+    "comment": "支付流水记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方充值订单号"
+      },
+      {
+        "name": "trade_type",
+        "type": "STRING",
+        "comment": "交易类型"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "act_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际到账金额"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_minus_apply_record_ri": {
+    "comment": "财务扣款申请审核记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方订单号"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "invoice",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "扣款金额"
+      },
+      {
+        "name": "role_type",
+        "type": "STRING",
+        "comment": "责任对象"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "扣款原因"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:审核中1:已审核2:审核失败"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_multilingual_ri": {
+    "comment": "多语言",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "自增主键"
+      },
+      {
+        "name": "business_type",
+        "type": "STRING",
+        "comment": "业务类型"
+      },
+      {
+        "name": "business_id",
+        "type": "STRING",
+        "comment": "业务唯一标识"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "业务属性"
+      },
+      {
+        "name": "lang",
+        "type": "STRING",
+        "comment": "语言类型"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_notify_log_ri": {
+    "comment": "支付，退款通知错误日志",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务订单号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "通知地址"
+      },
+      {
+        "name": "risk",
+        "type": "STRING",
+        "comment": "风控描述"
+      },
+      {
+        "name": "trade_time",
+        "type": "BIGINT",
+        "comment": "交易时间"
+      },
+      {
+        "name": "try_count",
+        "type": "BIGINT",
+        "comment": "重试次数"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:处理中 1:已支付(已回调) 2:成功(已通知) 3:退款 4:失败 5:取消"
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_overdraft_manual_record_ri": {
+    "comment": "人工扣欠款记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "role_type",
+        "type": "STRING",
+        "comment": "责任对象"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "扣款原因"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "审核状态 pending:待处理 success：审核成功 failure：审核失败"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_overdraft_record_ri": {
+    "comment": "欠款记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "关联业务单号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_payment_balance_ri": {
+    "comment": "余额支付记录扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "payment_id",
+        "type": "BIGINT",
+        "comment": "支付记录id"
+      },
+      {
+        "name": "refund_freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付扣除的退款冻结金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_payment_ri": {
+    "comment": "支付记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易记录id"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易订单号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "prepay_no",
+        "type": "STRING",
+        "comment": "支付机构的预支付订单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "币种金额"
+      },
+      {
+        "name": "fx_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "兑换人民币汇率"
+      },
+      {
+        "name": "fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额"
+      },
+      {
+        "name": "currency_off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额(币种金额)"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "当前账户余额"
+      },
+      {
+        "name": "before_balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易前余额"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "payment_type",
+        "type": "STRING",
+        "comment": "paypal支付方式"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "三方回调状态 0:支付中 1:已支付 2:已退款 3：支付失败"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "业务处理状态0:待付款1:支付中 2:已支付 3:成功 4:退款 5:失败 6:取消"
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "payer_id",
+        "type": "STRING",
+        "comment": "付款人ID"
+      },
+      {
+        "name": "payer_account",
+        "type": "STRING",
+        "comment": "付款人账号"
+      },
+      {
+        "name": "quick_pay",
+        "type": "BIGINT",
+        "comment": "免密支付类型"
+      },
+      {
+        "name": "refund_valid_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "memo",
+        "type": "STRING",
+        "comment": "备注2"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "success_url",
+        "type": "STRING",
+        "comment": "支付成功，前端跳转url"
+      },
+      {
+        "name": "fail_url",
+        "type": "STRING",
+        "comment": "支付失败，前端跳转url"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_paypal_dispute_message_ri": {
+    "comment": "Paypal拒付对话消息记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "dispute_id",
+        "type": "STRING",
+        "comment": "拒付Case ID"
+      },
+      {
+        "name": "posted_by",
+        "type": "STRING",
+        "comment": "消息发送方"
+      },
+      {
+        "name": "time_posted",
+        "type": "TIMESTAMP",
+        "comment": "消息发送时间"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "消息内容"
+      },
+      {
+        "name": "documents",
+        "type": "STRING",
+        "comment": "附件"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_paypal_refund_history_ri": {
+    "comment": "Paypal退款历史记录",
+    "columns": [
+      {
+        "name": "refund_id",
+        "type": "STRING",
+        "comment": "退款id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "currency_code",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "refund_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "invoice_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_permit_refund_user_ri": {
+    "comment": "允许提现退款用户表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_platform_bank_ri": {
+    "comment": "平台收款银行账户",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "transfer_way",
+        "type": "BIGINT",
+        "comment": "0:国际 1:国内"
+      },
+      {
+        "name": "transfer_type",
+        "type": "BIGINT",
+        "comment": "汇款途径0:银行转账 1:wise转账"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "base_info",
+        "type": "STRING",
+        "comment": "银行信息"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_purchase_settle_record_ri": {
+    "comment": "采购商结算记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "dept_id",
+        "type": "BIGINT",
+        "comment": "部门ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "打款金额"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "打款截图"
+      },
+      {
+        "name": "operate_date",
+        "type": "TIMESTAMP",
+        "comment": "打款日期"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_rate_config_ri": {
+    "comment": "通道手续费配置",
+    "columns": [
+      {
+        "name": "ch_id",
+        "type": "BIGINT",
+        "comment": "支付渠道ID"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "cost_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费费率"
+      },
+      {
+        "name": "fixed_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "固定损失"
+      },
+      {
+        "name": "min_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小充值金额"
+      },
+      {
+        "name": "max_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大充值金额"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_receive_phone_ri": {
+    "comment": "收件人手机号",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "手机号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_recharge_apply_record_ri": {
+    "comment": "财务充值申请审核记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "支付账户"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方订单号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "关联业务单号"
+      },
+      {
+        "name": "role_type",
+        "type": "STRING",
+        "comment": "对象类型"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "原因"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:审核中1:已审核2:审核失败"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_recharge_record_ri": {
+    "comment": "充值记录",
+    "columns": [
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账号号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "付款/收款账户"
+      },
+      {
+        "name": "payer_id",
+        "type": "STRING",
+        "comment": "付款人ID"
+      },
+      {
+        "name": "currency_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "到账币种金额"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "到账金额"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "充值金额"
+      },
+      {
+        "name": "loss_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "损耗金额"
+      },
+      {
+        "name": "withdraw_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "可提现金额"
+      },
+      {
+        "name": "effect_nums",
+        "type": "BIGINT",
+        "comment": "有效提现次数"
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "充值状态0:待付款1:成功2:失败"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_refund_detail_ri": {
+    "comment": "退款明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "refund_record_id",
+        "type": "BIGINT",
+        "comment": "退款记录ID"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "refund_order_no",
+        "type": "STRING",
+        "comment": "业务退款ID号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_refund_fee_ri": {
+    "comment": "退款费用扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "refund_record_id",
+        "type": "BIGINT",
+        "comment": "pay_refund_record的id"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "service_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "账单总的服务费"
+      },
+      {
+        "name": "purchase_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台采购服务费"
+      },
+      {
+        "name": "storage_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台仓储服务费"
+      },
+      {
+        "name": "technology_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平台技术服务费"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_refund_record_ri": {
+    "comment": "退款审核记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "dept_id",
+        "type": "BIGINT",
+        "comment": "部门ID"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方订单号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "父订单号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "子订单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "业务关联订单号"
+      },
+      {
+        "name": "order_type",
+        "type": "STRING",
+        "comment": "订单号前缀生成类型"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:待审核 1:审核通过 2:审核失败"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易记录id"
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "退款通知地址"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_refuse_record_ri": {
+    "comment": "拒付的记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "dispute_id",
+        "type": "STRING",
+        "comment": "拒付Case ID"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "拒付的三方交易号"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "拒付交易单号"
+      },
+      {
+        "name": "login_ip",
+        "type": "STRING",
+        "comment": "拒付的登录IP"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "拒付的支付账号"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "拒付的收件人电话"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "拒付币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "拒付金额"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "拒付状态"
+      },
+      {
+        "name": "due_date",
+        "type": "TIMESTAMP",
+        "comment": "回复截止时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "拒付原因"
+      },
+      {
+        "name": "message",
+        "type": "STRING",
+        "comment": "拒付留言"
+      },
+      {
+        "name": "biz_remark",
+        "type": "STRING",
+        "comment": "业务跟进备注"
+      },
+      {
+        "name": "dispute_life_cycle_stage",
+        "type": "STRING",
+        "comment": "争端生命周期"
+      },
+      {
+        "name": "links",
+        "type": "STRING",
+        "comment": "links"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_risk_blacklist_record_ri": {
+    "comment": "黑名单操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "oper_type",
+        "type": "BIGINT",
+        "comment": "操作类型0:添加1:删除"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "黑名单类型"
+      },
+      {
+        "name": "details",
+        "type": "STRING",
+        "comment": "黑名单信息"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_risk_blacklist_ri": {
+    "comment": "黑名单",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "paypal账号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "黑名单类型0:默认paypal"
+      },
+      {
+        "name": "details",
+        "type": "STRING",
+        "comment": "黑名单信息"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_risk_ri": {
+    "comment": "风控条件",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "scenes",
+        "type": "STRING",
+        "comment": "场景"
+      },
+      {
+        "name": "latitude_name",
+        "type": "STRING",
+        "comment": "风控纬度名称"
+      },
+      {
+        "name": "risk_items",
+        "type": "STRING",
+        "comment": "具体风控项"
+      },
+      {
+        "name": "risk_condition",
+        "type": "STRING",
+        "comment": "风控条件"
+      },
+      {
+        "name": "risk_trigger",
+        "type": "BIGINT",
+        "comment": "风控阀值"
+      },
+      {
+        "name": "risk_key",
+        "type": "STRING",
+        "comment": "风控纬度key"
+      },
+      {
+        "name": "risk_items_key",
+        "type": "STRING",
+        "comment": "风控条件key"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "添加时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态0:有效1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_transaction_payment_ext_ri": {
+    "comment": "支付-交易记录扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易记录id"
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "业务支付成功通知地址"
+      },
+      {
+        "name": "order_notify_url",
+        "type": "STRING",
+        "comment": "业务支付中通知地址"
+      },
+      {
+        "name": "time_expire",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "risk_flag",
+        "type": "BIGINT",
+        "comment": "0：正常订单 1：风险订单"
+      },
+      {
+        "name": "categories",
+        "type": "STRING",
+        "comment": "敏感商品分类ID"
+      },
+      {
+        "name": "shop_id",
+        "type": "STRING",
+        "comment": "不支持商家ID"
+      },
+      {
+        "name": "service_amount",
+        "type": "BIGINT",
+        "comment": "服务费"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "success_payment_no",
+        "type": "STRING",
+        "comment": "成功的支付记录号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_transaction_ri": {
+    "comment": "交易表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "transaction_no",
+        "type": "STRING",
+        "comment": "交易编号"
+      },
+      {
+        "name": "business_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "attach_no",
+        "type": "STRING",
+        "comment": "附加单号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "record_type",
+        "type": "BIGINT",
+        "comment": "账单类型：1.支付，2.退款，3.充值，4.提现"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "交易类型0:入账 1:出账 2:转移"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "账单金额"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "账单状态：0，初始状态，1.处理中，3.成功，5.失败，6.取消"
+      },
+      {
+        "name": "memo",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_transfer_ri": {
+    "comment": "线下汇款",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "transfer_type",
+        "type": "BIGINT",
+        "comment": "汇款途径0:银行转账 1:wise转账"
+      },
+      {
+        "name": "transfer_way",
+        "type": "BIGINT",
+        "comment": "0:海外汇款 1:中国大陆银行汇款"
+      },
+      {
+        "name": "sender",
+        "type": "STRING",
+        "comment": "汇款人"
+      },
+      {
+        "name": "bank",
+        "type": "STRING",
+        "comment": "汇款银行"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "银行单号"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇款金额"
+      },
+      {
+        "name": "recharge_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "充值金额"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "capital_loss",
+        "type": "DECIMAL(38,18)",
+        "comment": "资金损耗"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "notify_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "汇款截图"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "充值状态0:处理中 1:成功 2:失败"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_user_address_ri": {
+    "comment": "用户账单地址",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "类型：shipping,billing,other"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "用户邮箱地址"
+      },
+      {
+        "name": "full_name",
+        "type": "STRING",
+        "comment": "用户名称"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "state",
+        "type": "STRING",
+        "comment": "州"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "address_line_1",
+        "type": "STRING",
+        "comment": "详细地址1"
+      },
+      {
+        "name": "address_line_2",
+        "type": "STRING",
+        "comment": "详细地址2"
+      },
+      {
+        "name": "postal_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "联系方式"
+      },
+      {
+        "name": "seller_protection",
+        "type": "BOOLEAN",
+        "comment": "是否卖家保障"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_user_bank_cards_ri": {
+    "comment": "用户支付银行卡号",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "用户邮箱地址"
+      },
+      {
+        "name": "ip",
+        "type": "STRING",
+        "comment": "用户支付IP地址"
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": "支付渠道"
+      },
+      {
+        "name": "card_num",
+        "type": "STRING",
+        "comment": "银行卡号"
+      },
+      {
+        "name": "expiration",
+        "type": "STRING",
+        "comment": "卡号有效时间"
+      },
+      {
+        "name": "holder",
+        "type": "STRING",
+        "comment": "持卡人名称"
+      },
+      {
+        "name": "issuing_country_code",
+        "type": "STRING",
+        "comment": "发卡国家简码"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_user_risk_report_ri": {
+    "comment": "用户风控报告",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户 ID"
+      },
+      {
+        "name": "p6m_max_recharge",
+        "type": "DECIMAL(38,18)",
+        "comment": "最近6个月，单笔充值人民币金额最大值"
+      },
+      {
+        "name": "paypal_address_cnt",
+        "type": "BIGINT",
+        "comment": "paypal收货地址个数"
+      },
+      {
+        "name": "paypal_account_cnt",
+        "type": "BIGINT",
+        "comment": "paypal账户个数"
+      },
+      {
+        "name": "credit_card_cnt",
+        "type": "BIGINT",
+        "comment": "信用卡张数"
+      },
+      {
+        "name": "paypal_dispute_cnt",
+        "type": "BIGINT",
+        "comment": "paypal拒付次数"
+      },
+      {
+        "name": "credit_card_dispute_cnt",
+        "type": "BIGINT",
+        "comment": "信用卡拒付次数"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "更新人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_user_wallet_ri": {
+    "comment": "用户钱包",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户 ID"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "用户余额"
+      },
+      {
+        "name": "freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "冻结金额"
+      },
+      {
+        "name": "overdraft",
+        "type": "DECIMAL(38,18)",
+        "comment": "欠款"
+      },
+      {
+        "name": "pay_secret",
+        "type": "STRING",
+        "comment": "支付密码"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "refund_freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款冻结金额"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_withdraw_available_ri": {
+    "comment": "可提现记录",
+    "columns": [
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方交易号"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "账单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "payment_account",
+        "type": "STRING",
+        "comment": "付款/收款账户"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "currency_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "到账币种金额"
+      },
+      {
+        "name": "trade_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "到账金额"
+      },
+      {
+        "name": "off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额"
+      },
+      {
+        "name": "currency_off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "减免金额(币种金额)"
+      },
+      {
+        "name": "loss_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "损耗金额"
+      },
+      {
+        "name": "withdraw_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "可提现金额"
+      },
+      {
+        "name": "effect_nums",
+        "type": "BIGINT",
+        "comment": "有效提现次数"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型,对应业务枚举是BusinessTypeEnum"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_pay_withdraw_ri": {
+    "comment": "提现记录",
+    "columns": [
+      {
+        "name": "refund_no",
+        "type": "STRING",
+        "comment": "退款单号"
+      },
+      {
+        "name": "refund_channel",
+        "type": "STRING",
+        "comment": "退款渠道0:paypal 1:wise"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "三方订单号"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户账号"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "receive_account",
+        "type": "STRING",
+        "comment": "收款账号"
+      },
+      {
+        "name": "pay_way",
+        "type": "STRING",
+        "comment": "支付方式"
+      },
+      {
+        "name": "recharge_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "账户余额"
+      },
+      {
+        "name": "freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "冻结金额"
+      },
+      {
+        "name": "refund_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "off_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠金额"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "充值金额"
+      },
+      {
+        "name": "account_type",
+        "type": "BIGINT",
+        "comment": "退款账号类型"
+      },
+      {
+        "name": "refund_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "deal_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "notify_url",
+        "type": "STRING",
+        "comment": "业务通知地址"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "三方退款返回结果"
+      },
+      {
+        "name": "call_status",
+        "type": "BIGINT",
+        "comment": "三方接口退款状态 0:退款中2:成功 3:失败"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:待处理1:已处理 2:成功3:失败"
+      },
+      {
+        "name": "over_status",
+        "type": "BIGINT",
+        "comment": "0:正常 1:超过退款时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "refund_id",
+        "type": "STRING",
+        "comment": "三方支付退款ID"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "transaction_id",
+        "type": "BIGINT",
+        "comment": "交易记录id"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_pay_paypal_account_config_ri": {
+    "comment": "Paypal收款账户配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "pay_channel",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "secret_key",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "cost_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "min_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小人民币交易金额"
+      },
+      {
+        "name": "max_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大人民币交易金额"
+      },
+      {
+        "name": "withdraw_currency",
+        "type": "STRING",
+        "comment": "公司资金账户提现币种"
+      },
+      {
+        "name": "currency_exchange_fee_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "资金账户换汇手续费"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      },
+      {
+        "name": "expiry_days",
+        "type": "BIGINT",
+        "comment": "退款有效天数"
+      },
+      {
+        "name": "webhook_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家列表，逗号分隔"
+      },
+      {
+        "name": "country_type",
+        "type": "STRING",
+        "comment": "国家列表类型"
+      },
+      {
+        "name": "support_currencies",
+        "type": "STRING",
+        "comment": "支持的币种列表，逗号分隔"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "权重"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  }
+}

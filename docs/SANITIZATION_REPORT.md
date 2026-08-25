@@ -1,24 +1,30 @@
-# Sanitization Report
+# 脱敏报告
 
-This showcase was rebuilt from a reviewed private project snapshot without copying its Git history.
+## 基准
 
-## Excluded from the public repository
+- 原项目基准提交：`8c21491ddb092d8859faf94251fda3e5e45a5587`
+- 策略：保留原项目完整文件树与工程逻辑，在新的公开仓库历史中替换敏感值。
 
-- embedded cloud credentials and all credential-bearing revisions;
-- production ETL and DDL;
-- source-system table schemas;
-- internal business mappings, metrics and operational reports;
-- DataWorks, Flink, Hologres and MaxCompute control scripts;
-- internal endpoints, workspace identifiers and account configuration;
-- customer or employee data samples.
+## 保留内容
 
-## Included
+- `ETL/` 下各数据域、DDL/ETL 文件配对和 SQL 处理链路。
+- `data_model/` 中的 OneData 规范、命名词典、数仓规划和指标资料。
+- `table/` 中的 Schema 结构。
+- `pyshell/` 中的平台控制、分析、同步与生成脚本。
+- `.opencode/` 中的数仓研发命令和 skills。
 
-- a newly implemented Data Agent pipeline skeleton;
-- generic, fictional metadata and SQL examples;
-- deterministic quality-gate examples;
-- architecture and security documentation.
+## 已处理内容
 
-## History policy
+- 删除源码内嵌的 GCP 服务账号字典，改为从环境变量或外部 JSON 文件读取。
+- 将云项目、Workspace、Endpoint、Host、Database 改为环境变量或不可路由占位符。
+- 将生产项目限定符替换为 `demo_dw`，上下游引用保持一致。
+- 稳定替换邮箱、IP、长十六进制资源标识和本机绝对路径。
+- 保留业务建模、字段关系、JOIN、聚合、分区及调度逻辑。
 
-The original repository history is not copied, merged or force-pushed into this repository. The public repository starts with a new root commit.
+## 不包含
+
+- 原仓库 Git 历史。
+- 原始秘密值与可逆映射表。
+- 真实生产连接配置。
+
+最终数量和扫描结论由修复流程完成后写入 `docs/VALIDATION_REPORT.json`。

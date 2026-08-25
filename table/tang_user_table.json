@@ -1,0 +1,3115 @@
+{
+  "ods_mysql_tang_user_calipers_template_ri": {
+    "comment": "尺码助手模版",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "商品分类ID"
+      },
+      {
+        "name": "scree_calipers",
+        "type": "STRING",
+        "comment": "尺码助手信息"
+      },
+      {
+        "name": "preference",
+        "type": "BIGINT",
+        "comment": "个人喜好 1 合身 0 宽松"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "need_confirm_size",
+        "type": "BIGINT",
+        "comment": "是否需要确认 0 不 1 需要"
+      },
+      {
+        "name": "role_name",
+        "type": "STRING",
+        "comment": "角色名称"
+      },
+      {
+        "name": "use_default",
+        "type": "BIGINT",
+        "comment": "设为默认 1 使用 0 未设置"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0 正常 1 删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_credit_card_bill_address_ri": {
+    "comment": "用户信用卡账单地址",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "名"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "姓"
+      },
+      {
+        "name": "country_id",
+        "type": "BIGINT",
+        "comment": "Resource模块中的国家ID"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "province_id",
+        "type": "BIGINT",
+        "comment": "Resource模块中的州/省份ID"
+      },
+      {
+        "name": "province",
+        "type": "STRING",
+        "comment": "州/省份"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市名称"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "详细地址"
+      },
+      {
+        "name": "post_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "手机"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_gift_issue_record_ri": {
+    "comment": "用户积分，成长值礼品发放记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "issue_no",
+        "type": "STRING",
+        "comment": "发放编号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "礼品发放类型 0：全部 1：成长值 2：积分"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "用户消费金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "发放标识 0:未发放 1:已发放 2:异常"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_member_config_ri": {
+    "comment": "会员等级配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "level",
+        "type": "STRING",
+        "comment": "会员等级"
+      },
+      {
+        "name": "coupon_nums",
+        "type": "BIGINT",
+        "comment": "优惠券数量"
+      },
+      {
+        "name": "fare_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费折扣"
+      },
+      {
+        "name": "return_exchange_nums",
+        "type": "BIGINT",
+        "comment": "每个月免费退换货次数"
+      },
+      {
+        "name": "fine_photo_nums",
+        "type": "BIGINT",
+        "comment": "免费精细拍照次数"
+      },
+      {
+        "name": "fast_response_nums",
+        "type": "BIGINT",
+        "comment": "极速响应免费次数"
+      },
+      {
+        "name": "preview_package_nums",
+        "type": "BIGINT",
+        "comment": "预演包装免费次数"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "append_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值服务优惠折扣"
+      },
+      {
+        "name": "insurance_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险优惠折扣"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_member_consume_record_ri": {
+    "comment": "会员使用记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "会员等级"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "bz_order_no",
+        "type": "STRING",
+        "comment": "关联业务单号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型 0:优惠券 1:退换货2：精细拍照3:极速响应 4:包装预演"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "使用次数"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_member_growth_detail_ri": {
+    "comment": "会员成长值明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "0：包裹获取 1：系统赠送"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "last_level",
+        "type": "BIGINT",
+        "comment": "上次等级"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "当前等级"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_msg_abnormal_record_ri": {
+    "comment": "消息异常记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "exchange",
+        "type": "STRING",
+        "comment": "交换机"
+      },
+      {
+        "name": "route_key",
+        "type": "STRING",
+        "comment": "mq路由键值"
+      },
+      {
+        "name": "msg",
+        "type": "STRING",
+        "comment": "消息内容"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0: 未处理 1:已处理 2:处理失败"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_msg_log_ri": {
+    "comment": "消息投递日志",
+    "columns": [
+      {
+        "name": "msg_id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "msg",
+        "type": "STRING",
+        "comment": "消息体, json格式化"
+      },
+      {
+        "name": "exchange",
+        "type": "STRING",
+        "comment": "交换机"
+      },
+      {
+        "name": "routing_key",
+        "type": "STRING",
+        "comment": "路由键"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态: 0投递中 1投递成功 2投递失败 3已消费"
+      },
+      {
+        "name": "try_count",
+        "type": "BIGINT",
+        "comment": "重试次数"
+      },
+      {
+        "name": "next_try_time",
+        "type": "TIMESTAMP",
+        "comment": "下一次重试时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth2_authorization_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "registered_client_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "principal_name",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorization_grant_type",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorized_scopes",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "attributes",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "state",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorization_code_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorization_code_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "authorization_code_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "authorization_code_metadata",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "access_token_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "access_token_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "access_token_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "access_token_metadata",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "access_token_type",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "access_token_scopes",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "oidc_id_token_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "oidc_id_token_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "oidc_id_token_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "oidc_id_token_metadata",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "refresh_token_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "refresh_token_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "refresh_token_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "refresh_token_metadata",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "user_code_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "user_code_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "user_code_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "user_code_metadata",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "device_code_value",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "device_code_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "device_code_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "device_code_metadata",
+        "type": "STRING",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth2_registered_client_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_id_issued_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "client_secret",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_secret_expires_at",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "client_name",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_authentication_methods",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorization_grant_types",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "redirect_uris",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "post_logout_redirect_uris",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "scopes",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_settings",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "token_settings",
+        "type": "STRING",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth_access_token_ri": {
+    "comment": "SpringSecurity访问令牌表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "token_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "token",
+        "type": "STRING",
+        "comment": "accessToken数据"
+      },
+      {
+        "name": "authentication_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "username"
+      },
+      {
+        "name": "client_id",
+        "type": "STRING",
+        "comment": "clientId"
+      },
+      {
+        "name": "authentication",
+        "type": "STRING",
+        "comment": "身份数据"
+      },
+      {
+        "name": "refresh_token",
+        "type": "STRING",
+        "comment": "refreshToken"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth_client_details_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "client_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "resource_ids",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "client_secret",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "scope",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorized_grant_types",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "web_server_redirect_uri",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "authorities",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "access_token_validity",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "refresh_token_validity",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "additional_information",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "autoapprove",
+        "type": "STRING",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth_code_ri": {
+    "comment": "SpringSecurity授权码表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "授权码"
+      },
+      {
+        "name": "authentication",
+        "type": "STRING",
+        "comment": "身份数据"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_oauth_refresh_token_ri": {
+    "comment": "SpringSecurity刷新令牌表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "token_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "token",
+        "type": "STRING",
+        "comment": "accessToken数据"
+      },
+      {
+        "name": "authentication",
+        "type": "STRING",
+        "comment": "身份数据"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_store_ri": {
+    "comment": "店铺列表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "店铺链接"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "店铺来源"
+      },
+      {
+        "name": "seller",
+        "type": "STRING",
+        "comment": "买家"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_account_apply_log_ri": {
+    "comment": "用户账号信息修改日志",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "apply_id",
+        "type": "BIGINT",
+        "comment": "申请id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "apply_type",
+        "type": "BIGINT",
+        "comment": "申请类型"
+      },
+      {
+        "name": "apply_json",
+        "type": "STRING",
+        "comment": "申请参数"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "audit_type",
+        "type": "STRING",
+        "comment": "审批类型"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_account_apply_ri": {
+    "comment": "用户账号信息修改申请",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "apply_type",
+        "type": "BIGINT",
+        "comment": "申请类型：1修改用户邮箱，2账号恢复"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "origin_email",
+        "type": "STRING",
+        "comment": "老邮箱"
+      },
+      {
+        "name": "new_email",
+        "type": "STRING",
+        "comment": "新邮箱"
+      },
+      {
+        "name": "upload_credentials",
+        "type": "STRING",
+        "comment": "上传凭证"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "audit_status",
+        "type": "BIGINT",
+        "comment": "审核状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0正常，1逻辑删除"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "audit_remark",
+        "type": "STRING",
+        "comment": "审批备注"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_address_20250710_ri": {
+    "comment": "用户收货地址副本",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_address_ri": {
+    "comment": "用户收货地址",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "名"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "姓"
+      },
+      {
+        "name": "country_id",
+        "type": "BIGINT",
+        "comment": "国家ID"
+      },
+      {
+        "name": "province_id",
+        "type": "BIGINT",
+        "comment": "省份ID"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "地区"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市名称"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "详细地址"
+      },
+      {
+        "name": "post_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "手机"
+      },
+      {
+        "name": "tags",
+        "type": "STRING",
+        "comment": "地址标签"
+      },
+      {
+        "name": "choosed",
+        "type": "BIGINT",
+        "comment": "是否默认0:默认 1:不是默认"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_affiliates_store_collect_ri": {
+    "comment": "联盟店铺收藏",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "store_id",
+        "type": "BIGINT",
+        "comment": "联盟店铺ID"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "联盟店铺名称"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "联盟店铺链接"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "联盟店铺图片"
+      },
+      {
+        "name": "promoter",
+        "type": "STRING",
+        "comment": "卖家名称"
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "user_cid",
+        "type": "STRING",
+        "comment": "联盟店铺标签"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_auths_mfa_ri": {
+    "comment": "mfa动态验证使用场景",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "auth_key",
+        "type": "STRING",
+        "comment": "密钥"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:未启用1:启用"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_auths_ri": {
+    "comment": "用户授权",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户登录账号（邮箱）"
+      },
+      {
+        "name": "password",
+        "type": "STRING",
+        "comment": "用户登录密码"
+      },
+      {
+        "name": "platform",
+        "type": "STRING",
+        "comment": "三方平台(QQ/微信/faceb/watapp)"
+      },
+      {
+        "name": "openid",
+        "type": "STRING",
+        "comment": "三方用户唯一标识"
+      },
+      {
+        "name": "open_name",
+        "type": "STRING",
+        "comment": "三方昵称"
+      },
+      {
+        "name": "access_token",
+        "type": "STRING",
+        "comment": "三方访问token"
+      },
+      {
+        "name": "auth_key",
+        "type": "STRING",
+        "comment": "动态验证密钥"
+      },
+      {
+        "name": "login_ip",
+        "type": "STRING",
+        "comment": "登录IP"
+      },
+      {
+        "name": "login_time",
+        "type": "TIMESTAMP",
+        "comment": "登录时间"
+      },
+      {
+        "name": "activated",
+        "type": "BIGINT",
+        "comment": "邮箱是否激活0:未激活 1:激活"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:正常1:锁定2:删除"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标志0:正常 1:已删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_cart_goods_ri": {
+    "comment": "用户购物车商品",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "购物车记录id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "store_no",
+        "type": "BIGINT",
+        "comment": "购物车店铺编号"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "店铺来源"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "商品分类ID"
+      },
+      {
+        "name": "sku_id",
+        "type": "STRING",
+        "comment": "商品属性ID"
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名字"
+      },
+      {
+        "name": "goods_name_cn",
+        "type": "STRING",
+        "comment": "商品中文名称"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "goods_num",
+        "type": "BIGINT",
+        "comment": "商品数量"
+      },
+      {
+        "name": "goods_entry",
+        "type": "STRING",
+        "comment": "商品来源"
+      },
+      {
+        "name": "quantity",
+        "type": "BIGINT",
+        "comment": "库存"
+      },
+      {
+        "name": "goods_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品单价"
+      },
+      {
+        "name": "goods_attr",
+        "type": "STRING",
+        "comment": "商品属性"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "write_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "用户填写价格"
+      },
+      {
+        "name": "act_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品实际价格"
+      },
+      {
+        "name": "fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费"
+      },
+      {
+        "name": "selected",
+        "type": "BIGINT",
+        "comment": "0:未选中1:已选中"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "serial_number",
+        "type": "BIGINT",
+        "comment": "拆分编号"
+      },
+      {
+        "name": "goods_discount",
+        "type": "BIGINT",
+        "comment": "商品折扣标识"
+      },
+      {
+        "name": "store_discount",
+        "type": "BIGINT",
+        "comment": "店铺折扣标识"
+      },
+      {
+        "name": "buy_now",
+        "type": "BIGINT",
+        "comment": "0:默认 1:立即购买"
+      },
+      {
+        "name": "risk_flag",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "goods_attr_cn",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "user_cid",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "scree_calipers",
+        "type": "STRING",
+        "comment": "尺码助手"
+      },
+      {
+        "name": "min_num",
+        "type": "BIGINT",
+        "comment": "最小购买数量"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "customize_img",
+        "type": "STRING",
+        "comment": "定制订单图片"
+      },
+      {
+        "name": "activity_discount",
+        "type": "STRING",
+        "comment": "店铺优惠描述"
+      },
+      {
+        "name": "buy_limit",
+        "type": "BIGINT",
+        "comment": "限购数量"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "商品备注"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "模版重量"
+      },
+      {
+        "name": "volume",
+        "type": "STRING",
+        "comment": "模版体积"
+      },
+      {
+        "name": "template_id",
+        "type": "BIGINT",
+        "comment": "模版id"
+      },
+      {
+        "name": "tags",
+        "type": "STRING",
+        "comment": "商品优惠标识"
+      },
+      {
+        "name": "no_reason_7d_return",
+        "type": "BIGINT",
+        "comment": "退换"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "third_provider_type",
+        "type": "STRING",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_cart_store_ri": {
+    "comment": "购物车商品店铺",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "storage_no",
+        "type": "BIGINT",
+        "comment": "仓库编号"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "店铺来源"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "店铺链接"
+      },
+      {
+        "name": "seller",
+        "type": "STRING",
+        "comment": "卖家"
+      },
+      {
+        "name": "total_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品总价"
+      },
+      {
+        "name": "fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费"
+      },
+      {
+        "name": "service_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "服务费"
+      },
+      {
+        "name": "third_provider_type",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "selected",
+        "type": "BIGINT",
+        "comment": "是否选中0:未选中1:已选中"
+      },
+      {
+        "name": "purchase_type",
+        "type": "BIGINT",
+        "comment": "采购类型0:链接抓取 1:填写订单链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "discount_id",
+        "type": "BIGINT",
+        "comment": "折扣ID"
+      },
+      {
+        "name": "activity_discount",
+        "type": "STRING",
+        "comment": "店铺优惠描述"
+      },
+      {
+        "name": "buy_limit",
+        "type": "BIGINT",
+        "comment": "限购数量"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_collect_favorite_ri": {
+    "comment": "用户商品收藏专辑关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "favorite_id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "collect_id",
+        "type": "BIGINT",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_collect_ri": {
+    "comment": "用户商品收藏列表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "goods_title",
+        "type": "STRING",
+        "comment": "商品标题"
+      },
+      {
+        "name": "goods_price",
+        "type": "STRING",
+        "comment": "商品价格"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "平台来源"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "seller_id",
+        "type": "STRING",
+        "comment": "卖家ID"
+      },
+      {
+        "name": "user_cid",
+        "type": "STRING",
+        "comment": "自定义标签"
+      },
+      {
+        "name": "board_id",
+        "type": "BIGINT",
+        "comment": "清单id"
+      },
+      {
+        "name": "affiliates_shop_id",
+        "type": "BIGINT",
+        "comment": "联盟店铺Id"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效，-1:无效"
+      },
+      {
+        "name": "item_source",
+        "type": "STRING",
+        "comment": "OUTER:外部商品 PREFERRED:大店商品 AFFILIATES:联盟商品"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_device_ri": {
+    "comment": "用户设备标识",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备标识"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_favorite_ri": {
+    "comment": "用户商品收藏专辑",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "favorite_name",
+        "type": "STRING",
+        "comment": "专辑名称"
+      },
+      {
+        "name": "privacy",
+        "type": "BIGINT",
+        "comment": "0:公开,1:隐私"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "last_good_id",
+        "type": "BIGINT",
+        "comment": "最后一个商品id"
+      },
+      {
+        "name": "last_good_pic",
+        "type": "STRING",
+        "comment": "最后商品图片链接"
+      },
+      {
+        "name": "share_code",
+        "type": "STRING",
+        "comment": "专辑分享码"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_habit_ri": {
+    "comment": "用户习惯",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "habit_id",
+        "type": "BIGINT",
+        "comment": "习惯配置ID"
+      },
+      {
+        "name": "shortcut",
+        "type": "STRING",
+        "comment": "快捷习惯"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_info_ext_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "app_os",
+        "type": "STRING",
+        "comment": "设备系统"
+      },
+      {
+        "name": "fcm_token",
+        "type": "STRING",
+        "comment": "推送token令牌"
+      },
+      {
+        "name": "invite_url",
+        "type": "STRING",
+        "comment": "邀请链接"
+      },
+      {
+        "name": "storage_no",
+        "type": "BIGINT",
+        "comment": "仓库编号"
+      },
+      {
+        "name": "consume_integral",
+        "type": "BIGINT",
+        "comment": "消耗积分"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "qr_code",
+        "type": "STRING",
+        "comment": "二维码绑定"
+      },
+      {
+        "name": "declaration",
+        "type": "BIGINT",
+        "comment": "平台优化声明函状态"
+      },
+      {
+        "name": "app_ext",
+        "type": "STRING",
+        "comment": "app扩展信息"
+      },
+      {
+        "name": "app_version",
+        "type": "STRING",
+        "comment": "app版本号"
+      },
+      {
+        "name": "platform",
+        "type": "STRING",
+        "comment": "平台系统"
+      },
+      {
+        "name": "agreement",
+        "type": "STRING",
+        "comment": "隐私协议状态 true:已阅读 false:未阅读"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_info_ri": {
+    "comment": "用户信息",
+    "columns": [
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户真实姓名"
+      },
+      {
+        "name": "nick_name",
+        "type": "STRING",
+        "comment": "用户昵称"
+      },
+      {
+        "name": "avatar",
+        "type": "STRING",
+        "comment": "用户头像"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "钱包余额"
+      },
+      {
+        "name": "rebate",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金返利"
+      },
+      {
+        "name": "freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "冻结金额"
+      },
+      {
+        "name": "overdraft",
+        "type": "DECIMAL(38,18)",
+        "comment": "欠款"
+      },
+      {
+        "name": "pay_secret",
+        "type": "STRING",
+        "comment": "支付密码"
+      },
+      {
+        "name": "integral",
+        "type": "BIGINT",
+        "comment": "用户积分"
+      },
+      {
+        "name": "language",
+        "type": "STRING",
+        "comment": "语言"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "邮箱"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "VIP等级"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "birthday",
+        "type": "STRING",
+        "comment": "生日"
+      },
+      {
+        "name": "gender",
+        "type": "BIGINT",
+        "comment": "性别0:男性1:女性"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "电话"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备标识"
+      },
+      {
+        "name": "register_ip",
+        "type": "STRING",
+        "comment": "注册IP"
+      },
+      {
+        "name": "register_country",
+        "type": "STRING",
+        "comment": "注册国家"
+      },
+      {
+        "name": "province",
+        "type": "STRING",
+        "comment": "省"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "市区"
+      },
+      {
+        "name": "country_code",
+        "type": "STRING",
+        "comment": "国家简码"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库ID"
+      },
+      {
+        "name": "register_time",
+        "type": "TIMESTAMP",
+        "comment": "注册时间"
+      },
+      {
+        "name": "paid_free_enable",
+        "type": "BIGINT",
+        "comment": "是否开启免密支付 0:未开启 1:开启"
+      },
+      {
+        "name": "paid_free_limit",
+        "type": "DECIMAL(38,18)",
+        "comment": "免密支付限额"
+      },
+      {
+        "name": "refuse_num",
+        "type": "BIGINT",
+        "comment": "拒付次数"
+      },
+      {
+        "name": "risk",
+        "type": "BIGINT",
+        "comment": "0:正常 1:风险用户"
+      },
+      {
+        "name": "water_mark_state",
+        "type": "BIGINT",
+        "comment": "水印状态 0:开启 1:关闭"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "lock_status",
+        "type": "BIGINT",
+        "comment": "0:正常 1:锁定"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标志0:正常 1:已删除"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "数据更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_integral_consume_record_ri": {
+    "comment": "积分消费记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "交易类型"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "integral",
+        "type": "BIGINT",
+        "comment": "使用积分"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_integral_detail_ri": {
+    "comment": "积分明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型 0:包裹 1:系统发放 2：人工发放"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "收支类型 0：收入 1：支出"
+      },
+      {
+        "name": "integral",
+        "type": "BIGINT",
+        "comment": "积分"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_integral_his_ri": {
+    "comment": "用户积分纪录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "magnification",
+        "type": "BIGINT",
+        "comment": "积分倍率"
+      },
+      {
+        "name": "integral",
+        "type": "BIGINT",
+        "comment": "积分"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型 0:包裹 1:系统发放 2：人工发放"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "失效时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_lock_record_ri": {
+    "comment": "锁定记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户账号"
+      },
+      {
+        "name": "serial_no",
+        "type": "STRING",
+        "comment": "交易号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型 0：锁定 1:解锁"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_lock_ri": {
+    "comment": "用户锁定列表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "lock_type",
+        "type": "BIGINT",
+        "comment": "锁定类型0:账号锁定1:登录锁定"
+      },
+      {
+        "name": "details",
+        "type": "STRING",
+        "comment": "详情"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "lock_reason",
+        "type": "STRING",
+        "comment": "锁定原因"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_login_history_ri": {
+    "comment": "登录记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "登录账号"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备类型"
+      },
+      {
+        "name": "ipaddr",
+        "type": "STRING",
+        "comment": "登录IP地址"
+      },
+      {
+        "name": "login_location",
+        "type": "STRING",
+        "comment": "登录地点"
+      },
+      {
+        "name": "browser",
+        "type": "STRING",
+        "comment": "浏览器类型"
+      },
+      {
+        "name": "os",
+        "type": "STRING",
+        "comment": "操作系统"
+      },
+      {
+        "name": "cookies",
+        "type": "STRING",
+        "comment": "用户登录cookie"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "登录状态 0:成功 1:失败"
+      },
+      {
+        "name": "msg",
+        "type": "STRING",
+        "comment": "消息提示"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "province",
+        "type": "STRING",
+        "comment": "省份区域"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "login_time",
+        "type": "TIMESTAMP",
+        "comment": "登录时间"
+      },
+      {
+        "name": "app_device",
+        "type": "STRING",
+        "comment": "app信息"
+      },
+      {
+        "name": "version",
+        "type": "STRING",
+        "comment": "app版本号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_package_ri": {
+    "comment": "订单包裹",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "check_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      },
+      {
+        "name": "check_type",
+        "type": "BIGINT",
+        "comment": "审核类型"
+      },
+      {
+        "name": "estimated_weight",
+        "type": "BIGINT",
+        "comment": "包裹预估重量"
+      },
+      {
+        "name": "real_weight",
+        "type": "BIGINT",
+        "comment": "包裹真实重量"
+      },
+      {
+        "name": "package_status",
+        "type": "BIGINT",
+        "comment": "包裹状态"
+      },
+      {
+        "name": "pay_status",
+        "type": "BIGINT",
+        "comment": "支付状态"
+      },
+      {
+        "name": "transport_way",
+        "type": "STRING",
+        "comment": "运输方式"
+      },
+      {
+        "name": "logistics",
+        "type": "STRING",
+        "comment": "物流公司"
+      },
+      {
+        "name": "courier_number",
+        "type": "STRING",
+        "comment": "发货快递号"
+      },
+      {
+        "name": "bag_time",
+        "type": "TIMESTAMP",
+        "comment": "提包时间"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "ship_time",
+        "type": "TIMESTAMP",
+        "comment": "发货时间"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "包裹备注"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "真实姓名"
+      },
+      {
+        "name": "estimated_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估费用"
+      },
+      {
+        "name": "real_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "真实费用"
+      },
+      {
+        "name": "customs_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "海关费用"
+      },
+      {
+        "name": "safe_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险费用"
+      },
+      {
+        "name": "fuel_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "燃油费用"
+      },
+      {
+        "name": "addition_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "附加费用"
+      },
+      {
+        "name": "added_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值费用"
+      },
+      {
+        "name": "vehicle_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "转运费用"
+      },
+      {
+        "name": "total_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹总费用"
+      },
+      {
+        "name": "discount_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "总优惠费用"
+      },
+      {
+        "name": "integral_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "积分优惠"
+      },
+      {
+        "name": "member_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "会员优惠"
+      },
+      {
+        "name": "coupon_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠券优惠"
+      },
+      {
+        "name": "other_cost",
+        "type": "DECIMAL(38,18)",
+        "comment": "其它优惠"
+      },
+      {
+        "name": "coupon_coding",
+        "type": "STRING",
+        "comment": "优惠券编码"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "state",
+        "type": "STRING",
+        "comment": "州"
+      },
+      {
+        "name": "street_address",
+        "type": "STRING",
+        "comment": "街道地址"
+      },
+      {
+        "name": "receipt_name",
+        "type": "STRING",
+        "comment": "收货人名"
+      },
+      {
+        "name": "post_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "电话"
+      },
+      {
+        "name": "return_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "差额运费退款"
+      },
+      {
+        "name": "total_customs",
+        "type": "DECIMAL(38,18)",
+        "comment": "总申报价值"
+      },
+      {
+        "name": "package_langaue",
+        "type": "BIGINT",
+        "comment": "包裹语言"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_photo_tags_ri": {
+    "comment": "精细拍照标签",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "title",
+        "type": "STRING",
+        "comment": "名称"
+      },
+      {
+        "name": "base_info",
+        "type": "STRING",
+        "comment": "拍照要求"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_platform_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "open_id",
+        "type": "STRING",
+        "comment": "三方平台用户id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "platform",
+        "type": "STRING",
+        "comment": "平台"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "邮箱"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "默认0解绑1"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "platform_open_id",
+        "type": "STRING",
+        "comment": "第三方平台唯一标识"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_safe_device_ri": {
+    "comment": "用户信任的安全设备",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "设备标识"
+      },
+      {
+        "name": "ipaddr",
+        "type": "STRING",
+        "comment": "ip地址"
+      },
+      {
+        "name": "msg",
+        "type": "STRING",
+        "comment": "设备信息"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "province",
+        "type": "STRING",
+        "comment": "省份区域"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_send_address_ri": {
+    "comment": "寄送地址",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "寄送地址"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "寄送电话"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_station_letter_ri": {
+    "comment": "站内信",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "title",
+        "type": "STRING",
+        "comment": "标题"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "站内信内容"
+      },
+      {
+        "name": "reply_enable",
+        "type": "BIGINT",
+        "comment": "是否允许回复0:不允许回复1:允许回复2:已关闭"
+      },
+      {
+        "name": "reply_status",
+        "type": "BIGINT",
+        "comment": "0:默认 1:待回复 2:已回复"
+      },
+      {
+        "name": "read_time",
+        "type": "TIMESTAMP",
+        "comment": "已读时间"
+      },
+      {
+        "name": "dept_id",
+        "type": "BIGINT",
+        "comment": "部门ID"
+      },
+      {
+        "name": "post_id",
+        "type": "BIGINT",
+        "comment": "岗位id"
+      },
+      {
+        "name": "post_code",
+        "type": "STRING",
+        "comment": "岗位编码"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "email_enabled",
+        "type": "BIGINT",
+        "comment": "0:不发送邮件 1:发送邮件"
+      },
+      {
+        "name": "msg_type",
+        "type": "BIGINT",
+        "comment": "消息类型 0：系统消息 1：其它"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:未读1:已读"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0正常，1删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_station_reply_ri": {
+    "comment": "站内信回复",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "station_id",
+        "type": "BIGINT",
+        "comment": "站内信ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "图片路径数组"
+      },
+      {
+        "name": "reply_enable",
+        "type": "BIGINT",
+        "comment": "是否允许回复0:不允许回复1:允许回复"
+      },
+      {
+        "name": "avatar",
+        "type": "STRING",
+        "comment": "头像"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "回复的时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_store_collect_ri": {
+    "comment": "店铺收藏",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺ID"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "店铺链接"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "店铺图片"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "店铺来源"
+      },
+      {
+        "name": "seller",
+        "type": "STRING",
+        "comment": "卖家名称"
+      },
+      {
+        "name": "seller_id",
+        "type": "STRING",
+        "comment": "卖家ID"
+      },
+      {
+        "name": "user_cid",
+        "type": "STRING",
+        "comment": "用户标签"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_tags_ri": {
+    "comment": "用户标签",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "标签名称"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "bg_color",
+        "type": "STRING",
+        "comment": "标签颜色"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "标识等级"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "标识等级"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_type_config_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "Id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "user_type",
+        "type": "BIGINT",
+        "comment": "用户类型：1.b端用户"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0无效，1有效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_user_user_watermark_info_ri": {
+    "comment": "用户水印配置详情",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "水印标题"
+      },
+      {
+        "name": "background_image",
+        "type": "STRING",
+        "comment": "背景图"
+      },
+      {
+        "name": "config",
+        "type": "STRING",
+        "comment": "水印配置"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "is_use",
+        "type": "BIGINT",
+        "comment": "是否使用水印：0不使用，1使用"
+      },
+      {
+        "name": "is_delete",
+        "type": "BIGINT",
+        "comment": "是否删除：0否，1是"
+      }
+    ],
+    "partitions": []
+  }
+}

@@ -1,0 +1,657 @@
+# NL2SQL MVP 第一批开放表白名单
+# 范围来源: data_model/元数据目录/nl2sql/MVP范围说明.md
+
+version: 1
+scope:
+  name: ds_order_ops_mvp
+  description: DS 订单运营自助查数第一阶段白名单
+  business_processes:
+    - ds_ord
+  allowed_sql_types:
+    - SELECT
+    - WITH
+  forbidden_sql_keywords:
+    - INSERT
+    - UPDATE
+    - DELETE
+    - DROP
+    - ALTER
+    - CREATE
+    - TRUNCATE
+    - MERGE
+  default_partition_column: ds
+  default_bizdate_var: ${bizdate}
+  first_batch_table_count: 8
+
+global_limits:
+  require_table_whitelist: true
+  require_partition_filter: true
+  require_time_range_for_fact_tables: true
+  default_lookback_days: 30
+  max_lookback_days: 90
+  default_limit: 100
+  max_limit: 1000
+  allow_detail_preview: true
+  detail_preview_limit: 100
+  allow_full_table_scan: false
+  allow_cross_layer_free_join: false
+  unsupported_behavior: 返回“当前 NL2SQL MVP 不支持该查询”，不要自动下钻到 ODS 或非白名单表。
+
+pii_policy:
+  default_action: block
+  allow_user_id_for_aggregation: true
+  allow_user_id_raw_select: false
+  forbidden_field_categories:
+    - 用户姓名
+    - 用户邮箱
+    - 手机号
+    - WhatsApp
+    - Facebook ID
+    - Instagram ID
+    - 收货人姓名
+    - 注册 IP
+    - 推送 Token
+    - URL 回调地址
+    - 业务备注明细
+  global_forbidden_columns:
+    - usr_nm
+    - email
+    - phn
+    - wa_phn
+    - wa_dial_cd
+    - fb_id
+    - ig_id
+    - rcv_nm
+    - reg_ip
+    - fcm_tkn
+    - out_rmk
+    - b_rmk
+    - rmk
+
+table_selection_policy:
+  default_query_order:
+    - DWS
+    - DIM
+    - DWD
+  ods_allowed: false
+  dwd_allowed_only_when_listed: true
+  prefer_fact_table: dws_trd_ds_ord_line_td
+  deprecated_fact_tables:
+    - ads_ops_ord_ds_ord_line_td
+  fallback_rule: 如果 P0 表无法回答，优先反问或返回不支持，不要自行改查 ODS。
+
+tables:
+  - name: dws_trd_ds_ord_line_td
+    enabled: true
+    priority: P0
+    layer: DWS
+    domain: trd
+    business_process: ds_ord
+    local_schema_file: ETL/trd/dws_trd_ds_ord_line_td.ddl.sql
+    description: DS 订单行公共宽表，NL2SQL 默认事实查询入口，替代已废弃的自制 ADS。
+    grain: 1 行 = 1 个 DS 订单行在当日快照下的最新状态，包含订单头、订单行、三方商品、包裹费用分摊和生命周期字段。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - is_ord_del = 0
+      - is_line_del = 0
+      - ord_type_cd = 1
+    default_time_field: ord_pay_time
+    time_fields:
+      paid: ord_pay_time
+      order_created: ord_crt_time
+      line_created: crt_time
+      refund: ord_ref_time
+      shipped: pkg_snd_time
+      signed: sign_time
+    allowed_query_patterns:
+      - aggregate
+      - trend_by_day
+      - top_n
+      - limited_detail_preview
+    allowed_dimensions:
+      - ds
+      - shop_pltf_cd
+      - shop_id
+      - shop_nm
+      - tb_shop_id
+      - tb_shop_nm
+      - tb_item_id
+      - tb_item_nm_cn
+      - item_id
+      - item_nm
+      - item_stat_cd
+      - rcv_cntry_cd
+      - ccy
+      - ord_stat
+      - ord_line_stat
+      - pkg_stat
+      - pkg_pay_stat
+      - pkg_line_nm
+    allowed_metrics:
+      - pur_amt
+      - rtn_amt
+      - disc_amt
+      - post_fee
+      - item_amt
+      - item_amt_cny
+      - ord_amt
+      - ord_amt_cny
+      - ord_cnt
+      - ref_cnt
+      - crsh_cnt
+      - crsh_ref_cnt
+      - wt
+      - alloc_tot_pre_amt
+      - alloc_tot_actl_amt
+      - alloc_tech_srv_pre_fee
+      - alloc_tech_srv_actl_fee
+      - alloc_ins_amt
+      - alloc_diff_amt
+      - alloc_succ_diff_amt
+      - alloc_cpn_amt
+      - alloc_disc_amt
+      - alloc_dep_amt
+      - alloc_actl_dep_amt
+      - pred_wt
+      - actl_wt
+      - pkg_actl_wt
+      - ord_gmv
+      - pkg_gmv
+      - tot_gmv
+    allowed_identifiers:
+      - ord_no
+      - ord_line_no
+      - pkg_no
+      - tb_item_id
+      - tb_sku_id
+      - item_dim_id
+      - shop_id
+      - tb_shop_id
+    aggregation_only_columns:
+      - usr_id
+      - ord_no
+      - ord_line_no
+      - pkg_no
+    forbidden_columns:
+      - usr_nm
+      - email
+      - nick
+      - rcv_nm
+      - tb_item_url
+      - item_img
+      - vol_desc
+      - cxl_rsn
+      - pay_no
+      - out_ord_id
+      - out_ord_no
+      - out_ord_line_id
+      - ord_rmk
+      - rmk
+      - pkg_biz_rmk
+      - auth_shop_url
+      - auth_slr_nm
+      - auth_shop_unreachable_rsn
+      - auth_bd_usr_nm
+    metric_rules:
+      ds_order_gmv: SUM(ord_gmv)
+      ds_package_gmv: SUM(pkg_gmv)
+      ds_total_gmv: SUM(tot_gmv)
+      ds_purchase_amount: SUM(pur_amt)
+      ds_order_count: COUNT(DISTINCT ord_no)
+      ds_order_line_count: COUNT(DISTINCT ord_line_no)
+      ds_package_count: COUNT(DISTINCT pkg_no)
+      ds_refund_amount: SUM(rtn_amt)
+      ds_refund_rate: SUM(rtn_amt) / NULLIF(SUM(pur_amt), 0)
+      ds_aov: SUM(pur_amt) / NULLIF(COUNT(DISTINCT ord_no), 0)
+    cautions:
+      - 表为订单行粒度，统计订单量必须 COUNT(DISTINCT ord_no)。
+      - 统计子单行数使用 COUNT(DISTINCT ord_line_no)。
+      - 默认采购金额使用子单级 `pur_amt`，GMV 展示需明确使用 `ord_gmv`、`pkg_gmv` 或 `tot_gmv`。
+      - 国家分析默认使用收货国家 `rcv_cntry_cd`，不要用用户注册国家替代。
+      - 已废弃表 ads_ops_ord_ds_ord_line_td，不再作为查询入口或新增需求依赖。
+
+  - name: dws_trd_ds_ord_line_pkg_fee_td
+    enabled: true
+    priority: P0
+    layer: DWS
+    domain: trd
+    business_process: ds_ord_pkg_fee
+    local_schema_file: ETL/trd/dws_trd_ds_ord_line_pkg_fee_td.ddl.sql
+    description: DS 订单行包裹费用、重量、体积分摊汇总表。
+    grain: 1 行 = 1 个 DS 订单行在当日快照下的包裹费用分摊结果。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - ord_type_cd = 1
+    default_time_field: pay_time
+    time_fields:
+      paid: pay_time
+      created: crt_time
+    allowed_query_patterns:
+      - aggregate
+      - trend_by_day
+      - top_n
+      - limited_detail_preview
+    allowed_dimensions:
+      - ds
+      - out_chnl
+      - shop_pltf_cd
+      - pkg_wrap_cd
+      - ord_stat
+      - tb_item_id
+      - item_nm
+    allowed_metrics:
+      - ord_cnt
+      - fee_alloc_rate
+      - wt_alloc_rate
+      - vol_alloc_rate
+      - tot_pre_amt
+      - tot_actl_amt
+      - tech_srv_pre_fee
+      - tech_srv_actl_fee
+      - ins_amt
+      - diff_amt
+      - succ_diff_amt
+      - cpn_amt
+      - disc_amt
+      - dep_amt
+      - actl_dep_amt
+      - alloc_wt
+      - alloc_vol
+    allowed_identifiers:
+      - ord_no
+      - ord_line_no
+      - tb_item_id
+      - pkg_no
+    aggregation_only_columns:
+      - usr_id
+      - ord_no
+      - ord_line_no
+      - pkg_no
+    forbidden_columns: []
+    cautions:
+      - 该表只用于包裹费用分摊、重量和体积分析，不作为 DS GMV 默认入口。
+      - 统计包裹数使用 COUNT(DISTINCT pkg_no)。
+
+  - name: dim_itm_item_df
+    enabled: true
+    priority: P1
+    layer: DIM
+    domain: itm
+    business_process: item
+    local_schema_file: ETL/itm/dim_itm_item_df.ddl.sql
+    description: TangBuy 商品维度，用于补充商品状态、类目、价格和优选等级。
+    grain: 1 行 = 1 个 TangBuy 商品 SPU 当前快照。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - is_del = 0
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: tb_item_id
+        right_key: item_id
+        cardinality: many_to_one
+    allowed_query_patterns:
+      - dimension_filter
+      - dimension_lookup
+      - aggregate_with_fact
+    allowed_dimensions:
+      - item_id
+      - item_nm
+      - item_nm_cn
+      - item_stat
+      - pltf_stat
+      - is_sold_out
+      - is_hot
+      - is_tiered_prc
+      - data_src
+      - splr_type_cd
+      - ctgy_id
+      - ctgy_nm
+      - ctgy_lvl
+      - shop_id
+      - is_tb
+      - tb_lvl
+      - tb_choice_score
+      - tb_suit_cntry
+    allowed_metrics:
+      - min_prc
+      - max_prc
+      - crossed_prc
+      - post_fee
+      - splr_prc
+      - splr_max_prc
+    allowed_identifiers:
+      - item_id
+      - ctgy_id
+      - shop_id
+    forbidden_columns:
+      - imgs
+      - item_mv
+      - detail_url
+      - detail
+      - spec_param
+      - item_attr_json
+      - item_desc
+      - lang_pack_json
+      - risk_info_json
+      - detail_rmk
+      - detail_rmk_imgs
+      - cmsn_prc_cfg_json
+      - splr_shop_url
+      - splr_logo
+      - splr_detail_url
+      - ctgy_nm_lang_json
+      - ctgy_path
+      - ctgy_logo
+      - tb_ownr_nm
+      - tb_sgst_sale_prc_json
+    cautions:
+      - 仅作为商品维度补充，不直接计算订单指标。
+
+  - name: dim_itm_out_item_df
+    enabled: true
+    priority: P1
+    layer: DIM
+    domain: itm
+    business_process: out_item
+    local_schema_file: ETL/itm/dim_itm_out_item_df.ddl.sql
+    description: 三方平台商品维度，用于补充 Shopify/TikTok/WooCommerce 商品状态和关联关系。
+    grain: 1 行 = 1 个三方平台商品维度快照。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - is_del = 0
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: item_dim_id
+        right_key: out_item_dim_id
+        cardinality: many_to_one
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: tb_item_id
+        right_key: tb_item_id
+        cardinality: many_to_many_risk
+    allowed_query_patterns:
+      - dimension_filter
+      - dimension_lookup
+      - aggregate_with_fact
+    allowed_dimensions:
+      - out_item_dim_id
+      - item_nm
+      - item_id
+      - out_item_url
+      - tb_item_id
+      - pub_src
+      - cfm_stat
+      - item_stat_cd
+      - shop_id
+      - shop_nm
+      - shop_pltf_cd
+      - rel_stat
+      - bd_rel_stat
+      - cust_submit_stat
+      - is_ai_recmd
+      - is_order_unrel
+      - is_logis_tpl_rel
+    allowed_metrics:
+      - min_prc
+      - max_prc
+      - min_wt
+      - max_wt
+      - inv
+      - sales_cnt_30d
+    allowed_identifiers:
+      - out_item_dim_id
+      - item_id
+      - tb_item_id
+      - shop_id
+    forbidden_columns:
+      - draft_id
+      - unique_key
+      - splr_key
+      - graphql_api_id
+      - item_desc
+      - attr_json
+      - imgs
+      - no_rel_sort
+      - out_item_dtl_json
+    cautions:
+      - 订单宽表使用 `item_dim_id` 关联本维表的 `out_item_dim_id`。
+      - 使用 `tb_item_id` 关联可能存在多对多风险，必须先确认去重逻辑。
+
+  - name: dim_store_ds_shop_df
+    enabled: true
+    priority: P1
+    layer: DIM
+    domain: store
+    business_process: ds_shop
+    local_schema_file: ETL/store/dim_store_ds_shop_df.ddl.sql
+    description: DS 代发平台店铺维度，用于店铺平台、状态和履约服务分析。
+    grain: 1 行 = 1 个 DS 店铺当前快照。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - is_del = 0
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: shop_id
+        right_key: shop_id
+        cardinality: many_to_one_risk
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: shop_pltf_cd
+        right_key: shop_pltf_cd
+        cardinality: many_to_many_risk
+    allowed_query_patterns:
+      - dimension_filter
+      - dimension_lookup
+      - aggregate_with_fact
+    allowed_dimensions:
+      - shop_id
+      - shop_nm
+      - shop_pltf_cd
+      - shop_rgn_cd
+      - shop_cd
+      - slr_type_cd
+      - tk_usr_type_cd
+      - shop_stat
+      - auth_stat
+      - is_ssl_on
+      - flfl_service_id
+      - flfl_handle
+      - flfl_service_nm
+      - flfl_stat
+      - location_id
+      - api_ver
+    allowed_metrics: []
+    allowed_identifiers:
+      - shop_id
+      - shop_cd
+      - location_id
+    aggregation_only_columns:
+      - usr_id
+    forbidden_columns:
+      - email
+      - shop_url
+      - slr_nm
+      - flfl_callback_url
+      - rmk
+    cautions:
+      - 店铺分析优先使用订单宽表里的 `shop_id`、`shop_nm`、`shop_pltf_cd`，只有需要店铺状态或履约服务属性时才 JOIN 本表。
+
+  - name: dwd_store_ds_shop_auth_rel_df
+    enabled: true
+    priority: P1
+    layer: DWD
+    domain: store
+    business_process: ds_shop_auth
+    local_schema_file: ETL/store/dwd_store_ds_shop_auth_rel_df.ddl.sql
+    description: 用户和三方店铺授权关系快照，仅用于授权店铺数量、授权状态和店铺绑定分析。
+    grain: 1 行 = 1 个用户和三方店铺授权关系当前快照。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - is_del = 0
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: shop_id
+        right_key: shop_id
+        cardinality: many_to_many_risk
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: shop_pltf_cd
+        right_key: shop_pltf_cd
+        cardinality: many_to_many_risk
+    allowed_query_patterns:
+      - aggregate
+      - dimension_filter
+      - limited_detail_preview
+    allowed_dimensions:
+      - cntry_cd
+      - shop_pltf_cd
+      - shop_id
+      - shop_nm
+      - shop_rgn_cd
+      - auth_stat
+      - is_del
+    allowed_metrics: []
+    allowed_identifiers:
+      - auth_rel_id
+      - shop_id
+    aggregation_only_columns:
+      - usr_id
+    forbidden_columns:
+      - usr_nm
+      - slr_nm
+    metric_rules:
+      authorized_shop_count: COUNT(DISTINCT shop_id)
+      authorized_user_count: COUNT(DISTINCT usr_id)
+    cautions:
+      - 这是首批唯一开放的 DWD 表，仅限店铺授权关系分析。
+      - 与订单宽表 JOIN 前必须先按 `shop_id + shop_pltf_cd` 去重，否则可能放大订单指标。
+
+  - name: dim_comm_country_df
+    enabled: true
+    priority: P2
+    layer: DIM
+    domain: comm
+    business_process: geo_ref
+    local_schema_file: ETL/comm/dim_comm_country_df.ddl.sql
+    description: 国家维度，用于国家中文名、英文名、联合国区域、世界银行区域和区域组织标签补充。
+    grain: 1 行 = 1 个国家或地区代码。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters: []
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: rcv_cntry_cd
+        right_key: cntry_cd
+        cardinality: many_to_one
+    allowed_query_patterns:
+      - dimension_lookup
+      - aggregate_with_fact
+    allowed_dimensions:
+      - cntry_cd
+      - cntry_nm
+      - cntry_nm_en
+      - iso_alpha3_cd
+      - un_rgn
+      - un_sub_rgn
+      - un_mid_rgn
+      - wb_rgn
+      - wb_income_grp
+      - is_eu
+      - is_oecd
+      - is_asean
+      - is_gcc
+    allowed_metrics: []
+    allowed_identifiers:
+      - cntry_cd
+      - iso_alpha3_cd
+    forbidden_columns: []
+    cautions:
+      - 订单国家默认使用订单收货国家，不使用用户注册国家。
+
+  - name: dim_pay_exch_rate_df
+    enabled: true
+    priority: P2
+    layer: DIM
+    domain: pay
+    business_process: exch_rate
+    local_schema_file: ETL/pay/dim_pay_exch_rate_df.ddl.sql
+    description: 币种汇率维度，仅在业务明确要求币种换算或汇率解释时使用。
+    grain: 1 行 = 1 个币种汇率配置当前快照。
+    partition:
+      column: ds
+      required: true
+      default_expr: ds = '${bizdate}'
+    default_filters:
+      - ccy_stat = 1
+    join_keys:
+      - left_table: dws_trd_ds_ord_line_td
+        left_key: ccy
+        right_key: ccy_cd
+        cardinality: many_to_one
+    allowed_query_patterns:
+      - dimension_lookup
+      - aggregate_with_fact
+    allowed_dimensions:
+      - rate_id
+      - ccy_cd
+      - ccy_symbol
+      - ccy_lang
+      - exch_ccy
+      - rate_src_cd
+      - ccy_stat
+      - show_loc_cd
+    allowed_metrics:
+      - pub_rate
+      - fin_rate
+      - exch_rate
+      - pref_rate
+    allowed_identifiers:
+      - rate_id
+      - ccy_cd
+    forbidden_columns:
+      - upd_usr
+    cautions:
+      - 订单宽表已包含 `ord_amt_cny`、`item_amt_cny`，常规 GMV 不需要再 JOIN 汇率表。
+
+deferred_tables:
+  - name: dim_usr_info_df
+    reason: 用户维表包含邮箱、手机号、WhatsApp、Facebook、Instagram、注册 IP、余额等敏感字段，第一阶段不开放。
+    future_condition: 后续如需要用户分层聚合，必须先做字段级脱敏和只聚合不明细策略。
+  - name: dwd_trd_ds_ord_header_df
+    reason: 首版订单查询优先使用 DWS 订单行公共宽表，避免 DWD 直查造成口径分叉。
+  - name: dwd_trd_ds_ord_line_df
+    reason: 首版订单行查询优先使用 DWS 订单行公共宽表，避免重复维护 DWD 查询口径。
+  - name: all_ods_tables
+    reason: ODS 源表存在重复记录、源状态未清洗、JOIN 膨胀和权限风险，第一阶段全部不开放。
+
+deprecated_tables:
+  - name: ads_ops_ord_ds_ord_line_td
+    layer: ADS
+    reason: 自制 ADS 未形成真实业务使用，不再作为 NL2SQL 白名单、取数推荐入口或新增需求依赖。
+    replacement: dws_trd_ds_ord_line_td
+    action: 仅保留历史追溯记录；如需线上物理下线，必须单独确认并走平台变更。
+
+review_checklist:
+  - 每个 SQL 的表必须全部出现在 `tables.name` 且 `enabled = true`。
+  - 查询事实表必须带 `ds` 分区和业务时间范围。
+  - 查询订单指标默认走 `dws_trd_ds_ord_line_td`。
+  - 查询包裹费用分摊默认走 `dws_trd_ds_ord_line_pkg_fee_td`。
+  - 查询敏感字段、禁查字段或 deferred 表时必须拦截。
+  - 明细预览必须带 LIMIT，且不得超过 `detail_preview_limit`。

@@ -1,7 +1,0 @@
-{
-  "title": "Daily paid amount by shop and country",
-  "metric": "paid_amount",
-  "dimensions": ["shop_id", "country_code"],
-  "grain": "order_line",
-  "date_field": "paid_at"
-}

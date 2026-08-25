@@ -1,0 +1,3479 @@
+{
+  "ods_mysql_tang_cps_affiliates_shop_apply_ri": {
+    "comment": "联盟店铺资格审批表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "register_email",
+        "type": "STRING",
+        "comment": "系统注册邮箱"
+      },
+      {
+        "name": "platform",
+        "type": "STRING",
+        "comment": "社媒平台 Tiktok Facebook Twitter Whatsapp Instagram"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "社媒账号"
+      },
+      {
+        "name": "fans_num",
+        "type": "BIGINT",
+        "comment": "粉丝数量"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "邮箱"
+      },
+      {
+        "name": "apply_reason",
+        "type": "STRING",
+        "comment": "开通原因"
+      },
+      {
+        "name": "reject_reason",
+        "type": "STRING",
+        "comment": "拒绝原因"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:审批中 1:通过 2:拒绝"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_affiliates_shop_resource_ri": {
+    "comment": "联盟店铺资源链接表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "affiliates_shop_id",
+        "type": "BIGINT",
+        "comment": "联盟店铺ID"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "类型 image video"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "封面图片链接"
+      },
+      {
+        "name": "plate",
+        "type": "STRING",
+        "comment": "平台"
+      },
+      {
+        "name": "link",
+        "type": "STRING",
+        "comment": "链接"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0:正常 1:已删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_affiliates_shop_ri": {
+    "comment": "联盟店铺表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "搜索码"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "标题"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "封面图"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "invite_url",
+        "type": "STRING",
+        "comment": "邀请短链接"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "开通类型 0:申请开通 1:自动开通"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标志 0:正常 1:已删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_business_cooperation_user_follow_ri": {
+    "comment": "商务合作客户跟进表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "follow_user_id",
+        "type": "BIGINT",
+        "comment": "跟进人员ID"
+      },
+      {
+        "name": "follow_user_name",
+        "type": "STRING",
+        "comment": "跟进人员名称"
+      },
+      {
+        "name": "business_cooperation_user_id",
+        "type": "BIGINT",
+        "comment": "商务合作客户表ID"
+      },
+      {
+        "name": "real_time",
+        "type": "TIMESTAMP",
+        "comment": "实际跟进时间"
+      },
+      {
+        "name": "next_time",
+        "type": "TIMESTAMP",
+        "comment": "下次跟进时间"
+      },
+      {
+        "name": "context",
+        "type": "STRING",
+        "comment": "跟进内容"
+      },
+      {
+        "name": "attachment_url",
+        "type": "STRING",
+        "comment": "附件url"
+      },
+      {
+        "name": "attachment_name",
+        "type": "STRING",
+        "comment": "附件名称"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_business_cooperation_user_history_ri": {
+    "comment": "商务合作用户历史记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键，自增标识符"
+      },
+      {
+        "name": "bcu_id",
+        "type": "BIGINT",
+        "comment": "business_cooperation_user.id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "country_code",
+        "type": "STRING",
+        "comment": "用户所在的国家或地区代码"
+      },
+      {
+        "name": "country_name",
+        "type": "STRING",
+        "comment": "国家地区"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "用户的名称（名）"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "用户的姓氏"
+      },
+      {
+        "name": "company_name",
+        "type": "STRING",
+        "comment": "用户所属的公司名称"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "用户的邮箱地址"
+      },
+      {
+        "name": "phone_number",
+        "type": "STRING",
+        "comment": "用户的联系电话"
+      },
+      {
+        "name": "whatsapp",
+        "type": "STRING",
+        "comment": "用户的WhatsApp账号"
+      },
+      {
+        "name": "skype",
+        "type": "STRING",
+        "comment": "用户的Skype账号"
+      },
+      {
+        "name": "other_contact_type",
+        "type": "STRING",
+        "comment": "其他联系方式类型"
+      },
+      {
+        "name": "other_contact",
+        "type": "STRING",
+        "comment": "用户的其他联系方式"
+      },
+      {
+        "name": "requirements_description",
+        "type": "STRING",
+        "comment": "用户的需求描述，使用TEXT类型以支持较长的文本"
+      },
+      {
+        "name": "product_images",
+        "type": "STRING",
+        "comment": "产品图片，使用JSON类型以存储多个图片的链接"
+      },
+      {
+        "name": "follow_status",
+        "type": "BIGINT",
+        "comment": "跟进状态 1:未跟进 2:已跟进"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "take_status",
+        "type": "BIGINT",
+        "comment": "领取状态 0:未领取 1:已领取"
+      },
+      {
+        "name": "take_time",
+        "type": "TIMESTAMP",
+        "comment": "领取时间"
+      },
+      {
+        "name": "user_source",
+        "type": "BIGINT",
+        "comment": "客户来源 1:客户录入 2:运营录入"
+      },
+      {
+        "name": "user_level",
+        "type": "BIGINT",
+        "comment": "商家等级"
+      },
+      {
+        "name": "operate_id",
+        "type": "BIGINT",
+        "comment": "运营人员ID"
+      },
+      {
+        "name": "operate_name",
+        "type": "STRING",
+        "comment": "运营人员名称"
+      },
+      {
+        "name": "organization_id",
+        "type": "BIGINT",
+        "comment": "推广组别ID"
+      },
+      {
+        "name": "organization_name",
+        "type": "STRING",
+        "comment": "推广组别名称"
+      },
+      {
+        "name": "last_follow_id",
+        "type": "BIGINT",
+        "comment": "最后跟进ID"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标记"
+      },
+      {
+        "name": "facebook",
+        "type": "STRING",
+        "comment": "facebook账号"
+      },
+      {
+        "name": "independent_website",
+        "type": "STRING",
+        "comment": "独立站"
+      },
+      {
+        "name": "independent_product_link",
+        "type": "STRING",
+        "comment": "独立站商品链接"
+      },
+      {
+        "name": "has_similar_product",
+        "type": "BIGINT",
+        "comment": "是否有相似/同款 1:是 0:否"
+      },
+      {
+        "name": "image_similarity",
+        "type": "DECIMAL(38,18)",
+        "comment": "图片相似值 (0-1) 数值，小数点保留两位数"
+      },
+      {
+        "name": "link_1688",
+        "type": "STRING",
+        "comment": "1688同款链接"
+      },
+      {
+        "name": "choice_product_link",
+        "type": "STRING",
+        "comment": "Choice商品链接"
+      },
+      {
+        "name": "other_image_url",
+        "type": "STRING",
+        "comment": "其他图片链接"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "姓名"
+      },
+      {
+        "name": "annual_sales",
+        "type": "STRING",
+        "comment": "年销售额"
+      },
+      {
+        "name": "product_category",
+        "type": "STRING",
+        "comment": "产品类别"
+      },
+      {
+        "name": "extra_info",
+        "type": "STRING",
+        "comment": "附加信息"
+      },
+      {
+        "name": "ds_last_access_time",
+        "type": "TIMESTAMP",
+        "comment": "最后一次访问ds时间"
+      },
+      {
+        "name": "ds_has_search_product",
+        "type": "BIGINT",
+        "comment": "ds是否已搜品 0否 1是"
+      },
+      {
+        "name": "ds_has_pick_product",
+        "type": "BIGINT",
+        "comment": "ds是否已选品 0否 1是"
+      },
+      {
+        "name": "ds_has_order",
+        "type": "BIGINT",
+        "comment": "ds是否已交易 0否 1是"
+      },
+      {
+        "name": "abandon_status",
+        "type": "BIGINT",
+        "comment": "放弃状态 0:未放弃 1:已放弃"
+      },
+      {
+        "name": "abandon_reason",
+        "type": "STRING",
+        "comment": "放弃原因"
+      },
+      {
+        "name": "abandon_time",
+        "type": "TIMESTAMP",
+        "comment": "放弃时间"
+      },
+      {
+        "name": "lead_type",
+        "type": "BIGINT",
+        "comment": "线索类型 1:首次进入 2:搜品超时未跟进退回 3:手动退回 4:放弃后产生询盘单 5:放弃后产生搜品单 6:放弃后产生待关联商品"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_business_cooperation_user_operate_log_ri": {
+    "comment": "商务合作客户操作记录表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "bcu_id",
+        "type": "BIGINT",
+        "comment": "商务合作客户表business_cooperation_user ID"
+      },
+      {
+        "name": "follow_id",
+        "type": "BIGINT",
+        "comment": "business_cooperation_user_follow表id"
+      },
+      {
+        "name": "operate_id",
+        "type": "BIGINT",
+        "comment": "运营人员ID"
+      },
+      {
+        "name": "operate_name",
+        "type": "STRING",
+        "comment": "运营人员名称"
+      },
+      {
+        "name": "action",
+        "type": "BIGINT",
+        "comment": "操作：1.创建/导入 2.领取 3.分配 4.跟进 5.退回 6:删除 7:编辑用户等级"
+      },
+      {
+        "name": "pre_edit",
+        "type": "STRING",
+        "comment": "修改前数据"
+      },
+      {
+        "name": "post_edit",
+        "type": "STRING",
+        "comment": "修改后数据"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "operate_log",
+        "type": "STRING",
+        "comment": "操作记录"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_business_cooperation_user_ri": {
+    "comment": "商务合作用户",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键，自增标识符"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "country_code",
+        "type": "STRING",
+        "comment": "用户所在的国家或地区代码"
+      },
+      {
+        "name": "country_name",
+        "type": "STRING",
+        "comment": "国家地区"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "用户的名称（名）"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "用户的姓氏"
+      },
+      {
+        "name": "company_name",
+        "type": "STRING",
+        "comment": "用户所属的公司名称"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "用户的邮箱地址"
+      },
+      {
+        "name": "phone_number",
+        "type": "STRING",
+        "comment": "用户的联系电话"
+      },
+      {
+        "name": "whatsapp",
+        "type": "STRING",
+        "comment": "用户的WhatsApp账号"
+      },
+      {
+        "name": "skype",
+        "type": "STRING",
+        "comment": "用户的Skype账号"
+      },
+      {
+        "name": "other_contact_type",
+        "type": "STRING",
+        "comment": "其他联系方式类型"
+      },
+      {
+        "name": "other_contact",
+        "type": "STRING",
+        "comment": "用户的其他联系方式"
+      },
+      {
+        "name": "requirements_description",
+        "type": "STRING",
+        "comment": "用户的需求描述，使用TEXT类型以支持较长的文本"
+      },
+      {
+        "name": "product_images",
+        "type": "STRING",
+        "comment": "产品图片，使用JSON类型以存储多个图片的链接"
+      },
+      {
+        "name": "follow_status",
+        "type": "BIGINT",
+        "comment": "跟进状态 1:未跟进 2:已跟进"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "take_status",
+        "type": "BIGINT",
+        "comment": "领取状态 0:未领取 1:已领取"
+      },
+      {
+        "name": "take_time",
+        "type": "TIMESTAMP",
+        "comment": "领取时间"
+      },
+      {
+        "name": "user_source",
+        "type": "BIGINT",
+        "comment": "客户来源 1:客户录入 2:运营录入"
+      },
+      {
+        "name": "user_level",
+        "type": "BIGINT",
+        "comment": "商家等级"
+      },
+      {
+        "name": "operate_id",
+        "type": "BIGINT",
+        "comment": "运营人员ID"
+      },
+      {
+        "name": "operate_name",
+        "type": "STRING",
+        "comment": "运营人员名称"
+      },
+      {
+        "name": "organization_id",
+        "type": "BIGINT",
+        "comment": "推广组别ID"
+      },
+      {
+        "name": "organization_name",
+        "type": "STRING",
+        "comment": "推广组别名称"
+      },
+      {
+        "name": "last_follow_id",
+        "type": "BIGINT",
+        "comment": "最后跟进ID"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标记"
+      },
+      {
+        "name": "facebook",
+        "type": "STRING",
+        "comment": "facebook账号"
+      },
+      {
+        "name": "independent_website",
+        "type": "STRING",
+        "comment": "独立站"
+      },
+      {
+        "name": "independent_product_link",
+        "type": "STRING",
+        "comment": "独立站商品链接"
+      },
+      {
+        "name": "has_similar_product",
+        "type": "BIGINT",
+        "comment": "是否有相似/同款 1:是 0:否"
+      },
+      {
+        "name": "image_similarity",
+        "type": "DECIMAL(38,18)",
+        "comment": "图片相似值 (0-1) 数值，小数点保留两位数"
+      },
+      {
+        "name": "link_1688",
+        "type": "STRING",
+        "comment": "1688同款链接"
+      },
+      {
+        "name": "choice_product_link",
+        "type": "STRING",
+        "comment": "Choice商品链接"
+      },
+      {
+        "name": "other_image_url",
+        "type": "STRING",
+        "comment": "其他图片链接"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "姓名"
+      },
+      {
+        "name": "annual_sales",
+        "type": "STRING",
+        "comment": "年销售额"
+      },
+      {
+        "name": "product_category",
+        "type": "STRING",
+        "comment": "产品类别"
+      },
+      {
+        "name": "extra_info",
+        "type": "STRING",
+        "comment": "附加信息"
+      },
+      {
+        "name": "ds_last_access_time",
+        "type": "TIMESTAMP",
+        "comment": "最后一次访问ds时间"
+      },
+      {
+        "name": "ds_has_search_product",
+        "type": "BIGINT",
+        "comment": "ds是否已搜品 0否 1是"
+      },
+      {
+        "name": "ds_has_pick_product",
+        "type": "BIGINT",
+        "comment": "ds是否已选品 0否 1是"
+      },
+      {
+        "name": "ds_has_order",
+        "type": "BIGINT",
+        "comment": "ds是否已交易 0否 1是"
+      },
+      {
+        "name": "is_ds_user",
+        "type": "BIGINT",
+        "comment": "是否为DS用户"
+      },
+      {
+        "name": "abandon_status",
+        "type": "BIGINT",
+        "comment": "放弃状态 0:未放弃 1:已放弃"
+      },
+      {
+        "name": "abandon_reason",
+        "type": "STRING",
+        "comment": "放弃原因"
+      },
+      {
+        "name": "abandon_time",
+        "type": "TIMESTAMP",
+        "comment": "放弃时间"
+      },
+      {
+        "name": "recent_unassigned_time",
+        "type": "TIMESTAMP",
+        "comment": "最近进入未分配时间"
+      },
+      {
+        "name": "lead_type",
+        "type": "BIGINT",
+        "comment": "线索类型 1:首次进入 2:搜品超时未跟进退回 3:手动退回 4:放弃后产生询盘单 5:放弃后产生搜品单 6:放弃后产生待关联商品"
+      },
+      {
+        "name": "instagram",
+        "type": "STRING",
+        "comment": "Instagram账号"
+      },
+      {
+        "name": "daily_order_volume",
+        "type": "STRING",
+        "comment": "日单量档位：NEWBIE/1-10/10-50/50-100/100+"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_activity_reward_ri": {
+    "comment": "推广活动奖励",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "下级用户ID"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "奖励金额"
+      },
+      {
+        "name": "available_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "可领取金额"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "失效时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:正常 1:已作废"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_balance_detail_ri": {
+    "comment": "推广收支明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "0:收入 1:支出"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_bank_ri": {
+    "comment": "推广提现账号",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户账号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "账号类型 0:国内 1:国外"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "开户人名称"
+      },
+      {
+        "name": "bank_name",
+        "type": "STRING",
+        "comment": "开户行名称"
+      },
+      {
+        "name": "branch_name",
+        "type": "STRING",
+        "comment": "支行名称"
+      },
+      {
+        "name": "bank_account",
+        "type": "STRING",
+        "comment": "账号"
+      },
+      {
+        "name": "bank_routing_number",
+        "type": "STRING",
+        "comment": "收款银行ABA routing number"
+      },
+      {
+        "name": "bank_address",
+        "type": "STRING",
+        "comment": "银行所在地"
+      },
+      {
+        "name": "swift_code",
+        "type": "STRING",
+        "comment": "swift代码"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "收款人地址"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_complaint_record_ri": {
+    "comment": "申述记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "last_forbid_tips",
+        "type": "BIGINT",
+        "comment": "最近一条禁用原因"
+      },
+      {
+        "name": "last_forbid_reason",
+        "type": "STRING",
+        "comment": "上次禁用原因"
+      },
+      {
+        "name": "last_forbid_time",
+        "type": "TIMESTAMP",
+        "comment": "最近一次禁用时间"
+      },
+      {
+        "name": "forbid_tips",
+        "type": "STRING",
+        "comment": "禁用原因"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "审核状态"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_customer_follow_ri": {
+    "comment": "推广客户跟进表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "follow_user_id",
+        "type": "BIGINT",
+        "comment": "跟进人员ID"
+      },
+      {
+        "name": "follow_user_name",
+        "type": "STRING",
+        "comment": "跟进人员名称"
+      },
+      {
+        "name": "proxy_customer_id",
+        "type": "BIGINT",
+        "comment": "推广客户表ID"
+      },
+      {
+        "name": "real_time",
+        "type": "TIMESTAMP",
+        "comment": "实际跟进时间"
+      },
+      {
+        "name": "next_time",
+        "type": "TIMESTAMP",
+        "comment": "下次跟进时间"
+      },
+      {
+        "name": "context",
+        "type": "STRING",
+        "comment": "跟进内容"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_customer_return_ri": {
+    "comment": "超时回退表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "proxy_customer_id",
+        "type": "BIGINT",
+        "comment": "推广客户表ID"
+      },
+      {
+        "name": "operate_id",
+        "type": "BIGINT",
+        "comment": "运营人员ID"
+      },
+      {
+        "name": "follow_status",
+        "type": "BIGINT",
+        "comment": "状态 0:未处理 1:已处理"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_customer_ri": {
+    "comment": "推广客户",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "take_status",
+        "type": "BIGINT",
+        "comment": "领取状态 1:未领取 2:已领取"
+      },
+      {
+        "name": "take_time",
+        "type": "TIMESTAMP",
+        "comment": "领取时间"
+      },
+      {
+        "name": "customer_source",
+        "type": "BIGINT",
+        "comment": "客户来源 1:系统注册 2:手动录入 3:爬取"
+      },
+      {
+        "name": "cooperation_status",
+        "type": "BIGINT",
+        "comment": "合作状态 1:未合作 2:合作中"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "推广者名称"
+      },
+      {
+        "name": "user_social_name",
+        "type": "STRING",
+        "comment": "推广者社媒名称"
+      },
+      {
+        "name": "blogger_link",
+        "type": "STRING",
+        "comment": "博主链接"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "常用邮箱"
+      },
+      {
+        "name": "business_email",
+        "type": "STRING",
+        "comment": "商务邮箱"
+      },
+      {
+        "name": "proxy_level",
+        "type": "BIGINT",
+        "comment": "推广等级"
+      },
+      {
+        "name": "organization_id",
+        "type": "BIGINT",
+        "comment": "推广组别ID"
+      },
+      {
+        "name": "organization_name",
+        "type": "STRING",
+        "comment": "推广组别名称"
+      },
+      {
+        "name": "operate_id",
+        "type": "BIGINT",
+        "comment": "运营人员ID"
+      },
+      {
+        "name": "operate_name",
+        "type": "STRING",
+        "comment": "运营人员名称"
+      },
+      {
+        "name": "country_code",
+        "type": "STRING",
+        "comment": "国家简码"
+      },
+      {
+        "name": "obtain_source",
+        "type": "STRING",
+        "comment": "获取来源"
+      },
+      {
+        "name": "fans_scope",
+        "type": "BIGINT",
+        "comment": "粉丝规模"
+      },
+      {
+        "name": "play_median",
+        "type": "BIGINT",
+        "comment": "播放中位值"
+      },
+      {
+        "name": "video_num",
+        "type": "BIGINT",
+        "comment": "视频数"
+      },
+      {
+        "name": "view_num",
+        "type": "BIGINT",
+        "comment": "观看数"
+      },
+      {
+        "name": "social_media_link",
+        "type": "STRING",
+        "comment": "社媒链接"
+      },
+      {
+        "name": "video_theme",
+        "type": "STRING",
+        "comment": "视频主题"
+      },
+      {
+        "name": "video_link",
+        "type": "STRING",
+        "comment": "推荐TB视频链接"
+      },
+      {
+        "name": "cooperation_platform",
+        "type": "STRING",
+        "comment": "合作平台"
+      },
+      {
+        "name": "cooperation_brand",
+        "type": "STRING",
+        "comment": "合作品牌"
+      },
+      {
+        "name": "business_intention",
+        "type": "BIGINT",
+        "comment": "商机意愿 1合作意愿强、推⼴⼒强 2合作意愿强、推⼴⼒中 3合作意愿中、推⼴⼒强 4合作意愿弱、推⼴⼒中弱"
+      },
+      {
+        "name": "follow_status",
+        "type": "BIGINT",
+        "comment": "跟进状态 1:未跟进 2:已跟进"
+      },
+      {
+        "name": "follow_time",
+        "type": "TIMESTAMP",
+        "comment": "跟进时间"
+      },
+      {
+        "name": "crawler_time",
+        "type": "TIMESTAMP",
+        "comment": "爬取时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "next_follow_time",
+        "type": "TIMESTAMP",
+        "comment": "下次跟进时间"
+      },
+      {
+        "name": "whats_app",
+        "type": "STRING",
+        "comment": "whatsApp的联系方式"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_detail_ri": {
+    "comment": "推广明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "superior_id",
+        "type": "BIGINT",
+        "comment": "上级ID"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "下级ID"
+      },
+      {
+        "name": "total_fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算运费总额"
+      },
+      {
+        "name": "referer_site",
+        "type": "STRING",
+        "comment": "站点来源"
+      },
+      {
+        "name": "active_tag",
+        "type": "BIGINT",
+        "comment": "活动标签"
+      },
+      {
+        "name": "register_time",
+        "type": "TIMESTAMP",
+        "comment": "注册时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_info_ri": {
+    "comment": "分销用户资料",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "country_id",
+        "type": "BIGINT",
+        "comment": "国家ID"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "nick_name",
+        "type": "STRING",
+        "comment": "昵称"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "真实姓名"
+      },
+      {
+        "name": "gender",
+        "type": "BIGINT",
+        "comment": "0:男 1:女"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "名称"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "姓氏"
+      },
+      {
+        "name": "receive_type",
+        "type": "STRING",
+        "comment": "收款类型"
+      },
+      {
+        "name": "bank",
+        "type": "STRING",
+        "comment": "开户行"
+      },
+      {
+        "name": "receive_account",
+        "type": "STRING",
+        "comment": "收款账户"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "手机号"
+      },
+      {
+        "name": "contact_type",
+        "type": "STRING",
+        "comment": "社交账号类型"
+      },
+      {
+        "name": "contact",
+        "type": "STRING",
+        "comment": "联系方式"
+      },
+      {
+        "name": "organization",
+        "type": "STRING",
+        "comment": "组织"
+      },
+      {
+        "name": "base_info",
+        "type": "STRING",
+        "comment": "信息"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:审核中1:审核通过 2:审核失败"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_level_cfg_ri": {
+    "comment": "推广等级配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "等级名称"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "bkge_scale",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金比例"
+      },
+      {
+        "name": "receive_condition",
+        "type": "BIGINT",
+        "comment": "领取条件(活跃用户数)"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0:有效 1:无效"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_level_detail_ri": {
+    "comment": "推广等级明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "账号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "0：包裹获取 1：系统赠送"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:升级1:降级"
+      },
+      {
+        "name": "level",
+        "type": "STRING",
+        "comment": "当前等级"
+      },
+      {
+        "name": "last_level",
+        "type": "STRING",
+        "comment": "上次级别"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_name_change_ri": {
+    "comment": "推广者名字变更申请",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "用户登录账号"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "姓名"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "证件类型"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "图片"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "原因"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:待处理 1:成功 2:失败"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_operate_record_ri": {
+    "comment": "推广后台操作日志",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "操作内容"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_original_settle_ri": {
+    "comment": "推广原创佣金结算",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "owner_source",
+        "type": "STRING",
+        "comment": "原创用户类型 10:平台 20:运营 30:联盟店铺 40:推广者"
+      },
+      {
+        "name": "original_id",
+        "type": "BIGINT",
+        "comment": "原创人ID"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "购买人ID"
+      },
+      {
+        "name": "proxy_product_id",
+        "type": "BIGINT",
+        "comment": "推广商品信息关联ID"
+      },
+      {
+        "name": "markup_type",
+        "type": "BIGINT",
+        "comment": "加价类型 1:大店加价 2:联盟店铺加价"
+      },
+      {
+        "name": "markup_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "加价金额"
+      },
+      {
+        "name": "profit_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金比例"
+      },
+      {
+        "name": "act_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算商品佣金"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "领取状态：0:待领取 1:已领取"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_partner_channel_ri": {
+    "comment": "合作推广渠道",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者Id"
+      },
+      {
+        "name": "channel",
+        "type": "STRING",
+        "comment": "推广渠道"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "三方渠道账号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_partner_daily_ri": {
+    "comment": "深度跟进日志",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "principal",
+        "type": "STRING",
+        "comment": "推广负责人"
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者 Id"
+      },
+      {
+        "name": "junior_num",
+        "type": "BIGINT",
+        "comment": "推广者下线人数"
+      },
+      {
+        "name": "expression",
+        "type": "STRING",
+        "comment": "表现"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "推广者状态"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_partner_record_ri": {
+    "comment": "深度合作操作日志",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_partner_ri": {
+    "comment": "深度推广者",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者Id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "推广者姓名"
+      },
+      {
+        "name": "principal",
+        "type": "STRING",
+        "comment": "推广平台负责人"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "channel",
+        "type": "STRING",
+        "comment": "推广频道"
+      },
+      {
+        "name": "organization",
+        "type": "STRING",
+        "comment": "组织"
+      },
+      {
+        "name": "junior_num",
+        "type": "BIGINT",
+        "comment": "下级推广人数"
+      },
+      {
+        "name": "expression",
+        "type": "STRING",
+        "comment": "表现"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "合作状态 effective:合作中 pause:暂停 invalid:合作无效(停止)"
+      },
+      {
+        "name": "cooperation_time",
+        "type": "STRING",
+        "comment": "合作时间"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "合作方案"
+      },
+      {
+        "name": "duties",
+        "type": "STRING",
+        "comment": "工作职责"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_product_info_ri": {
+    "comment": "推广商品信息表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "购买人ID"
+      },
+      {
+        "name": "promotion_type",
+        "type": "BIGINT",
+        "comment": "推广类型 1:清单 2:联盟店铺 3:大店自下单"
+      },
+      {
+        "name": "act_type",
+        "type": "BIGINT",
+        "comment": "1:正常分佣 2:都分给推广者"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "PI业务单号"
+      },
+      {
+        "name": "product_id",
+        "type": "BIGINT",
+        "comment": "商品ID"
+      },
+      {
+        "name": "product_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "product_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品实付金额"
+      },
+      {
+        "name": "product_url",
+        "type": "STRING",
+        "comment": "商品下单链接"
+      },
+      {
+        "name": "product_num",
+        "type": "BIGINT",
+        "comment": "商品下单数量"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "商品平台来源 taobao:淘宝 tmall:天猫 wd:微店 alibaba:1688"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": "数据来源 OUTER:外部商品 PREFERRED:大店商品 AFFILIATES:联盟商品"
+      },
+      {
+        "name": "preferred_markup_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "大店加价金额"
+      },
+      {
+        "name": "affiliates_markup_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "联盟加价金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_product_settle_ri": {
+    "comment": "推广商品佣金结算",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "income_type",
+        "type": "BIGINT",
+        "comment": "收益类型 1:清单 2:联盟店铺 3:平台"
+      },
+      {
+        "name": "superior_id",
+        "type": "BIGINT",
+        "comment": "收益人ID"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "购买人ID"
+      },
+      {
+        "name": "proxy_product_id",
+        "type": "BIGINT",
+        "comment": "推广商品信息关联ID"
+      },
+      {
+        "name": "markup_type",
+        "type": "BIGINT",
+        "comment": "加价类型 1:大店加价 2:联盟店铺加价"
+      },
+      {
+        "name": "markup_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "加价金额"
+      },
+      {
+        "name": "profit_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金比例"
+      },
+      {
+        "name": "act_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算商品佣金"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "领取状态 0:待领取 1:已领取"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "PI业务单号"
+      },
+      {
+        "name": "business_status",
+        "type": "BIGINT",
+        "comment": "业务状态:1.已下单 2.已取消 3.已完成"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_promoter_share_ri": {
+    "comment": "推广分享清单",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "下级推广者ID"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "invite_url",
+        "type": "STRING",
+        "comment": "邀请链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_punish_record_ri": {
+    "comment": "推广惩罚记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "操作类型"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_record_ri": {
+    "comment": "包裹佣金推广收益记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "provider_id",
+        "type": "BIGINT",
+        "comment": "下级用户ID"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "收益金额"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "下单时间"
+      },
+      {
+        "name": "pkg_status",
+        "type": "BIGINT",
+        "comment": "包裹订单状态"
+      },
+      {
+        "name": "bag_status",
+        "type": "BIGINT",
+        "comment": "退包状态：0：正常包裹 1：国内退包 2：国外退包 3：取消包裹 4：补款包裹"
+      },
+      {
+        "name": "advance_fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "预付运费"
+      },
+      {
+        "name": "act_fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "实付费用"
+      },
+      {
+        "name": "profit_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金比率"
+      },
+      {
+        "name": "rebate_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "act_profit_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际佣金比率"
+      },
+      {
+        "name": "estimate_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估佣金"
+      },
+      {
+        "name": "settle_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算佣金"
+      },
+      {
+        "name": "settle_time",
+        "type": "TIMESTAMP",
+        "comment": "结算时间"
+      },
+      {
+        "name": "act_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "实发佣金"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "包裹下单时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "佣金状态 待结算0 已结算1 无效2"
+      },
+      {
+        "name": "delivery_time",
+        "type": "TIMESTAMP",
+        "comment": "发货时间"
+      },
+      {
+        "name": "active_tag",
+        "type": "BIGINT",
+        "comment": "活动标识"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_ri": {
+    "comment": "推广列表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "推广码"
+      },
+      {
+        "name": "spread_url",
+        "type": "STRING",
+        "comment": "推广链接"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "等级"
+      },
+      {
+        "name": "withdrawal_ratio",
+        "type": "BIGINT",
+        "comment": "提现额度百分比"
+      },
+      {
+        "name": "balance",
+        "type": "DECIMAL(38,18)",
+        "comment": "余额"
+      },
+      {
+        "name": "freeze",
+        "type": "DECIMAL(38,18)",
+        "comment": "冻结金额"
+      },
+      {
+        "name": "growth",
+        "type": "BIGINT",
+        "comment": "成长值"
+      },
+      {
+        "name": "forbid_num",
+        "type": "BIGINT",
+        "comment": "禁用次数"
+      },
+      {
+        "name": "explain_rejected_num",
+        "type": "BIGINT",
+        "comment": "申述拒绝次数"
+      },
+      {
+        "name": "forbid_time",
+        "type": "TIMESTAMP",
+        "comment": "禁用时间"
+      },
+      {
+        "name": "forbid_tips",
+        "type": "STRING",
+        "comment": "禁用提示"
+      },
+      {
+        "name": "report_num",
+        "type": "BIGINT",
+        "comment": "惩罚次数"
+      },
+      {
+        "name": "deadline",
+        "type": "TIMESTAMP",
+        "comment": "惩罚到期时间"
+      },
+      {
+        "name": "protocol_state",
+        "type": "BIGINT",
+        "comment": "协议状态"
+      },
+      {
+        "name": "complaint_state",
+        "type": "BIGINT",
+        "comment": "申述开关"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型：0，普通推广者；1.达人推广者"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_settle_record_ri": {
+    "comment": "推广结算记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "superior_id",
+        "type": "BIGINT",
+        "comment": "推广者用户ID"
+      },
+      {
+        "name": "junior_id",
+        "type": "BIGINT",
+        "comment": "下级用户ID"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹号"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "推广收益"
+      },
+      {
+        "name": "available_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "剩余领取金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "作废时间"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_share_collect_ri": {
+    "comment": "推广收藏清单\\n",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "分享清单ID"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_share_label_ri": {
+    "comment": "推广清单商品分类",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "title",
+        "type": "STRING",
+        "comment": "标题"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_share_product_ri": {
+    "comment": "推广清单商品",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "product_id",
+        "type": "STRING",
+        "comment": "商品ID"
+      },
+      {
+        "name": "product_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "product_name_lang",
+        "type": "STRING",
+        "comment": "商品名称多语言"
+      },
+      {
+        "name": "product_price",
+        "type": "STRING",
+        "comment": "商品价格"
+      },
+      {
+        "name": "product_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "product_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "provider_id",
+        "type": "STRING",
+        "comment": "外部商品ID"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "商品平台来源 taobao:淘宝 tmall:天猫 wd:微店 alibaba:1688"
+      },
+      {
+        "name": "shop_id",
+        "type": "STRING",
+        "comment": "店铺id"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "share_label_id",
+        "type": "STRING",
+        "comment": "清单标签类型ID"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "pending:待发布 put_on:已上架 put_off:已下架 invalid:作废"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": "数据来源 OUTER:外部商品 PREFERRED:大店商品 AFFILIATES:联盟商品"
+      },
+      {
+        "name": "original_create",
+        "type": "BIGINT",
+        "comment": "是否原创 0:否 1:是"
+      },
+      {
+        "name": "change_operate",
+        "type": "BIGINT",
+        "comment": "变更后是否操作 0:未操作 1:已操作"
+      },
+      {
+        "name": "publish_time",
+        "type": "TIMESTAMP",
+        "comment": "发布时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标志 0:正常 1:已删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_share_resource_ri": {
+    "comment": "清单资源链接",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "类型"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "封面图片链接"
+      },
+      {
+        "name": "plate",
+        "type": "STRING",
+        "comment": "平台"
+      },
+      {
+        "name": "link",
+        "type": "STRING",
+        "comment": "链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0:正常 1:已删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_share_ri": {
+    "comment": "推广清单",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "搜索码"
+      },
+      {
+        "name": "title",
+        "type": "STRING",
+        "comment": "标题"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "类型"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "封面图"
+      },
+      {
+        "name": "plate",
+        "type": "STRING",
+        "comment": "平台"
+      },
+      {
+        "name": "link",
+        "type": "STRING",
+        "comment": "链接"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "invite_url",
+        "type": "STRING",
+        "comment": "邀请短链接"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "清单展现位置"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "pending:待发布 put_on:已发布 put_off:已下架 invalid:作废"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "publish_time",
+        "type": "TIMESTAMP",
+        "comment": "发布时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标志 0:正常 1:已删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_statics_ri": {
+    "comment": "推广统计",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "take_num",
+        "type": "BIGINT",
+        "comment": "提包人数"
+      },
+      {
+        "name": "refuse_num",
+        "type": "BIGINT",
+        "comment": "拒付订单数"
+      },
+      {
+        "name": "st_date",
+        "type": "TIMESTAMP",
+        "comment": "统计时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_withdraw_his_ri": {
+    "comment": "佣金转账提现记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "account",
+        "type": "STRING",
+        "comment": "申请人账号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "提现金额"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "收款类型"
+      },
+      {
+        "name": "bank_id",
+        "type": "BIGINT",
+        "comment": "用户提现银行信息ID"
+      },
+      {
+        "name": "receive_account",
+        "type": "STRING",
+        "comment": "收款账号"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "用户备注"
+      },
+      {
+        "name": "apply_time",
+        "type": "TIMESTAMP",
+        "comment": "申请时间"
+      },
+      {
+        "name": "transfer_img",
+        "type": "STRING",
+        "comment": "汇款截图"
+      },
+      {
+        "name": "fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "手续费"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "hand_time",
+        "type": "TIMESTAMP",
+        "comment": "发放时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "发放状态0:待发放1:发放中 2:发放成功 3:发放失败 4:撤销"
+      },
+      {
+        "name": "base_data",
+        "type": "STRING",
+        "comment": "收款银行信息"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_report_audit_record_ri": {
+    "comment": "审核记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "report_event_id",
+        "type": "BIGINT",
+        "comment": "举报事件ID"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "share:清单 product:商品"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "share_product_id",
+        "type": "BIGINT",
+        "comment": "清单商品ID"
+      },
+      {
+        "name": "punish_type",
+        "type": "STRING",
+        "comment": "处罚类型 normal:无异常 product_put_off:商品下架 product_blacklist:商品加入黑名单 share_put_off:清单下架 proxy_punish:推广处罚 account_forbid:帐号禁用\n"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_report_event_ri": {
+    "comment": "举报投诉事件",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "share:清单 product:商品"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "share_product_id",
+        "type": "BIGINT",
+        "comment": "清单商品ID"
+      },
+      {
+        "name": "product_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "report_type",
+        "type": "STRING",
+        "comment": "举报类型"
+      },
+      {
+        "name": "event_type",
+        "type": "STRING",
+        "comment": "事件类型"
+      },
+      {
+        "name": "receive_time",
+        "type": "TIMESTAMP",
+        "comment": "接单时间"
+      },
+      {
+        "name": "auditor",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "audit_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_report_feedback_ri": {
+    "comment": "举报反馈",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "report_event_id",
+        "type": "BIGINT",
+        "comment": "举报事件ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名称"
+      },
+      {
+        "name": "avatar",
+        "type": "STRING",
+        "comment": "用户头像"
+      },
+      {
+        "name": "type",
+        "type": "STRING",
+        "comment": "share:清单 product:商品"
+      },
+      {
+        "name": "share_id",
+        "type": "BIGINT",
+        "comment": "清单ID"
+      },
+      {
+        "name": "share_product_id",
+        "type": "BIGINT",
+        "comment": "清单商品ID"
+      },
+      {
+        "name": "report_type",
+        "type": "STRING",
+        "comment": "举报类型"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "内容"
+      },
+      {
+        "name": "status",
+        "type": "STRING",
+        "comment": "pending:待处理 processed:已处理"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_star_ri": {
+    "comment": "网红配置表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "网红名称"
+      },
+      {
+        "name": "icon",
+        "type": "STRING",
+        "comment": "网红头像"
+      },
+      {
+        "name": "fans_num",
+        "type": "STRING",
+        "comment": "粉丝量"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "简介"
+      },
+      {
+        "name": "star_source",
+        "type": "STRING",
+        "comment": "网红来源"
+      },
+      {
+        "name": "create_user",
+        "type": "STRING",
+        "comment": "创建者"
+      },
+      {
+        "name": "update_user",
+        "type": "STRING",
+        "comment": "更新者"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序值"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_b_share_ri": {
+    "comment": "B端分享：运营→B、B→B",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "holder_type",
+        "type": "BIGINT",
+        "comment": "主体类型：1运营 2B端用户"
+      },
+      {
+        "name": "holder_id",
+        "type": "BIGINT",
+        "comment": "主体ID：运营=sys_user.user_id，B端=business_cooperation_user.id"
+      },
+      {
+        "name": "holder_name",
+        "type": "STRING",
+        "comment": "主体名称"
+      },
+      {
+        "name": "share_code",
+        "type": "STRING",
+        "comment": "分享码，唯一"
+      },
+      {
+        "name": "short_url",
+        "type": "STRING",
+        "comment": "短链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_b_share_detail_ri": {
+    "comment": "B端推广明细：BShareDetail",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID（B端推广者 userId）"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "当前注册用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "当前用户名称"
+      },
+      {
+        "name": "email",
+        "type": "STRING",
+        "comment": "当前用户邮箱"
+      },
+      {
+        "name": "delivered_order_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "当前用户妥投订单金额"
+      },
+      {
+        "name": "delivered_order_count",
+        "type": "BIGINT",
+        "comment": "当前用户妥投订单数量"
+      },
+      {
+        "name": "share_code",
+        "type": "STRING",
+        "comment": "分享码"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识 0:未删除 1:已删除"
+      },
+      {
+        "name": "register_time",
+        "type": "TIMESTAMP",
+        "comment": "用户注册时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "commission_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "佣金金额"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_b_share_order_detail_ri": {
+    "comment": "B端推广订单明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "promoter_id",
+        "type": "BIGINT",
+        "comment": "推广者ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "当前用户ID"
+      },
+      {
+        "name": "order_id",
+        "type": "BIGINT",
+        "comment": "订单号"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹号"
+      },
+      {
+        "name": "pay_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付金额"
+      },
+      {
+        "name": "refund_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "extra_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "补款金额"
+      },
+      {
+        "name": "actual_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际金额"
+      },
+      {
+        "name": "commission_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "订单佣金"
+      },
+      {
+        "name": "commission_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "订单佣金比例"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "订单支付时间"
+      },
+      {
+        "name": "delivery_time",
+        "type": "TIMESTAMP",
+        "comment": "订单妥投时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_cps_proxy_promotion_activity_record_ri": {
+    "comment": "推广活动奖励记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "scene",
+        "type": "BIGINT",
+        "comment": "活动场景 2推广者填写申请表奖励"
+      },
+      {
+        "name": "offered_reward_usd",
+        "type": "DECIMAL(38,18)",
+        "comment": "参与活动时配置的美元奖励快照"
+      },
+      {
+        "name": "audit_status",
+        "type": "BIGINT",
+        "comment": "0待审核 1已通过 2已驳回 3已发放"
+      },
+      {
+        "name": "daily_order_volume",
+        "type": "STRING",
+        "comment": "日单量档位：NEWBIE/1-10/10-50/50-100/100+，仅 scene=2"
+      },
+      {
+        "name": "whatsapp_dial_code",
+        "type": "STRING",
+        "comment": "WhatsApp 区号，含+，仅 scene=2"
+      },
+      {
+        "name": "whatsapp_phone",
+        "type": "STRING",
+        "comment": "WhatsApp 本地号码，纯数字，仅 scene=2"
+      },
+      {
+        "name": "facebook_id",
+        "type": "STRING",
+        "comment": "Facebook ID（选填），仅 scene=2"
+      },
+      {
+        "name": "instagram_id",
+        "type": "STRING",
+        "comment": "Instagram ID（选填），仅 scene=2"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      }
+    ],
+    "partitions": []
+  }
+}

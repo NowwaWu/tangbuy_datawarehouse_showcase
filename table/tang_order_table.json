@@ -1,0 +1,1429 @@
+{
+  "ods_mysql_tang_order_t_draft_item_refund_apply_ri": {
+    "comment": "draft订单退款申请表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "ID"
+      },
+      {
+        "name": "refund_no",
+        "type": "STRING",
+        "comment": "退款NO"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "itemNo"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "申请用户ID"
+      },
+      {
+        "name": "refund_num",
+        "type": "BIGINT",
+        "comment": "申请退款数量"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "1=未处理，2=已同意, 3=已拒绝"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "取消原因"
+      },
+      {
+        "name": "reject_reason",
+        "type": "STRING",
+        "comment": "审核拒绝原因"
+      },
+      {
+        "name": "apply_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "processed_at",
+        "type": "TIMESTAMP",
+        "comment": "处理时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "apply_id",
+        "type": "BIGINT",
+        "comment": "主表ID "
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_draft_refund_apply_ri": {
+    "comment": "draft订单退款申请主表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "申请用户ID"
+      },
+      {
+        "name": "outer_order_id",
+        "type": "BIGINT",
+        "comment": "draftOrder订单ID"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "1=未处理，2=已处理"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "apply_time",
+        "type": "TIMESTAMP",
+        "comment": "申请时间"
+      },
+      {
+        "name": "processed_at",
+        "type": "TIMESTAMP",
+        "comment": "处理时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_item_exchange_ri": {
+    "comment": "换货商品单号",
+    "columns": [
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品编号"
+      },
+      {
+        "name": "parent_no",
+        "type": "STRING",
+        "comment": "父级单号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_item_mail_limit_ri": {
+    "comment": "商品邮限",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "自增ID"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品编号"
+      },
+      {
+        "name": "mail_limit_id",
+        "type": "BIGINT",
+        "comment": "邮限ID"
+      },
+      {
+        "name": "mail_limit_pid",
+        "type": "BIGINT",
+        "comment": "邮限制父级ID"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建者"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_item_plugin_ri": {
+    "comment": "插件商品扩展表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "plugin_order_id",
+        "type": "BIGINT",
+        "comment": "plugin_order_id"
+      },
+      {
+        "name": "plugin_line_id",
+        "type": "BIGINT",
+        "comment": "plugin_line_id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "bd_user_id",
+        "type": "BIGINT",
+        "comment": "bd_use_id"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "ordrNo"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "item_no"
+      },
+      {
+        "name": "bd_user_name",
+        "type": "STRING",
+        "comment": "bd_user_name"
+      },
+      {
+        "name": "purchase_type",
+        "type": "BIGINT",
+        "comment": "0=普通商品，1=阶梯商品"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "json"
+      },
+      {
+        "name": "purchase_suggestion_post_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "range_post_price"
+      },
+      {
+        "name": "purchase_suggestion_price",
+        "type": "DECIMAL(38,18)",
+        "comment": ""
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "timer_tiered_flag",
+        "type": "BIGINT",
+        "comment": "定时更新表示;1未更新，2已经更新"
+      },
+      {
+        "name": "plugin_purchase_line_id",
+        "type": "BIGINT",
+        "comment": "插件采购明细ID"
+      },
+      {
+        "name": "combine_goods_id",
+        "type": "STRING",
+        "comment": "组合商品ID"
+      },
+      {
+        "name": "combine_sku_id",
+        "type": "STRING",
+        "comment": "组合商品SKUID"
+      },
+      {
+        "name": "combine_goods_name",
+        "type": "STRING",
+        "comment": "组合商品名字"
+      },
+      {
+        "name": "combine_goods_attribute",
+        "type": "STRING",
+        "comment": "组合商品属性"
+      },
+      {
+        "name": "goods_type",
+        "type": "BIGINT",
+        "comment": "组合商品规格属性"
+      },
+      {
+        "name": "combine_goods_img",
+        "type": "STRING",
+        "comment": "组合商品图片"
+      },
+      {
+        "name": "combine_goods_url",
+        "type": "STRING",
+        "comment": "组合商品URL"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_event_ri": {
+    "comment": "订单事件时间",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "唯一ID"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "event_time",
+        "type": "TIMESTAMP",
+        "comment": "事件时间"
+      },
+      {
+        "name": "event_type",
+        "type": "BIGINT",
+        "comment": "事件类型"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_item_ri": {
+    "comment": "商品子订单",
+    "columns": [
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品条码号"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "商品订单号"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "商品数量"
+      },
+      {
+        "name": "unit_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品单价"
+      },
+      {
+        "name": "write_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "填写价格"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品重量"
+      },
+      {
+        "name": "express_delivery",
+        "type": "BIGINT",
+        "comment": "快递是否发货0否，1是"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "express_id",
+        "type": "STRING",
+        "comment": "快递公司编号"
+      },
+      {
+        "name": "express",
+        "type": "STRING",
+        "comment": "快递公司"
+      },
+      {
+        "name": "goods_status",
+        "type": "BIGINT",
+        "comment": "商品状态"
+      },
+      {
+        "name": "position_no",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "mail_limit",
+        "type": "STRING",
+        "comment": "邮限"
+      },
+      {
+        "name": "purchase_no",
+        "type": "STRING",
+        "comment": "淘宝购买单号"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "商品分类id"
+      },
+      {
+        "name": "goods_attribute",
+        "type": "STRING",
+        "comment": "商品属性"
+      },
+      {
+        "name": "goods_attribute_cn",
+        "type": "STRING",
+        "comment": "商品中文属性"
+      },
+      {
+        "name": "goods_need_fil",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品需要补款"
+      },
+      {
+        "name": "goods_fil",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品补款"
+      },
+      {
+        "name": "booked_fil",
+        "type": "DECIMAL(38,18)",
+        "comment": "预定补款"
+      },
+      {
+        "name": "volume",
+        "type": "STRING",
+        "comment": "体积长宽高"
+      },
+      {
+        "name": "sku_id",
+        "type": "STRING",
+        "comment": "商品属性ID"
+      },
+      {
+        "name": "confirm_status",
+        "type": "BIGINT",
+        "comment": "待确认状态"
+      },
+      {
+        "name": "return_status",
+        "type": "BIGINT",
+        "comment": "退换货状态"
+      },
+      {
+        "name": "return_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "退换货手续费"
+      },
+      {
+        "name": "goods_return",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品退款"
+      },
+      {
+        "name": "back_postage",
+        "type": "DECIMAL(38,18)",
+        "comment": "寄回邮费"
+      },
+      {
+        "name": "user_cid",
+        "type": "STRING",
+        "comment": "用户分类ID"
+      },
+      {
+        "name": "signed_time",
+        "type": "TIMESTAMP",
+        "comment": "签收时间"
+      },
+      {
+        "name": "storage_out_time",
+        "type": "TIMESTAMP",
+        "comment": "入库超期时间"
+      },
+      {
+        "name": "purchase_time",
+        "type": "TIMESTAMP",
+        "comment": "订购时间"
+      },
+      {
+        "name": "discount_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品优惠金额"
+      },
+      {
+        "name": "cart_purchase_type",
+        "type": "BIGINT",
+        "comment": "购物车订购类型0未订购1已订购"
+      },
+      {
+        "name": "exception_type",
+        "type": "BIGINT",
+        "comment": "异常类型"
+      },
+      {
+        "name": "need_confirm",
+        "type": "BIGINT",
+        "comment": "是否需要确认"
+      },
+      {
+        "name": "deferred_type",
+        "type": "BIGINT",
+        "comment": "是否延期处理0，否，1是"
+      },
+      {
+        "name": "goods_comment",
+        "type": "STRING",
+        "comment": "商品备注"
+      },
+      {
+        "name": "goods_extension",
+        "type": "STRING",
+        "comment": "备注图片"
+      },
+      {
+        "name": "insurance_back",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险已赔金额"
+      },
+      {
+        "name": "goods_comment_time",
+        "type": "TIMESTAMP",
+        "comment": "备注添加时间"
+      },
+      {
+        "name": "fee_customize",
+        "type": "DECIMAL(38,18)",
+        "comment": "定制服务费"
+      },
+      {
+        "name": "goods_name_cn",
+        "type": "STRING",
+        "comment": "商品中文名称"
+      },
+      {
+        "name": "comment",
+        "type": "STRING",
+        "comment": "用户备注"
+      },
+      {
+        "name": "virtual_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "虚拟价格"
+      },
+      {
+        "name": "sale_type",
+        "type": "BIGINT",
+        "comment": "销售类型"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "extend_field",
+        "type": "STRING",
+        "comment": "子单上的扩展字段"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": "大店:PREFERRED ,联盟:AFFILIATES;OUTER外部"
+      },
+      {
+        "name": "inventory_id",
+        "type": "STRING",
+        "comment": "清单ID"
+      },
+      {
+        "name": "show_way",
+        "type": "BIGINT",
+        "comment": "0=不展示,1=我的仓库,2=我的备货"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_operation_ri": {
+    "comment": "订单操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "唯一id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "记录时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "op_type",
+        "type": "STRING",
+        "comment": "操作类型"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "商品号码"
+      },
+      {
+        "name": "company_id",
+        "type": "BIGINT",
+        "comment": "公司ID"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_pay_ri": {
+    "comment": "订单支付",
+    "columns": [
+      {
+        "name": "business_no",
+        "type": "STRING",
+        "comment": "唯一ID"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "支付状态"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "订单金额"
+      },
+      {
+        "name": "pay_no",
+        "type": "STRING",
+        "comment": "支付单号"
+      },
+      {
+        "name": "relation_no",
+        "type": "STRING",
+        "comment": "商品关联编号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "cancel_relation_no",
+        "type": "STRING",
+        "comment": "取消的关联单号"
+      },
+      {
+        "name": "cancel_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "取消金额"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "扩展字段"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_refund_ri": {
+    "comment": "订单退款",
+    "columns": [
+      {
+        "name": "business_no",
+        "type": "STRING",
+        "comment": "业务单号"
+      },
+      {
+        "name": "business_type",
+        "type": "BIGINT",
+        "comment": "业务类型"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "退款状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "退款时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "relation_no",
+        "type": "STRING",
+        "comment": "关联商品"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退款金额"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "order_audit_id",
+        "type": "BIGINT",
+        "comment": "退款审核ID"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "拓展信息"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_return_ri": {
+    "comment": "退换货记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "唯一ID"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品编号"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单编号"
+      },
+      {
+        "name": "return_type",
+        "type": "BIGINT",
+        "comment": "退换货类型"
+      },
+      {
+        "name": "is_received",
+        "type": "BIGINT",
+        "comment": "是否收到货款"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建者"
+      },
+      {
+        "name": "company_id",
+        "type": "BIGINT",
+        "comment": "公司ID"
+      },
+      {
+        "name": "amount_reason",
+        "type": "STRING",
+        "comment": "退还金额原因"
+      },
+      {
+        "name": "purchase_no",
+        "type": "STRING",
+        "comment": "订购交易号"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "storage_no",
+        "type": "BIGINT",
+        "comment": "仓库编号"
+      },
+      {
+        "name": "trade_imgs",
+        "type": "STRING",
+        "comment": "凭证图片"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_order_ri": {
+    "comment": "商品订单",
+    "columns": [
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "order_status",
+        "type": "BIGINT",
+        "comment": "下单状态"
+      },
+      {
+        "name": "seller_name",
+        "type": "STRING",
+        "comment": "卖家名字"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户真实姓名"
+      },
+      {
+        "name": "buyer",
+        "type": "STRING",
+        "comment": "采购员"
+      },
+      {
+        "name": "destination",
+        "type": "STRING",
+        "comment": "配送目的地国家"
+      },
+      {
+        "name": "destination_id",
+        "type": "BIGINT",
+        "comment": "国家id"
+      },
+      {
+        "name": "store_source",
+        "type": "STRING",
+        "comment": "店铺来源"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "店铺URL地址"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺id"
+      },
+      {
+        "name": "order_language",
+        "type": "STRING",
+        "comment": "用户下单语言"
+      },
+      {
+        "name": "order_currency",
+        "type": "STRING",
+        "comment": "下单币种"
+      },
+      {
+        "name": "expedited",
+        "type": "BIGINT",
+        "comment": "0:普通1:加急"
+      },
+      {
+        "name": "pay_no",
+        "type": "STRING",
+        "comment": "支付单号"
+      },
+      {
+        "name": "storage_no",
+        "type": "BIGINT",
+        "comment": "仓库位置编号"
+      },
+      {
+        "name": "user_vip",
+        "type": "BIGINT",
+        "comment": "用户vip"
+      },
+      {
+        "name": "company_id",
+        "type": "BIGINT",
+        "comment": "采购公司ID"
+      },
+      {
+        "name": "merge_item",
+        "type": "STRING",
+        "comment": "合并商品"
+      },
+      {
+        "name": "pay_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "支付汇率"
+      },
+      {
+        "name": "postage",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费金额"
+      },
+      {
+        "name": "postage_fil",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费补款金额"
+      },
+      {
+        "name": "postage_need_fil",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费需要补款金额"
+      },
+      {
+        "name": "postage_return",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费退款金额"
+      },
+      {
+        "name": "fee_service",
+        "type": "DECIMAL(38,18)",
+        "comment": "服务费"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "订单删除标记"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "付款时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "下单时间"
+      },
+      {
+        "name": "pending_time",
+        "type": "TIMESTAMP",
+        "comment": "接单时间"
+      },
+      {
+        "name": "store_rebate",
+        "type": "DECIMAL(38,18)",
+        "comment": "店铺返利点"
+      },
+      {
+        "name": "order_type",
+        "type": "BIGINT",
+        "comment": "订单类型"
+      },
+      {
+        "name": "sys_tag",
+        "type": "STRING",
+        "comment": "系统标记"
+      },
+      {
+        "name": "device",
+        "type": "STRING",
+        "comment": "下单设备"
+      },
+      {
+        "name": "activity_discount",
+        "type": "STRING",
+        "comment": "店铺优惠信息"
+      },
+      {
+        "name": "order_buyer_id",
+        "type": "STRING",
+        "comment": "采购员ID"
+      },
+      {
+        "name": "order_buyer_post",
+        "type": "STRING",
+        "comment": "采购员部门"
+      },
+      {
+        "name": "platform_technical_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "技术服务费"
+      },
+      {
+        "name": "brand_status",
+        "type": "BIGINT",
+        "comment": "0：表示未审核，1：审核通过"
+      },
+      {
+        "name": "extend_field",
+        "type": "STRING",
+        "comment": "主单上的扩展字段"
+      },
+      {
+        "name": "platform_technical_fee_return",
+        "type": "DECIMAL(38,18)",
+        "comment": "技术服务费退款"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_shipping_detail_item_ri": {
+    "comment": "备货单商品明细订单关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "ID"
+      },
+      {
+        "name": "shipping_detail_id",
+        "type": "BIGINT",
+        "comment": "备货单ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "itemNo"
+      },
+      {
+        "name": "num",
+        "type": "BIGINT",
+        "comment": "总数量"
+      },
+      {
+        "name": "used_num",
+        "type": "BIGINT",
+        "comment": "使用数量"
+      },
+      {
+        "name": "splitd_num",
+        "type": "BIGINT",
+        "comment": "拆去数量"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "shipping_id",
+        "type": "BIGINT",
+        "comment": "shippingId"
+      },
+      {
+        "name": "shipping_sku_id",
+        "type": "BIGINT",
+        "comment": "shippingskuId"
+      },
+      {
+        "name": "origin_num",
+        "type": "BIGINT",
+        "comment": "原数量"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_shipping_detail_record_ri": {
+    "comment": "备货单操作记录表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "user_id"
+      },
+      {
+        "name": "shipping_id",
+        "type": "BIGINT",
+        "comment": "shippingId"
+      },
+      {
+        "name": "shipping_detail_id",
+        "type": "BIGINT",
+        "comment": "shipping_detail_id"
+      },
+      {
+        "name": "shipping_sku_id",
+        "type": "BIGINT",
+        "comment": "shippingskuId"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "item_no"
+      },
+      {
+        "name": "num",
+        "type": "BIGINT",
+        "comment": "num"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "1=打包2=取消"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_shipping_detail_ri": {
+    "comment": "备货单明细表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "备货单明细ID"
+      },
+      {
+        "name": "shipping_id",
+        "type": "BIGINT",
+        "comment": "备货单ID"
+      },
+      {
+        "name": "shipping_sku_id",
+        "type": "BIGINT",
+        "comment": "SKU备货单ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": "商品ID"
+      },
+      {
+        "name": "sku_id",
+        "type": "STRING",
+        "comment": "sku_id"
+      },
+      {
+        "name": "num",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采购价格"
+      },
+      {
+        "name": "custom_type",
+        "type": "STRING",
+        "comment": "定制类型"
+      },
+      {
+        "name": "custom_imgs",
+        "type": "STRING",
+        "comment": "定制图片"
+      },
+      {
+        "name": "custom_content",
+        "type": "STRING",
+        "comment": "定制内容"
+      },
+      {
+        "name": "custom_content_cn",
+        "type": "STRING",
+        "comment": "定制内容"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_shipping_product_ri": {
+    "comment": "备货单商品表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "备货单ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": "商品ID"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "provide_type"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": "data_source"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "goods_name_cn",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "num",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小采购价格"
+      },
+      {
+        "name": "max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大采购价格"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品url"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_order_t_shipping_sku_ri": {
+    "comment": "SKU备货单明细表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "SKU备货单ID"
+      },
+      {
+        "name": "shipping_id",
+        "type": "BIGINT",
+        "comment": "备货单ID"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "goods_id",
+        "type": "STRING",
+        "comment": "商品ID"
+      },
+      {
+        "name": "sku_id",
+        "type": "STRING",
+        "comment": "sku_id"
+      },
+      {
+        "name": "sku_img",
+        "type": "STRING",
+        "comment": "SKU图片"
+      },
+      {
+        "name": "goods_attribute",
+        "type": "STRING",
+        "comment": "商品属性"
+      },
+      {
+        "name": "goods_attribute_cn",
+        "type": "STRING",
+        "comment": "商品中文属性"
+      },
+      {
+        "name": "num",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采购价格"
+      },
+      {
+        "name": "max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采购价格"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "货架号"
+      },
+      {
+        "name": "barcode",
+        "type": "STRING",
+        "comment": "商品条形码"
+      }
+    ],
+    "partitions": []
+  }
+}

@@ -1,0 +1,3580 @@
+{
+  "ods_mysql_tang_storage_s_customized_order_ri": {
+    "comment": "定制物流商品信息",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "goods_num",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "total_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "length",
+        "type": "DECIMAL(38,18)",
+        "comment": "长度"
+      },
+      {
+        "name": "width",
+        "type": "DECIMAL(38,18)",
+        "comment": "宽度"
+      },
+      {
+        "name": "hight",
+        "type": "DECIMAL(38,18)",
+        "comment": "高度"
+      },
+      {
+        "name": "customized_id",
+        "type": "STRING",
+        "comment": "定制单号"
+      },
+      {
+        "name": "goods_link",
+        "type": "STRING",
+        "comment": "商品链接"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_customized_pack_ri": {
+    "comment": "定制包裹记录",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "customized_id",
+        "type": "STRING",
+        "comment": "定制单号"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹状态  0 提交  1审核中  2待支付 3 支付完成  4已寄送   5 审核拒绝   6已取消"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "物流备注"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "提包时间"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "line_name",
+        "type": "STRING",
+        "comment": "线路名称"
+      },
+      {
+        "name": "logistics_remark",
+        "type": "STRING",
+        "comment": "物流部备注"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_declare_fee_ri": {
+    "comment": "包裹申报明细",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "name_en",
+        "type": "STRING",
+        "comment": "英文名"
+      },
+      {
+        "name": "name_cn",
+        "type": "STRING",
+        "comment": "中文名"
+      },
+      {
+        "name": "hs_code",
+        "type": "STRING",
+        "comment": "海关编码"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "unit_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "单价"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "总价"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "申报状态"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "申报类型 0 商品， 1 运费"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品编号"
+      },
+      {
+        "name": "tariff",
+        "type": "STRING",
+        "comment": "税则"
+      },
+      {
+        "name": "describe",
+        "type": "STRING",
+        "comment": "税则描述"
+      },
+      {
+        "name": "skuid",
+        "type": "STRING",
+        "comment": "商品的skuId"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_increment_ri": {
+    "comment": "增值服务配置表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "unit_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "单价"
+      },
+      {
+        "name": "min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最低金额"
+      },
+      {
+        "name": "max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最高限制"
+      },
+      {
+        "name": "name_cn",
+        "type": "STRING",
+        "comment": "中文名"
+      },
+      {
+        "name": "name_en",
+        "type": "STRING",
+        "comment": "英文名"
+      },
+      {
+        "name": "description_cn",
+        "type": "STRING",
+        "comment": "中文描述"
+      },
+      {
+        "name": "description_en",
+        "type": "STRING",
+        "comment": "英文描述"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "使用状态"
+      },
+      {
+        "name": "unit",
+        "type": "STRING",
+        "comment": "单位"
+      },
+      {
+        "name": "free",
+        "type": "BIGINT",
+        "comment": "免费"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "服务编码"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "包装类型：0外部包装， 1包装细节"
+      },
+      {
+        "name": "pack_detail",
+        "type": "STRING",
+        "comment": "包装细节"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "volume",
+        "type": "DECIMAL(38,18)",
+        "comment": "体积"
+      },
+      {
+        "name": "seq",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "name_es",
+        "type": "STRING",
+        "comment": "西班牙语"
+      },
+      {
+        "name": "name_ko",
+        "type": "STRING",
+        "comment": "韩语"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_items_photo_record_ri": {
+    "comment": "照片记录表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "category",
+        "type": "BIGINT",
+        "comment": "类别 0 普通 1 精细"
+      },
+      {
+        "name": "photo_status",
+        "type": "BIGINT",
+        "comment": "照片状态 0 存在 1 不存在"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "PO号"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_items_photo_ri": {
+    "comment": "商品拍照记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品iD"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "service_no",
+        "type": "STRING",
+        "comment": "服务编码"
+      },
+      {
+        "name": "extension",
+        "type": "STRING",
+        "comment": "照片地址"
+      },
+      {
+        "name": "category",
+        "type": "BIGINT",
+        "comment": "拍照类型"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "拍照状态"
+      },
+      {
+        "name": "remarks",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "合并单号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "添加时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "user_extension",
+        "type": "STRING",
+        "comment": "用户照片地址"
+      },
+      {
+        "name": "config",
+        "type": "STRING",
+        "comment": "水印配置"
+      },
+      {
+        "name": "is_use",
+        "type": "BIGINT",
+        "comment": "是否使用水印"
+      },
+      {
+        "name": "is_delete",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      },
+      {
+        "name": "seq",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "original_extension",
+        "type": "STRING",
+        "comment": "原始照片"
+      },
+      {
+        "name": "compose",
+        "type": "BIGINT",
+        "comment": "是否合成水印 0否 1 是"
+      },
+      {
+        "name": "manual_addition",
+        "type": "BIGINT",
+        "comment": "是否手动添加 0 否 1 是"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_order_more_ri": {
+    "comment": "多到任务",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "express",
+        "type": "STRING",
+        "comment": "快递公司"
+      },
+      {
+        "name": "express_id",
+        "type": "STRING",
+        "comment": "快递公司id"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "company_id",
+        "type": "BIGINT",
+        "comment": "所属公司"
+      },
+      {
+        "name": "buyer",
+        "type": "STRING",
+        "comment": "采购员"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "多到描述"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "start_item",
+        "type": "STRING",
+        "comment": "发起单号"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "新增人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "新增时间"
+      },
+      {
+        "name": "describe",
+        "type": "STRING",
+        "comment": "商品描述"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "是否异常0否，1是"
+      },
+      {
+        "name": "matching_time",
+        "type": "TIMESTAMP",
+        "comment": "匹配时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_order_ri": {
+    "comment": "仓库商品信息",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "仓库订单"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品订单"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "商品主订单"
+      },
+      {
+        "name": "mergee",
+        "type": "BIGINT",
+        "comment": "是否合并"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "签收时快递单号"
+      },
+      {
+        "name": "express_id",
+        "type": "STRING",
+        "comment": "快递公司"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "操作状态"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "入库类型"
+      },
+      {
+        "name": "exp_type",
+        "type": "BIGINT",
+        "comment": "异常类型"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "区域编号"
+      },
+      {
+        "name": "destination",
+        "type": "STRING",
+        "comment": "寄送国家"
+      },
+      {
+        "name": "dest_id",
+        "type": "BIGINT",
+        "comment": "国家编号"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "goods_img",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "goods_nums",
+        "type": "BIGINT",
+        "comment": "商品数量"
+      },
+      {
+        "name": "goods_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "价格"
+      },
+      {
+        "name": "volume",
+        "type": "STRING",
+        "comment": "商品体积"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品重量"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "订单备注"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建者"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "storage_time",
+        "type": "TIMESTAMP",
+        "comment": "入库时间"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "过期时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库编号"
+      },
+      {
+        "name": "buyer",
+        "type": "STRING",
+        "comment": "采购员"
+      },
+      {
+        "name": "invalid",
+        "type": "BIGINT",
+        "comment": "是否有效"
+      },
+      {
+        "name": "position_type",
+        "type": "BIGINT",
+        "comment": "库位类型"
+      },
+      {
+        "name": "out_type",
+        "type": "BIGINT",
+        "comment": "出库类型"
+      },
+      {
+        "name": "out_time",
+        "type": "TIMESTAMP",
+        "comment": "出库时间"
+      },
+      {
+        "name": "is_send",
+        "type": "BIGINT",
+        "comment": "是否寄出"
+      },
+      {
+        "name": "is_out",
+        "type": "BIGINT",
+        "comment": "是否出库"
+      },
+      {
+        "name": "inside",
+        "type": "BIGINT",
+        "comment": "是否在库内"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "abnormal_type",
+        "type": "BIGINT",
+        "comment": "异常类型"
+      },
+      {
+        "name": "abnormal_remark",
+        "type": "STRING",
+        "comment": "异常备注"
+      },
+      {
+        "name": "un_pack_weight",
+        "type": "BIGINT",
+        "comment": "是否净重测量"
+      },
+      {
+        "name": "un_pack_volume",
+        "type": "STRING",
+        "comment": "净体积"
+      },
+      {
+        "name": "un_pack_weight_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "净重"
+      },
+      {
+        "name": "skip_weight",
+        "type": "BIGINT",
+        "comment": "是否跳过称重"
+      },
+      {
+        "name": "integral",
+        "type": "BIGINT",
+        "comment": "是否积分商品 0 否 1 是"
+      },
+      {
+        "name": "photo_status",
+        "type": "BIGINT",
+        "comment": "是否拍摄照片0否 1是"
+      },
+      {
+        "name": "quality_time",
+        "type": "TIMESTAMP",
+        "comment": "已到货时间"
+      },
+      {
+        "name": "data_source",
+        "type": "BIGINT",
+        "comment": "1 外部商品 2 大店商品 3 联盟商品"
+      },
+      {
+        "name": "sale_type",
+        "type": "BIGINT",
+        "comment": "订单销售类型"
+      },
+      {
+        "name": "barcode",
+        "type": "STRING",
+        "comment": "商品条形码"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_addr_ri": {
+    "comment": "包裹收件信息",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "last_name",
+        "type": "STRING",
+        "comment": "姓"
+      },
+      {
+        "name": "first_name",
+        "type": "STRING",
+        "comment": "名字"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "省洲"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "详细地址"
+      },
+      {
+        "name": "post_code",
+        "type": "STRING",
+        "comment": "邮编"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "手机号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_fee_ri": {
+    "comment": "包裹各项费用明细",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "fee_first",
+        "type": "DECIMAL(38,18)",
+        "comment": "首重费用"
+      },
+      {
+        "name": "fee_continue",
+        "type": "DECIMAL(38,18)",
+        "comment": "续重费用"
+      },
+      {
+        "name": "fee_customs",
+        "type": "DECIMAL(38,18)",
+        "comment": "报关费"
+      },
+      {
+        "name": "fee_fuel",
+        "type": "DECIMAL(38,18)",
+        "comment": "燃油费"
+      },
+      {
+        "name": "fee_service",
+        "type": "DECIMAL(38,18)",
+        "comment": "服务费"
+      },
+      {
+        "name": "fee_operation",
+        "type": "DECIMAL(38,18)",
+        "comment": "操作费"
+      },
+      {
+        "name": "value_added_tax",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值税"
+      },
+      {
+        "name": "tax",
+        "type": "DECIMAL(38,18)",
+        "comment": "申报价值"
+      },
+      {
+        "name": "insurance",
+        "type": "DECIMAL(38,18)",
+        "comment": "丢包险"
+      },
+      {
+        "name": "insurance_service",
+        "type": "DECIMAL(38,18)",
+        "comment": "投保费用"
+      },
+      {
+        "name": "fee_first_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际首重费用"
+      },
+      {
+        "name": "fee_continue_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际续重费用"
+      },
+      {
+        "name": "fee_customs_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际报关税"
+      },
+      {
+        "name": "fee_fuel_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际燃油费"
+      },
+      {
+        "name": "fee_service_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际服务费"
+      },
+      {
+        "name": "value_added_tax_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际增值税"
+      },
+      {
+        "name": "insurance_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际保费"
+      },
+      {
+        "name": "coupon",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠券折扣"
+      },
+      {
+        "name": "discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "vip折扣"
+      },
+      {
+        "name": "line_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "线路折扣"
+      },
+      {
+        "name": "line_config",
+        "type": "STRING",
+        "comment": "线路配置"
+      },
+      {
+        "name": "vip",
+        "type": "DECIMAL(38,18)",
+        "comment": "vip 折扣率"
+      },
+      {
+        "name": "discount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际vip折扣"
+      },
+      {
+        "name": "line_disc_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际线路折扣"
+      },
+      {
+        "name": "order_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "线路商品折扣"
+      },
+      {
+        "name": "order_pre_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估折扣"
+      },
+      {
+        "name": "order_act_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际折扣"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "invoice_tax",
+        "type": "DECIMAL(38,18)",
+        "comment": "发票申报金额"
+      },
+      {
+        "name": "insurance_order",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品投保金额"
+      },
+      {
+        "name": "remote_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "偏远费"
+      },
+      {
+        "name": "remote_fee_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际偏远费"
+      },
+      {
+        "name": "over_weight_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "超重费"
+      },
+      {
+        "name": "over_weight_fee_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际超重费"
+      },
+      {
+        "name": "over_long_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "超长费"
+      },
+      {
+        "name": "over_long_fee_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际超长费"
+      },
+      {
+        "name": "password_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠金额"
+      },
+      {
+        "name": "password_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "优惠比例"
+      },
+      {
+        "name": "password_discount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际优惠金额"
+      },
+      {
+        "name": "insurance_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险优惠金额"
+      },
+      {
+        "name": "increment_discount",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值服务优惠金额"
+      },
+      {
+        "name": "insurance_discount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险优惠实际金额"
+      },
+      {
+        "name": "increment_discount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值服务优惠实际金额"
+      },
+      {
+        "name": "insurance_discount_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险优惠率"
+      },
+      {
+        "name": "increment_discount_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值服务优惠率"
+      },
+      {
+        "name": "increment_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "增值服务费用"
+      },
+      {
+        "name": "increment_amount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际增值服务费用"
+      },
+      {
+        "name": "total_amount_pre",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹预估总费用"
+      },
+      {
+        "name": "total_amount_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹实际总费用"
+      },
+      {
+        "name": "technical_service_fee_pre",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹预估技术服务费"
+      },
+      {
+        "name": "technical_service_fee_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹实际技术服务费"
+      },
+      {
+        "name": "technical_service_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹技术服务费率"
+      },
+      {
+        "name": "coupon_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际优惠券"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_info_ri": {
+    "comment": "包裹扩展信息",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "current_line_name",
+        "type": "STRING",
+        "comment": "当前线路名称"
+      },
+      {
+        "name": "current_line_id",
+        "type": "BIGINT",
+        "comment": "当前线路id"
+      },
+      {
+        "name": "expire_insurance",
+        "type": "BIGINT",
+        "comment": "是否自动失效保险 0 未失效 1 失效 2 已申请过 默认0"
+      },
+      {
+        "name": "return_status",
+        "type": "BIGINT",
+        "comment": "0 正常 1 退回中 默认0"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "包裹区域"
+      },
+      {
+        "name": "his_express_no",
+        "type": "STRING",
+        "comment": "历史单号"
+      },
+      {
+        "name": "pack_lock",
+        "type": "BIGINT",
+        "comment": "包裹临时区锁定 0 正常 1 包裹锁定 2 解锁未处理"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "包裹位置"
+      },
+      {
+        "name": "virtually_waybill",
+        "type": "BIGINT",
+        "comment": "虚拟单号 0 否 1 是"
+      },
+      {
+        "name": "virtually_no",
+        "type": "STRING",
+        "comment": "虚拟单号"
+      },
+      {
+        "name": "logistics_push",
+        "type": "BIGINT",
+        "comment": "是否推送 默认0"
+      },
+      {
+        "name": "delivery_time",
+        "type": "TIMESTAMP",
+        "comment": "收货时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_invoice_ri": {
+    "comment": "包裹发票",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "name_en",
+        "type": "STRING",
+        "comment": "英文名"
+      },
+      {
+        "name": "name_cn",
+        "type": "STRING",
+        "comment": "中文名"
+      },
+      {
+        "name": "hs_code",
+        "type": "STRING",
+        "comment": "海关编码"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "unit_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "单价"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "总价"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_item_ri": {
+    "comment": "包裹商品对应表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "dis_tag",
+        "type": "BIGINT",
+        "comment": "去标签 0 不去 1 去"
+      },
+      {
+        "name": "dis_pack",
+        "type": "BIGINT",
+        "comment": "去包装 0 不去 1 去"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_memo_ri": {
+    "comment": "包裹内部备注",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "memo",
+        "type": "STRING",
+        "comment": "包裹备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_operation_ri": {
+    "comment": "包裹操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "op_type",
+        "type": "STRING",
+        "comment": "操作类型"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_oqc_ri": {
+    "comment": "包裹OQC检查",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹号"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "运单号"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": "物流线路"
+      },
+      {
+        "name": "line_id",
+        "type": "BIGINT",
+        "comment": "线路id"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_photos_ri": {
+    "comment": "包裹拍照",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "photos",
+        "type": "STRING",
+        "comment": "照片"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "添加时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_process_ri": {
+    "comment": "取消/退包包裹",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "ids",
+        "type": "STRING",
+        "comment": "批量商品单号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "包裹类型:退包，取消，补款"
+      },
+      {
+        "name": "is_foreign",
+        "type": "BIGINT",
+        "comment": "国外退包"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹当前状态"
+      },
+      {
+        "name": "exp_type",
+        "type": "BIGINT",
+        "comment": "异常类型"
+      },
+      {
+        "name": "fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "退/补款金额"
+      },
+      {
+        "name": "pay_type",
+        "type": "BIGINT",
+        "comment": "退/补款类型"
+      },
+      {
+        "name": "inside",
+        "type": "BIGINT",
+        "comment": "是否在库内"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "storage_time",
+        "type": "TIMESTAMP",
+        "comment": "入库时间"
+      },
+      {
+        "name": "is_cancel",
+        "type": "BIGINT",
+        "comment": "取消状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "audit",
+        "type": "BIGINT",
+        "comment": "是否需要审核"
+      },
+      {
+        "name": "audit_by",
+        "type": "STRING",
+        "comment": "审核人"
+      },
+      {
+        "name": "audit_time",
+        "type": "TIMESTAMP",
+        "comment": "审核时间"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易单号"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "refund_success",
+        "type": "BIGINT",
+        "comment": "是否退款成功"
+      },
+      {
+        "name": "back_operation_fee",
+        "type": "BIGINT",
+        "comment": "是否退回操作费，0 否，1是"
+      },
+      {
+        "name": "back_service_fee",
+        "type": "BIGINT",
+        "comment": "是否退回服务费，0 否，1是"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_provisional_operation_ri": {
+    "comment": "包裹临时库操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "provisional_id",
+        "type": "BIGINT",
+        "comment": "临时区id"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "out_time",
+        "type": "TIMESTAMP",
+        "comment": "出库时间"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "is_out",
+        "type": "BIGINT",
+        "comment": "是否出库"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_provisional_ri": {
+    "comment": "包裹临时库",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "items_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "包裹类型"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "storage_time",
+        "type": "TIMESTAMP",
+        "comment": "入库时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "入库人"
+      },
+      {
+        "name": "is_out",
+        "type": "BIGINT",
+        "comment": "是否出库"
+      },
+      {
+        "name": "item_count",
+        "type": "BIGINT",
+        "comment": "商品数量"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹状态"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "out_by",
+        "type": "STRING",
+        "comment": "出库人"
+      },
+      {
+        "name": "out_time",
+        "type": "TIMESTAMP",
+        "comment": "出库时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_record_ri": {
+    "comment": "打包记录",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "line_id",
+        "type": "BIGINT",
+        "comment": "线路id"
+      },
+      {
+        "name": "line_name",
+        "type": "STRING",
+        "comment": "线路名称"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "package_condition",
+        "type": "STRING",
+        "comment": "打包条件"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "新增时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "新增人"
+      },
+      {
+        "name": "condition_met",
+        "type": "BIGINT",
+        "comment": "是否满足条件 0 否 1 是"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_refund_ri": {
+    "comment": "退包记录",
+    "columns": [
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": "物流线路"
+      },
+      {
+        "name": "line_id",
+        "type": "BIGINT",
+        "comment": "线路id"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "退包类型"
+      },
+      {
+        "name": "position_no",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "退包状态"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "退包时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_return_ri": {
+    "comment": "退包列表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "return_express_no",
+        "type": "STRING",
+        "comment": "退回单号"
+      },
+      {
+        "name": "logistic_name",
+        "type": "STRING",
+        "comment": "物流商"
+      },
+      {
+        "name": "logistic_no",
+        "type": "STRING",
+        "comment": "物流单号"
+      },
+      {
+        "name": "return_type",
+        "type": "BIGINT",
+        "comment": "退回类型 0 国内退包 1 国外"
+      },
+      {
+        "name": "refund_operate",
+        "type": "BIGINT",
+        "comment": "退回操作费 0 不退 1 退"
+      },
+      {
+        "name": "refund_increment",
+        "type": "BIGINT",
+        "comment": "退回增值服务费 0 不退 1 退"
+      },
+      {
+        "name": "return_reason",
+        "type": "STRING",
+        "comment": "退回原因"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "operate_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0 退回中 1 已退回"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_supplement_ri": {
+    "comment": "补款包裹",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "ids",
+        "type": "STRING",
+        "comment": "批量订单编号"
+      },
+      {
+        "name": "fare",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "补款金额"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹当前状态"
+      },
+      {
+        "name": "is_supplement",
+        "type": "BIGINT",
+        "comment": "是否已补款"
+      },
+      {
+        "name": "is_cancel",
+        "type": "BIGINT",
+        "comment": "是否取消"
+      },
+      {
+        "name": "inside",
+        "type": "BIGINT",
+        "comment": "是否在库内"
+      },
+      {
+        "name": "position",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "新增人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "新增时间"
+      },
+      {
+        "name": "repair_cancel",
+        "type": "BIGINT",
+        "comment": "取消补款， 默认0， 1取消"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_throw_ri": {
+    "comment": "包裹称重可操作物流线路",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "线路ID"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": "线路名称"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "有效状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_trade_record_ri": {
+    "comment": "交易记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "trade_type",
+        "type": "BIGINT",
+        "comment": "交易类型 0支付 1补款 2退款 3取消 4退包"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "交易金额"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "volume",
+        "type": "STRING",
+        "comment": "体积"
+      },
+      {
+        "name": "use_volume",
+        "type": "BIGINT",
+        "comment": "是否计抛0否，1是"
+      },
+      {
+        "name": "cancel",
+        "type": "BIGINT",
+        "comment": "是否取消0否，1是"
+      },
+      {
+        "name": "success",
+        "type": "BIGINT",
+        "comment": "是否成功0否，1是"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "新增人"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "新增时间"
+      },
+      {
+        "name": "biz_id",
+        "type": "STRING",
+        "comment": "支付业务单号"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "success_time",
+        "type": "TIMESTAMP",
+        "comment": "成功时间"
+      },
+      {
+        "name": "weight_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际重"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_trade_ri": {
+    "comment": "交易单号",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "唯一标识"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "package_type",
+        "type": "BIGINT",
+        "comment": "包裹类型，0是正常提报，1是预演"
+      },
+      {
+        "name": "biz_id",
+        "type": "STRING",
+        "comment": "业务id"
+      },
+      {
+        "name": "biz_type",
+        "type": "BIGINT",
+        "comment": "业务类型，0提交，1退款，2补款，3取消，4退包"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易单号"
+      },
+      {
+        "name": "trade_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "交易相关信息"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_validate_ri": {
+    "comment": "PDA发货记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "自增主键"
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "物流单号"
+      },
+      {
+        "name": "line_id",
+        "type": "BIGINT",
+        "comment": "物流id"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "operate_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_pack_weight_ri": {
+    "comment": "包裹称重记录",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": "配送方式"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "国际快递单号"
+      },
+      {
+        "name": "predict_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估重量"
+      },
+      {
+        "name": "items_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "仓库称重"
+      },
+      {
+        "name": "act_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算重量"
+      },
+      {
+        "name": "diff_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估偏差"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "width",
+        "type": "DECIMAL(38,18)",
+        "comment": "宽度"
+      },
+      {
+        "name": "height",
+        "type": "DECIMAL(38,18)",
+        "comment": "高度"
+      },
+      {
+        "name": "lengths",
+        "type": "DECIMAL(38,18)",
+        "comment": "长度"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "need_volume_cal",
+        "type": "BIGINT",
+        "comment": "是否计抛"
+      },
+      {
+        "name": "line_volume_cal",
+        "type": "BIGINT",
+        "comment": "线路计抛"
+      },
+      {
+        "name": "pack_weight_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "包裹实际重量"
+      },
+      {
+        "name": "use_volume_weight",
+        "type": "BIGINT",
+        "comment": "重量计费方式"
+      },
+      {
+        "name": "package_condition",
+        "type": "STRING",
+        "comment": "打包条件"
+      },
+      {
+        "name": "condition_met",
+        "type": "BIGINT",
+        "comment": "是否满足条件 0 否 1 是"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_package_ri": {
+    "comment": "包裹信息表",
+    "columns": [
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹单号"
+      },
+      {
+        "name": "items_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "运单号"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "支付订单号"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": ""
+      },
+      {
+        "name": "line_id",
+        "type": "BIGINT",
+        "comment": "线路id"
+      },
+      {
+        "name": "logistic",
+        "type": "STRING",
+        "comment": "物流公司"
+      },
+      {
+        "name": "send_area",
+        "type": "BIGINT",
+        "comment": "国家ID"
+      },
+      {
+        "name": "predict_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估重量"
+      },
+      {
+        "name": "box_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "包装箱重量"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际重量"
+      },
+      {
+        "name": "deposit",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估押金"
+      },
+      {
+        "name": "act_deposit",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际押金"
+      },
+      {
+        "name": "difference",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费退还差价"
+      },
+      {
+        "name": "total_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "总金额"
+      },
+      {
+        "name": "lang",
+        "type": "STRING",
+        "comment": "使用语言"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "用户备注"
+      },
+      {
+        "name": "currency",
+        "type": "STRING",
+        "comment": "币种"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户ID"
+      },
+      {
+        "name": "plateform",
+        "type": "STRING",
+        "comment": "客户端"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹状态"
+      },
+      {
+        "name": "pay_status",
+        "type": "BIGINT",
+        "comment": "支付状态"
+      },
+      {
+        "name": "bag_status",
+        "type": "BIGINT",
+        "comment": "退包状态"
+      },
+      {
+        "name": "sys_status",
+        "type": "BIGINT",
+        "comment": "系统审核"
+      },
+      {
+        "name": "artificial_status",
+        "type": "BIGINT",
+        "comment": "人工审核"
+      },
+      {
+        "name": "risk_status",
+        "type": "BIGINT",
+        "comment": "风控审核"
+      },
+      {
+        "name": "lock_status",
+        "type": "BIGINT",
+        "comment": "锁定状态"
+      },
+      {
+        "name": "declare_status",
+        "type": "BIGINT",
+        "comment": "申报状态"
+      },
+      {
+        "name": "hs_status",
+        "type": "BIGINT",
+        "comment": "信息是否有误"
+      },
+      {
+        "name": "rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "汇率"
+      },
+      {
+        "name": "risk",
+        "type": "STRING",
+        "comment": "风控信息"
+      },
+      {
+        "name": "bag_remark",
+        "type": "STRING",
+        "comment": "退包备注"
+      },
+      {
+        "name": "user_lock",
+        "type": "BIGINT",
+        "comment": "用户锁定状态"
+      },
+      {
+        "name": "preview_no",
+        "type": "STRING",
+        "comment": "预演包裹"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "支付超期时间"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库"
+      },
+      {
+        "name": "is_pending",
+        "type": "BIGINT",
+        "comment": "是否支付中"
+      },
+      {
+        "name": "success_difference",
+        "type": "DECIMAL(38,18)",
+        "comment": "成功退还差价"
+      },
+      {
+        "name": "tax_type",
+        "type": "BIGINT",
+        "comment": "缴税方式"
+      },
+      {
+        "name": "vat_company_name",
+        "type": "STRING",
+        "comment": "公司VAT名称"
+      },
+      {
+        "name": "tax_no",
+        "type": "STRING",
+        "comment": "税号"
+      },
+      {
+        "name": "receive_info",
+        "type": "STRING",
+        "comment": "收件人信息至目的国"
+      },
+      {
+        "name": "temporary_package_no",
+        "type": "STRING",
+        "comment": "临时单号"
+      },
+      {
+        "name": "declare_mode",
+        "type": "BIGINT",
+        "comment": "申报方式"
+      },
+      {
+        "name": "is_delete",
+        "type": "BIGINT",
+        "comment": "是否删除： 0未删， 1删除"
+      },
+      {
+        "name": "sender_info",
+        "type": "STRING",
+        "comment": "发件人信息"
+      },
+      {
+        "name": "send_time",
+        "type": "TIMESTAMP",
+        "comment": "发货时间"
+      },
+      {
+        "name": "error_id",
+        "type": "STRING",
+        "comment": "异常包裹定义"
+      },
+      {
+        "name": "carrier_id",
+        "type": "BIGINT",
+        "comment": "物流商编码ID"
+      },
+      {
+        "name": "logistic_id",
+        "type": "BIGINT",
+        "comment": "物流商id"
+      },
+      {
+        "name": "need_invoice",
+        "type": "BIGINT",
+        "comment": "是否必须打印 0否 1是"
+      },
+      {
+        "name": "invoice_print",
+        "type": "BIGINT",
+        "comment": "是否打印发票 0 否 1是"
+      },
+      {
+        "name": "back_time",
+        "type": "TIMESTAMP",
+        "comment": "退款时间"
+      },
+      {
+        "name": "record_id",
+        "type": "BIGINT",
+        "comment": "当前交易记录id"
+      },
+      {
+        "name": "handle",
+        "type": "BIGINT",
+        "comment": "是否差额处理， 默认0， 1执行"
+      },
+      {
+        "name": "province_id",
+        "type": "BIGINT",
+        "comment": "省份id"
+      },
+      {
+        "name": "lock_reason",
+        "type": "STRING",
+        "comment": "锁定原因"
+      },
+      {
+        "name": "customized_id",
+        "type": "STRING",
+        "comment": "定制单号"
+      },
+      {
+        "name": "customized_audit",
+        "type": "BIGINT",
+        "comment": "是否审核中"
+      },
+      {
+        "name": "logistics_status",
+        "type": "BIGINT",
+        "comment": "物流审核"
+      },
+      {
+        "name": "compensation_status",
+        "type": "BIGINT",
+        "comment": "是否赔付 0 否， 1是"
+      },
+      {
+        "name": "use_insure",
+        "type": "BIGINT",
+        "comment": "是否使用保险，0 否 1是"
+      },
+      {
+        "name": "compensation_time",
+        "type": "TIMESTAMP",
+        "comment": "赔付开始时间"
+      },
+      {
+        "name": "pre_weight_act",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估实重"
+      },
+      {
+        "name": "pre_volume_act",
+        "type": "STRING",
+        "comment": "预估体积"
+      },
+      {
+        "name": "pre_volume_cal",
+        "type": "BIGINT",
+        "comment": "预估计抛"
+      },
+      {
+        "name": "reward",
+        "type": "BIGINT",
+        "comment": "领取奖励，0否 1是"
+      },
+      {
+        "name": "compensation_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险赔付金额"
+      },
+      {
+        "name": "compensation_diff",
+        "type": "DECIMAL(38,18)",
+        "comment": "保险赔付差价"
+      },
+      {
+        "name": "script_template",
+        "type": "STRING",
+        "comment": "包裹话术"
+      },
+      {
+        "name": "remark_cn",
+        "type": "STRING",
+        "comment": "用户备注翻译"
+      },
+      {
+        "name": "growth_time",
+        "type": "TIMESTAMP",
+        "comment": "增加成长值时间"
+      },
+      {
+        "name": "is_growth",
+        "type": "BIGINT",
+        "comment": "是否添加成长值"
+      },
+      {
+        "name": "activity",
+        "type": "STRING",
+        "comment": "活动明细"
+      },
+      {
+        "name": "special_status",
+        "type": "BIGINT",
+        "comment": "特殊申报 0正常 1申报 2 填写完成 3 申报完成"
+      },
+      {
+        "name": "transfer",
+        "type": "BIGINT",
+        "comment": "转单号 0 否 1 是"
+      },
+      {
+        "name": "is_change",
+        "type": "BIGINT",
+        "comment": "是否修改 0 否 1 是"
+      },
+      {
+        "name": "after_sales_status",
+        "type": "BIGINT",
+        "comment": "售后状态 0 否 1 是"
+      },
+      {
+        "name": "after_sales_amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "售后金额"
+      },
+      {
+        "name": "risk_type",
+        "type": "BIGINT",
+        "comment": "风控类型"
+      },
+      {
+        "name": "weight_refund",
+        "type": "BIGINT",
+        "comment": "退款状态(0正常 1待退款)"
+      },
+      {
+        "name": "hot_item",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_type",
+        "type": "BIGINT",
+        "comment": "0:普通包裹;1:插件包裹"
+      },
+      {
+        "name": "track_no",
+        "type": "STRING",
+        "comment": "末端轨迹编号"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_preview_ri": {
+    "comment": "预演包裹",
+    "columns": [
+      {
+        "name": "id",
+        "type": "STRING",
+        "comment": "预演包裹号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "预演类型 0:商品1:包裹"
+      },
+      {
+        "name": "ids",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "line",
+        "type": "STRING",
+        "comment": "线路"
+      },
+      {
+        "name": "line_id",
+        "type": "STRING",
+        "comment": "线路id"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "country_id",
+        "type": "BIGINT",
+        "comment": "国家id"
+      },
+      {
+        "name": "country",
+        "type": "STRING",
+        "comment": "国家名称"
+      },
+      {
+        "name": "pay_status",
+        "type": "BIGINT",
+        "comment": "支付状态"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "包裹状态"
+      },
+      {
+        "name": "send",
+        "type": "BIGINT",
+        "comment": "是否立即寄送"
+      },
+      {
+        "name": "service_ids",
+        "type": "STRING",
+        "comment": "增值服务"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "width",
+        "type": "DECIMAL(38,18)",
+        "comment": "宽"
+      },
+      {
+        "name": "height",
+        "type": "DECIMAL(38,18)",
+        "comment": "高"
+      },
+      {
+        "name": "lengths",
+        "type": "DECIMAL(38,18)",
+        "comment": "长"
+      },
+      {
+        "name": "trade_no",
+        "type": "STRING",
+        "comment": "交易单号"
+      },
+      {
+        "name": "reason_cn",
+        "type": "STRING",
+        "comment": "禁用原因"
+      },
+      {
+        "name": "reason_en",
+        "type": "STRING",
+        "comment": "禁用原因"
+      },
+      {
+        "name": "volume_base",
+        "type": "DECIMAL(38,18)",
+        "comment": "体积基数"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "pay_time",
+        "type": "TIMESTAMP",
+        "comment": "支付时间"
+      },
+      {
+        "name": "expire_time",
+        "type": "TIMESTAMP",
+        "comment": "支付有效时间"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "仓库备注"
+      },
+      {
+        "name": "user_remark",
+        "type": "STRING",
+        "comment": "用户备注"
+      },
+      {
+        "name": "is_pending",
+        "type": "BIGINT",
+        "comment": "是否支付中"
+      },
+      {
+        "name": "carton_model",
+        "type": "STRING",
+        "comment": "纸箱型号"
+      },
+      {
+        "name": "parent_id",
+        "type": "STRING",
+        "comment": "父id"
+      },
+      {
+        "name": "intention_line_id",
+        "type": "STRING",
+        "comment": "意向线路id"
+      },
+      {
+        "name": "intention_line",
+        "type": "STRING",
+        "comment": "意向线路"
+      },
+      {
+        "name": "preview_result",
+        "type": "STRING",
+        "comment": "预演结果"
+      },
+      {
+        "name": "volume_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "体积重"
+      },
+      {
+        "name": "need_volume",
+        "type": "BIGINT",
+        "comment": "是否需要计抛"
+      },
+      {
+        "name": "act_weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "实际重量"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "operater_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      },
+      {
+        "name": "delete",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      },
+      {
+        "name": "cancel_reason",
+        "type": "STRING",
+        "comment": "取消原因"
+      },
+      {
+        "name": "lang",
+        "type": "STRING",
+        "comment": "用户语言"
+      },
+      {
+        "name": "package_info",
+        "type": "STRING",
+        "comment": "包裹详情"
+      },
+      {
+        "name": "use_subpackage",
+        "type": "BIGINT",
+        "comment": "是否分包 0 否， 1是"
+      },
+      {
+        "name": "preview_id",
+        "type": "STRING",
+        "comment": "主预演id"
+      },
+      {
+        "name": "user_read",
+        "type": "BIGINT",
+        "comment": "用户是否已读 0 否 1 是"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "包裹区域"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_return_items_ri": {
+    "comment": "退换商品记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品单号"
+      },
+      {
+        "name": "pid",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "主订单号"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      },
+      {
+        "name": "employee_no",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "退换类型"
+      },
+      {
+        "name": "goods_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "goods_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "buyer",
+        "type": "STRING",
+        "comment": "购买者"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "position_no",
+        "type": "STRING",
+        "comment": "库位号"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "金额"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "merge_item",
+        "type": "STRING",
+        "comment": "合并商品"
+      },
+      {
+        "name": "post_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "平摊运费"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品重量"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "invalid",
+        "type": "BIGINT",
+        "comment": "1 无效"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "出库操作人"
+      },
+      {
+        "name": "is_delete",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      },
+      {
+        "name": "virtually",
+        "type": "BIGINT",
+        "comment": "是否虚拟退货0否 1 是"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_return_operation_ri": {
+    "comment": "退换货操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "pid",
+        "type": "STRING",
+        "comment": "包裹编号"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "商品编号"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作账号"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "操作时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_return_pack_ri": {
+    "comment": "退换货打包记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "自增主键"
+      },
+      {
+        "name": "pid",
+        "type": "STRING",
+        "comment": "退换货单号"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "新增时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作人"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "employee",
+        "type": "STRING",
+        "comment": "员工编号"
+      },
+      {
+        "name": "opt_type",
+        "type": "BIGINT",
+        "comment": "操作类型0开始 1结束"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库id"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_return_ri": {
+    "comment": "退换货包裹",
+    "columns": [
+      {
+        "name": "pid",
+        "type": "STRING",
+        "comment": "包裹id"
+      },
+      {
+        "name": "amount",
+        "type": "DECIMAL(38,18)",
+        "comment": "商品金额"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "退换类型"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "退换原因"
+      },
+      {
+        "name": "post_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "邮寄费"
+      },
+      {
+        "name": "operater",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "phone",
+        "type": "STRING",
+        "comment": "联系电话"
+      },
+      {
+        "name": "express_id",
+        "type": "STRING",
+        "comment": "快递id"
+      },
+      {
+        "name": "express",
+        "type": "STRING",
+        "comment": "快递公司"
+      },
+      {
+        "name": "express_no",
+        "type": "STRING",
+        "comment": "快递单号"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "收件名"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "地址"
+      },
+      {
+        "name": "return_info",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "province",
+        "type": "STRING",
+        "comment": "省"
+      },
+      {
+        "name": "city",
+        "type": "STRING",
+        "comment": "城市"
+      },
+      {
+        "name": "county",
+        "type": "STRING",
+        "comment": "乡镇区"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "处理状态"
+      },
+      {
+        "name": "payment_status",
+        "type": "BIGINT",
+        "comment": "到付状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "return_ids",
+        "type": "STRING",
+        "comment": "出库后的取消商品记录"
+      },
+      {
+        "name": "print_out",
+        "type": "BIGINT",
+        "comment": "打印出库单"
+      },
+      {
+        "name": "storage_id",
+        "type": "BIGINT",
+        "comment": "仓库"
+      },
+      {
+        "name": "is_delete",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      },
+      {
+        "name": "duty_type",
+        "type": "BIGINT",
+        "comment": "责任归属"
+      },
+      {
+        "name": "express_info",
+        "type": "STRING",
+        "comment": "物流信息"
+      },
+      {
+        "name": "express_link",
+        "type": "STRING",
+        "comment": "快递链接"
+      },
+      {
+        "name": "offline",
+        "type": "BIGINT",
+        "comment": "是否线下打单 0否 1是"
+      },
+      {
+        "name": "warehouse_msg",
+        "type": "STRING",
+        "comment": "仓库留言"
+      },
+      {
+        "name": "seller_msg",
+        "type": "STRING",
+        "comment": "卖家留言"
+      },
+      {
+        "name": "overdue_time",
+        "type": "TIMESTAMP",
+        "comment": "超期时间"
+      },
+      {
+        "name": "area",
+        "type": "STRING",
+        "comment": "包裹区域"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_s_service_ri": {
+    "comment": "包裹增值服务关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "package_no",
+        "type": "STRING",
+        "comment": "包裹或预演"
+      },
+      {
+        "name": "increment_id",
+        "type": "BIGINT",
+        "comment": "增值服务id"
+      },
+      {
+        "name": "code",
+        "type": "STRING",
+        "comment": "服务编码"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "包裹类型 0:正常包裹 1: 预演包裹"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(38,18)",
+        "comment": "服务价格"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "是否删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_shop_ri": {
+    "comment": "店铺表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "merchant_id",
+        "type": "BIGINT",
+        "comment": "商户id"
+      },
+      {
+        "name": "shop_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "intro",
+        "type": "STRING",
+        "comment": "店铺简介"
+      },
+      {
+        "name": "first_category_id",
+        "type": "BIGINT",
+        "comment": "主营类目id(一级)"
+      },
+      {
+        "name": "second_category_id",
+        "type": "BIGINT",
+        "comment": "主营类目id(二级)"
+      },
+      {
+        "name": "cover_img",
+        "type": "STRING",
+        "comment": "店铺封面图"
+      },
+      {
+        "name": "app_cover_img",
+        "type": "STRING",
+        "comment": "店铺封面图app端"
+      },
+      {
+        "name": "background_img",
+        "type": "STRING",
+        "comment": "店铺背景图"
+      },
+      {
+        "name": "logo_img",
+        "type": "STRING",
+        "comment": "店铺logo图"
+      },
+      {
+        "name": "concat_user",
+        "type": "STRING",
+        "comment": "联系人"
+      },
+      {
+        "name": "concat_phone",
+        "type": "STRING",
+        "comment": "联系电话"
+      },
+      {
+        "name": "online_im",
+        "type": "STRING",
+        "comment": "在线客服"
+      },
+      {
+        "name": "withdrawal_account",
+        "type": "STRING",
+        "comment": "提现账号"
+      },
+      {
+        "name": "shipping_address_ids",
+        "type": "STRING",
+        "comment": "发货地址ids"
+      },
+      {
+        "name": "shipping_address_names",
+        "type": "STRING",
+        "comment": "发货地址名称集合"
+      },
+      {
+        "name": "shipping_address_detail",
+        "type": "STRING",
+        "comment": "发货详细地址"
+      },
+      {
+        "name": "return_address_ids",
+        "type": "STRING",
+        "comment": "退货地址ids"
+      },
+      {
+        "name": "return_address_names",
+        "type": "STRING",
+        "comment": "退货地址名称集合"
+      },
+      {
+        "name": "return_address_detail",
+        "type": "STRING",
+        "comment": "退货详细地址"
+      },
+      {
+        "name": "customer_notice",
+        "type": "STRING",
+        "comment": "客户须知"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:默认 1:正常 2:禁用"
+      },
+      {
+        "name": "video_type",
+        "type": "BIGINT",
+        "comment": "视频类型 1 youtube视频 2 tiktok视频"
+      },
+      {
+        "name": "creation_time",
+        "type": "TIMESTAMP",
+        "comment": "成立时间"
+      },
+      {
+        "name": "video_url",
+        "type": "STRING",
+        "comment": "视频链接地址"
+      },
+      {
+        "name": "video_display_url",
+        "type": "STRING",
+        "comment": "视频播放链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_storage_storage_ri": {
+    "comment": "仓库",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "仓库名称"
+      },
+      {
+        "name": "capacity",
+        "type": "BIGINT",
+        "comment": "仓库容量"
+      },
+      {
+        "name": "address",
+        "type": "STRING",
+        "comment": "仓库地址"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "0:有效1:无效"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "更新时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "操作员"
+      },
+      {
+        "name": "capacity_use",
+        "type": "BIGINT",
+        "comment": "已使用容量"
+      },
+      {
+        "name": "full",
+        "type": "BIGINT",
+        "comment": "仓库是否已满 0 否 1 是"
+      },
+      {
+        "name": "distribution",
+        "type": "BIGINT",
+        "comment": "默认分配 0关闭 1 开启"
+      }
+    ],
+    "partitions": []
+  }
+}

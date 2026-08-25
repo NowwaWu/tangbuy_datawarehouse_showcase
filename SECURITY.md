@@ -1,18 +1,15 @@
-# Security Policy
+# 安全说明
 
-## Public repository boundary
+本仓库只用于架构、建模和工程能力展示，不应直接连接生产环境。
 
-This repository contains demonstration code only. Do not commit:
+## 凭据
 
-- API keys, access keys, service-account JSON, private keys or tokens;
-- real DataWorks workspace IDs, MaxCompute projects, endpoints or internal URLs;
-- production table schemas, ETL jobs, business definitions or operational reports;
-- customer, employee, order, payment, shop or logistics data.
+所有凭据必须由环境变量或外部密钥管理服务提供。禁止提交 `.env`、服务账号 JSON、PEM 私钥、AK/SK、Token、Webhook 和数据库密码。
 
-## Configuration
+## 云资源
 
-Runtime integrations must load credentials from environment variables or an external secret manager. Example values must use unmistakable placeholders and must never be valid credentials.
+脚本中的项目名、Workspace、Endpoint、Host、Database 均应由环境变量配置。示例默认值仅指向 `example.invalid` 或虚构项目，不具备真实访问能力。
 
-## Reporting
+## 发现问题
 
-If a secret is committed, revoke or rotate it first. Removing it from the latest commit is not sufficient because Git history retains previous versions.
+如果发现疑似有效凭据，请立即停止使用、轮换凭据并清理相关 Git 历史，不要在 Issue 中粘贴秘密值。

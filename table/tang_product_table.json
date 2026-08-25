@@ -1,0 +1,2924 @@
+{
+  "ods_mysql_tang_product_pallet_collect_product_ri": {
+    "comment": "货盘集合商品表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "pallet_id",
+        "type": "BIGINT",
+        "comment": "关联货盘id"
+      },
+      {
+        "name": "pallet_collect_id",
+        "type": "BIGINT",
+        "comment": "关联货盘集合id"
+      },
+      {
+        "name": "product_id",
+        "type": "BIGINT",
+        "comment": "关联商品id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_pallet_collection_ri": {
+    "comment": "货盘集合",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "集合名"
+      },
+      {
+        "name": "name_lang",
+        "type": "STRING",
+        "comment": "集合"
+      },
+      {
+        "name": "pallet_id",
+        "type": "BIGINT",
+        "comment": "关联货盘id"
+      },
+      {
+        "name": "default_flag",
+        "type": "BIGINT",
+        "comment": "是否为默认集合"
+      },
+      {
+        "name": "image",
+        "type": "STRING",
+        "comment": "集合图片"
+      },
+      {
+        "name": "sort_num",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_pallet_product_ri": {
+    "comment": "货盘商品关联",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "pallet_id",
+        "type": "BIGINT",
+        "comment": "货盘id"
+      },
+      {
+        "name": "product_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "top_up",
+        "type": "BIGINT",
+        "comment": "置顶顺序"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_pallet_ri": {
+    "comment": "货盘",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "名称"
+      },
+      {
+        "name": "pc_banner",
+        "type": "STRING",
+        "comment": "pc_banner"
+      },
+      {
+        "name": "app_banner",
+        "type": "STRING",
+        "comment": "app_banner"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0关闭，1开启"
+      },
+      {
+        "name": "background_color",
+        "type": "STRING",
+        "comment": "背景颜色"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_activity_condition_ri": {
+    "comment": "大店活动条件",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "activity_id",
+        "type": "BIGINT",
+        "comment": "关联活动id"
+      },
+      {
+        "name": "choose_type",
+        "type": "BIGINT",
+        "comment": "选择类型：1平台"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "join_min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "参与最小价格"
+      },
+      {
+        "name": "join_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "参与最低价格"
+      },
+      {
+        "name": "param_json",
+        "type": "STRING",
+        "comment": "其他参数json"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_activity_ri": {
+    "comment": "大店活动表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "活动名称"
+      },
+      {
+        "name": "begin_time",
+        "type": "TIMESTAMP",
+        "comment": "活动开始时间"
+      },
+      {
+        "name": "end_time",
+        "type": "TIMESTAMP",
+        "comment": "活动结束时间"
+      },
+      {
+        "name": "logos",
+        "type": "STRING",
+        "comment": "logo"
+      },
+      {
+        "name": "activity_type",
+        "type": "BIGINT",
+        "comment": "活动类型"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "活动状态"
+      },
+      {
+        "name": "execute_status",
+        "type": "BIGINT",
+        "comment": "处理状态"
+      },
+      {
+        "name": "discount_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "打折比例"
+      },
+      {
+        "name": "discount_type",
+        "type": "BIGINT",
+        "comment": "优惠类型：1打折"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "假删标识"
+      },
+      {
+        "name": "last_sync_time",
+        "type": "TIMESTAMP",
+        "comment": "上一次同步时间"
+      },
+      {
+        "name": "last_sync_key",
+        "type": "STRING",
+        "comment": "活动同步标识"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_before_sale_count_ri": {
+    "comment": "大店商品前置数量统计",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "provider_item_id",
+        "type": "STRING",
+        "comment": "三方商品id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "三方类型"
+      },
+      {
+        "name": "owner_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "owner_name",
+        "type": "STRING",
+        "comment": "用户名"
+      },
+      {
+        "name": "invalid_flag",
+        "type": "BIGINT",
+        "comment": "失效标识"
+      },
+      {
+        "name": "invalid_time",
+        "type": "TIMESTAMP",
+        "comment": "失效时间"
+      },
+      {
+        "name": "owner_source",
+        "type": "BIGINT",
+        "comment": "计数来源"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "provider_key",
+        "type": "STRING",
+        "comment": "三方商品标识"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_before_sale_record_ri": {
+    "comment": "",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "count_id",
+        "type": "BIGINT",
+        "comment": "批次号id"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "订单号"
+      },
+      {
+        "name": "order_item_no",
+        "type": "STRING",
+        "comment": "子订单号"
+      },
+      {
+        "name": "nums",
+        "type": "BIGINT",
+        "comment": "数量"
+      },
+      {
+        "name": "board_id",
+        "type": "BIGINT",
+        "comment": "清单id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_edit_record_ri": {
+    "comment": "商品编辑审核",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "origin_info",
+        "type": "STRING",
+        "comment": "原商品信息"
+      },
+      {
+        "name": "target_info",
+        "type": "STRING",
+        "comment": "新商品信息"
+      },
+      {
+        "name": "edit_time",
+        "type": "TIMESTAMP",
+        "comment": "编辑时间"
+      },
+      {
+        "name": "edit_user_name",
+        "type": "STRING",
+        "comment": "编辑人员"
+      },
+      {
+        "name": "edit_user_id",
+        "type": "BIGINT",
+        "comment": "编辑人员id"
+      },
+      {
+        "name": "audit_time",
+        "type": "TIMESTAMP",
+        "comment": "上一次审核时间"
+      },
+      {
+        "name": "audit_status",
+        "type": "STRING",
+        "comment": "审核结果"
+      },
+      {
+        "name": "audit_user_id",
+        "type": "BIGINT",
+        "comment": "审核人员"
+      },
+      {
+        "name": "audit_user_name",
+        "type": "STRING",
+        "comment": "审核人员名"
+      },
+      {
+        "name": "audit_reason",
+        "type": "STRING",
+        "comment": "审核理由"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "owner_source",
+        "type": "BIGINT",
+        "comment": "原创来源"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_excel_link_ri": {
+    "comment": "大店商品导入详情",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "link_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态:0未执行,1成功，-1失败"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "失败原因"
+      },
+      {
+        "name": "task_id",
+        "type": "BIGINT",
+        "comment": "任务id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "info_json",
+        "type": "STRING",
+        "comment": "其他信息"
+      },
+      {
+        "name": "error_code",
+        "type": "BIGINT",
+        "comment": "错误类型"
+      },
+      {
+        "name": "rankings_info_json",
+        "type": "STRING",
+        "comment": "榜单json"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_excel_task_ri": {
+    "comment": "大店商品导入任务",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "link_num",
+        "type": "BIGINT",
+        "comment": "链接数量"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0队列中，1进行中，2已完成"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建用户名"
+      },
+      {
+        "name": "create_user_id",
+        "type": "BIGINT",
+        "comment": "创建用户id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_hobby_factory_url_ri": {
+    "comment": "兴趣爱好关联工厂链接表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "preferred_hobby_group_id",
+        "type": "BIGINT",
+        "comment": "栏目ID"
+      },
+      {
+        "name": "preferred_hobby_subject_id",
+        "type": "BIGINT",
+        "comment": "兴趣爱好ID"
+      },
+      {
+        "name": "preferred_factory_platform_url",
+        "type": "STRING",
+        "comment": "不同平台跳转的地址json"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_hobby_group_ri": {
+    "comment": "大店兴趣爱好组",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "爱好分组名称"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "爱好编辑者"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注信息"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0禁用，1启用"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_hobby_label_relation_ri": {
+    "comment": "兴趣爱好标签关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "preferred_hobby_group_id",
+        "type": "BIGINT",
+        "comment": "栏目ID"
+      },
+      {
+        "name": "preferred_hobby_subject_id",
+        "type": "BIGINT",
+        "comment": "兴趣爱好ID"
+      },
+      {
+        "name": "preferred_label_id",
+        "type": "BIGINT",
+        "comment": "大店标签id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_hobby_subject_ri": {
+    "comment": "兴趣爱好banner",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "兴趣爱好栏目名称"
+      },
+      {
+        "name": "img_url",
+        "type": "STRING",
+        "comment": "图片链接"
+      },
+      {
+        "name": "name_lang_json",
+        "type": "STRING",
+        "comment": "爱好分组名称"
+      },
+      {
+        "name": "operator",
+        "type": "STRING",
+        "comment": "爱好编辑者"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0禁用，1启用"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "sort_num",
+        "type": "BIGINT",
+        "comment": "排序字段"
+      },
+      {
+        "name": "group_id",
+        "type": "BIGINT",
+        "comment": "兴趣爱好栏目ID"
+      },
+      {
+        "name": "subject_type",
+        "type": "BIGINT",
+        "comment": "兴趣爱好标签类型：1链接跳转，2:标签商品池"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_label_ri": {
+    "comment": "大店标签",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "标签名称"
+      },
+      {
+        "name": "multi_name",
+        "type": "STRING",
+        "comment": "标签名称"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型：1.兴趣标签，2.网红标签，3.平台推广"
+      },
+      {
+        "name": "show",
+        "type": "BIGINT",
+        "comment": "是否展示：1.展示，0.不展示"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：1.启用，0.禁用"
+      },
+      {
+        "name": "multi_language",
+        "type": "STRING",
+        "comment": "多语言描述"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_activity_ri": {
+    "comment": "大店商品活动关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "activity_id",
+        "type": "BIGINT",
+        "comment": "活动id"
+      },
+      {
+        "name": "page_num",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "sync_key",
+        "type": "STRING",
+        "comment": "同步标识"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0正常，1删除"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_category_ri": {
+    "comment": "大店类目表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "类目分类id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "类目分类中文名"
+      },
+      {
+        "name": "name_lang_json",
+        "type": "STRING",
+        "comment": "分类名多语言"
+      },
+      {
+        "name": "parent_id",
+        "type": "BIGINT",
+        "comment": "父级id"
+      },
+      {
+        "name": "ancestors",
+        "type": "STRING",
+        "comment": "祖籍id List"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "层级"
+      },
+      {
+        "name": "leaf_node",
+        "type": "BIGINT",
+        "comment": "是否是子节点，默认值0，非叶子节点；1：叶子节点"
+      },
+      {
+        "name": "logo",
+        "type": "STRING",
+        "comment": "图标"
+      },
+      {
+        "name": "sort_order",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0禁用，1启用"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_label_ri": {
+    "comment": "大店商品标签",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": ""
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "大店商品id"
+      },
+      {
+        "name": "preferred_label_id",
+        "type": "BIGINT",
+        "comment": "大店标签id"
+      },
+      {
+        "name": "long_term",
+        "type": "BIGINT",
+        "comment": "是否长期有效：1.长期，0.否"
+      },
+      {
+        "name": "valid_start",
+        "type": "TIMESTAMP",
+        "comment": "有效期开始时间"
+      },
+      {
+        "name": "valid_end",
+        "type": "TIMESTAMP",
+        "comment": "有效期截止时间"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_ri": {
+    "comment": "大店商品信息",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "owner_id",
+        "type": "BIGINT",
+        "comment": "原创人员id"
+      },
+      {
+        "name": "owner_name",
+        "type": "STRING",
+        "comment": "原创人员名"
+      },
+      {
+        "name": "owner_source",
+        "type": "BIGINT",
+        "comment": "原创来源"
+      },
+      {
+        "name": "owner_time",
+        "type": "TIMESTAMP",
+        "comment": "原创时间"
+      },
+      {
+        "name": "owner_del_flag",
+        "type": "BIGINT",
+        "comment": "原创推广者删除标识"
+      },
+      {
+        "name": "increase_rate",
+        "type": "DECIMAL(38,18)",
+        "comment": "加价比例"
+      },
+      {
+        "name": "sync_time",
+        "type": "TIMESTAMP",
+        "comment": "同步时间"
+      },
+      {
+        "name": "edit_flag",
+        "type": "BIGINT",
+        "comment": "是否编辑过"
+      },
+      {
+        "name": "provider_change_flag",
+        "type": "BIGINT",
+        "comment": "edit与商详变更flag"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "choice_score",
+        "type": "BIGINT",
+        "comment": "大店评分"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "商品等级"
+      },
+      {
+        "name": "suitable_country",
+        "type": "STRING",
+        "comment": "适合国家"
+      },
+      {
+        "name": "suggest_sale_price_json",
+        "type": "STRING",
+        "comment": "建议零售价json"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_score_ri": {
+    "comment": "大店商品得分表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键ID"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "大店商品id"
+      },
+      {
+        "name": "all_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "所有的得分"
+      },
+      {
+        "name": "all_score_sort_id",
+        "type": "DECIMAL(38,18)",
+        "comment": "全部商品排序字段"
+      },
+      {
+        "name": "comprehensive_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "综合得分"
+      },
+      {
+        "name": "fan_favorite_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "粉丝最爱得分"
+      },
+      {
+        "name": "fan_favorite_score_sort_id",
+        "type": "DECIMAL(38,18)",
+        "comment": "粉丝最爱排序字段"
+      },
+      {
+        "name": "five_star_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "五星推荐得分"
+      },
+      {
+        "name": "five_star_score_sort_id",
+        "type": "DECIMAL(38,18)",
+        "comment": "五星推荐排序字段"
+      },
+      {
+        "name": "hot_sell_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "热销得分"
+      },
+      {
+        "name": "hot_sell_score_sort_id",
+        "type": "DECIMAL(38,18)",
+        "comment": "热销排序字段"
+      },
+      {
+        "name": "factory_outlet_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "工厂特卖推荐得分"
+      },
+      {
+        "name": "factory_outlet_score_sort_id",
+        "type": "DECIMAL(38,18)",
+        "comment": "工厂特卖排序字段"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_size_category_ri": {
+    "comment": "大店商品尺码分类表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "ancestors",
+        "type": "STRING",
+        "comment": "祖籍id List"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "分类id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_size_ri": {
+    "comment": "大店商品尺码表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "product_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "size",
+        "type": "STRING",
+        "comment": "尺码信息"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:待识别 1:未识别 2:待展示 3:展示中"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_product_size_schedule_ri": {
+    "comment": "大店商品尺码任务表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "product_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "request_id",
+        "type": "STRING",
+        "comment": "请求id"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态 0:已处理 1:已收到结果"
+      },
+      {
+        "name": "response_id",
+        "type": "STRING",
+        "comment": "返回的请求id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_provider_category_ri": {
+    "comment": "外部对接平台类目分类表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "provider_biz_no",
+        "type": "STRING",
+        "comment": "分类编号no"
+      },
+      {
+        "name": "parent_biz_no",
+        "type": "STRING",
+        "comment": "父级编号no"
+      },
+      {
+        "name": "ancestors_no",
+        "type": "STRING",
+        "comment": "祖籍编号list"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "分类中文名"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "层级"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型：taobao，alibaba"
+      },
+      {
+        "name": "leaf_node",
+        "type": "BIGINT",
+        "comment": "是否是子节点，默认值0，非叶子节点；1：叶子节点"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_preferred_source_search_ri": {
+    "comment": "货源商品",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "external_category_name",
+        "type": "STRING",
+        "comment": "外站类目名（原始）"
+      },
+      {
+        "name": "external_category_name_cn",
+        "type": "STRING",
+        "comment": "外展类目名中文"
+      },
+      {
+        "name": "item_images",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "item_url",
+        "type": "STRING",
+        "comment": "原商详链接"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "其他数据"
+      },
+      {
+        "name": "amazon_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "亚马逊价格"
+      },
+      {
+        "name": "_1688_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "1688价格"
+      },
+      {
+        "name": "_1688_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "1688最大价格"
+      },
+      {
+        "name": "tb_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "tb价格"
+      },
+      {
+        "name": "tb_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "tb最大价格"
+      },
+      {
+        "name": "predict_profit",
+        "type": "DECIMAL(38,18)",
+        "comment": "预估利润"
+      },
+      {
+        "name": "max_predict_profit",
+        "type": "DECIMAL(38,18)",
+        "comment": "yu"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_category_app_config_ri": {
+    "comment": "导购分类表app配置",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "corner_mark",
+        "type": "BIGINT",
+        "comment": "角标 0 HOT, 1 NEW, 2 CLEARANCE, 3 FLASH, 4 DEAL"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "更新人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_category_ri": {
+    "comment": "商品分类表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "分类id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "分类中文名"
+      },
+      {
+        "name": "name_lang",
+        "type": "STRING",
+        "comment": "多语言"
+      },
+      {
+        "name": "parent_id",
+        "type": "BIGINT",
+        "comment": "父级id"
+      },
+      {
+        "name": "path",
+        "type": "STRING",
+        "comment": "父级路径"
+      },
+      {
+        "name": "sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "search_q",
+        "type": "STRING",
+        "comment": "搜索关键字"
+      },
+      {
+        "name": "min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小搜索金额"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "层级"
+      },
+      {
+        "name": "leaf",
+        "type": "BIGINT",
+        "comment": "是否叶子结点:0非叶子结点 1=叶子结点"
+      },
+      {
+        "name": "logo",
+        "type": "STRING",
+        "comment": "图标"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态1=启用 0=禁用"
+      },
+      {
+        "name": "deleted",
+        "type": "BIGINT",
+        "comment": "是否删除 0=正常 1=删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "更新人"
+      },
+      {
+        "name": "search_leaf_category_ids",
+        "type": "STRING",
+        "comment": "大店叶子类目id"
+      },
+      {
+        "name": "corner_mark",
+        "type": "BIGINT",
+        "comment": "角标 0 HOT, 1 NEW, 2 CLEARANCE, 3 FLASH, 4 DEAL"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_details_ri": {
+    "comment": "商品详情表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "description",
+        "type": "STRING",
+        "comment": "商品详情富文本"
+      },
+      {
+        "name": "spec_param",
+        "type": "STRING",
+        "comment": "规格参数"
+      },
+      {
+        "name": "detail",
+        "type": "STRING",
+        "comment": "详细信息"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "selection_item_id",
+        "type": "BIGINT",
+        "comment": "选品指南id"
+      },
+      {
+        "name": "risk_info_json",
+        "type": "STRING",
+        "comment": "风险信息"
+      },
+      {
+        "name": "ai_title_flag",
+        "type": "BIGINT",
+        "comment": "ai是否优化过标题"
+      },
+      {
+        "name": "lang_pack_map_json",
+        "type": "STRING",
+        "comment": "多语言"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      },
+      {
+        "name": "remark_images",
+        "type": "STRING",
+        "comment": "备注图片"
+      },
+      {
+        "name": "product_attributes_json",
+        "type": "STRING",
+        "comment": "商品属性"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_item_ri": {
+    "comment": "商品表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "item_name_lang",
+        "type": "STRING",
+        "comment": "商品名称多语言"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "item_mv",
+        "type": "STRING",
+        "comment": "商品mv"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(38,18)",
+        "comment": "价格"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "上下架状态"
+      },
+      {
+        "name": "data_source",
+        "type": "STRING",
+        "comment": "数据来源"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "分类id"
+      },
+      {
+        "name": "shop_id",
+        "type": "BIGINT",
+        "comment": "店铺id"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识"
+      },
+      {
+        "name": "version",
+        "type": "BIGINT",
+        "comment": "版本号"
+      },
+      {
+        "name": "post_fee",
+        "type": "DECIMAL(38,18)",
+        "comment": "运费"
+      },
+      {
+        "name": "max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最高价格"
+      },
+      {
+        "name": "platform_status",
+        "type": "BIGINT",
+        "comment": "平台状态"
+      },
+      {
+        "name": "crossed_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最低划线价"
+      },
+      {
+        "name": "freight_type",
+        "type": "STRING",
+        "comment": "运费类型"
+      },
+      {
+        "name": "sold_out_flag",
+        "type": "BIGINT",
+        "comment": "售罄flag"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "provider_info_id",
+        "type": "BIGINT",
+        "comment": "商品三方信息表id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "assemble_status",
+        "type": "BIGINT",
+        "comment": "聚合状态"
+      },
+      {
+        "name": "invalid_time",
+        "type": "TIMESTAMP",
+        "comment": "失效时间"
+      },
+      {
+        "name": "provider_key",
+        "type": "STRING",
+        "comment": "三方商品key"
+      },
+      {
+        "name": "detail_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "hot_flag",
+        "type": "BIGINT",
+        "comment": "是否爆品"
+      },
+      {
+        "name": "commission_price_config_json",
+        "type": "STRING",
+        "comment": "佣金规则"
+      },
+      {
+        "name": "adjust_num",
+        "type": "BIGINT",
+        "comment": "净重尺校准次数"
+      },
+      {
+        "name": "has_tiered_price",
+        "type": "BIGINT",
+        "comment": "是否有阶梯价"
+      },
+      {
+        "name": "accept_provider_flag",
+        "type": "BIGINT",
+        "comment": "是否接受原商品变更"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_provider_info_ri": {
+    "comment": "商品三方信息表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "三方平台类型"
+      },
+      {
+        "name": "provider_item_id",
+        "type": "STRING",
+        "comment": "三方商品id"
+      },
+      {
+        "name": "provider_detail_url",
+        "type": "STRING",
+        "comment": "三方直达链接"
+      },
+      {
+        "name": "provider_shop_id",
+        "type": "STRING",
+        "comment": "三方店铺id"
+      },
+      {
+        "name": "provider_shop_name",
+        "type": "STRING",
+        "comment": "三方店铺名"
+      },
+      {
+        "name": "provider_shop_logo",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "provider_shop_url",
+        "type": "STRING",
+        "comment": "店铺url"
+      },
+      {
+        "name": "provider_cid",
+        "type": "STRING",
+        "comment": "三方分类id"
+      },
+      {
+        "name": "provider_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采集到的价格"
+      },
+      {
+        "name": "provider_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采集到的最大价格"
+      },
+      {
+        "name": "provider_status",
+        "type": "BIGINT",
+        "comment": "三方状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "provider_item_name",
+        "type": "STRING",
+        "comment": "商品名称"
+      },
+      {
+        "name": "provider_item_images",
+        "type": "STRING",
+        "comment": "商品主图"
+      },
+      {
+        "name": "provider_key",
+        "type": "STRING",
+        "comment": "三方商品key"
+      },
+      {
+        "name": "provider_attribute_list",
+        "type": "STRING",
+        "comment": "货源商品规格"
+      },
+      {
+        "name": "product_attributes_json",
+        "type": "STRING",
+        "comment": "商品属性"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_product_sku_ri": {
+    "comment": "商品sku表",
+    "columns": [
+      {
+        "name": "sku_id",
+        "type": "BIGINT",
+        "comment": "skuId"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(38,18)",
+        "comment": "价格"
+      },
+      {
+        "name": "inventory",
+        "type": "BIGINT",
+        "comment": "库存"
+      },
+      {
+        "name": "attr_json",
+        "type": "STRING",
+        "comment": "属性json"
+      },
+      {
+        "name": "images",
+        "type": "STRING",
+        "comment": "sku图片"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识"
+      },
+      {
+        "name": "third_sku_id",
+        "type": "STRING",
+        "comment": "三方sku id"
+      },
+      {
+        "name": "sku_code",
+        "type": "STRING",
+        "comment": "规格编码"
+      },
+      {
+        "name": "sales",
+        "type": "BIGINT",
+        "comment": "实际销量"
+      },
+      {
+        "name": "weight",
+        "type": "DECIMAL(38,18)",
+        "comment": "重量"
+      },
+      {
+        "name": "crossed_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "划线价"
+      },
+      {
+        "name": "attr_desc_json",
+        "type": "STRING",
+        "comment": "sku规格描述"
+      },
+      {
+        "name": "enable_flag",
+        "type": "BIGINT",
+        "comment": "是否启用"
+      },
+      {
+        "name": "storage_count",
+        "type": "BIGINT",
+        "comment": "入库数量"
+      },
+      {
+        "name": "shop_id",
+        "type": "BIGINT",
+        "comment": "店铺id"
+      },
+      {
+        "name": "third_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "三方价格"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_shop_category_product_ri": {
+    "comment": "店铺分类商品-关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "shop_category_id",
+        "type": "BIGINT",
+        "comment": "店铺分类id"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "shop_id",
+        "type": "BIGINT",
+        "comment": "店铺id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_shop_category_ri": {
+    "comment": "店铺分类",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "商品分类名称"
+      },
+      {
+        "name": "name_lang",
+        "type": "STRING",
+        "comment": "分类名字多语言"
+      },
+      {
+        "name": "shop_id",
+        "type": "BIGINT",
+        "comment": "店铺id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "shop_sort",
+        "type": "BIGINT",
+        "comment": "排序"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态：0不启用，1启用"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_shop_product_ri": {
+    "comment": "店铺商品",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键"
+      },
+      {
+        "name": "item_id",
+        "type": "BIGINT",
+        "comment": "商品id"
+      },
+      {
+        "name": "item_code",
+        "type": "STRING",
+        "comment": "商品编码"
+      },
+      {
+        "name": "purchase_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "采购价"
+      },
+      {
+        "name": "purchase_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大采购价"
+      },
+      {
+        "name": "suggest_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "建议售价"
+      },
+      {
+        "name": "suggest_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大建议售价"
+      },
+      {
+        "name": "sales",
+        "type": "BIGINT",
+        "comment": "销量"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "price_config_json",
+        "type": "STRING",
+        "comment": "价格设置"
+      },
+      {
+        "name": "origin_url",
+        "type": "STRING",
+        "comment": "原始链接"
+      },
+      {
+        "name": "provider_item_id",
+        "type": "STRING",
+        "comment": "原始商品id"
+      },
+      {
+        "name": "remove_time",
+        "type": "TIMESTAMP",
+        "comment": "进入回收站时间"
+      },
+      {
+        "name": "top_up",
+        "type": "BIGINT",
+        "comment": "是否置顶"
+      },
+      {
+        "name": "shop_sort",
+        "type": "BIGINT",
+        "comment": "店铺下的排序"
+      },
+      {
+        "name": "settle_price_config_json",
+        "type": "STRING",
+        "comment": "结算价规则"
+      },
+      {
+        "name": "settle_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "结算价格"
+      },
+      {
+        "name": "settle_max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大结算价格"
+      },
+      {
+        "name": "level",
+        "type": "BIGINT",
+        "comment": "商品等级"
+      },
+      {
+        "name": "suitable_country",
+        "type": "STRING",
+        "comment": "适用国家"
+      },
+      {
+        "name": "customize_types",
+        "type": "STRING",
+        "comment": "定制类型"
+      },
+      {
+        "name": "post_fee_config_json",
+        "type": "STRING",
+        "comment": "运费设置"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_storage_item_sorting_ri": {
+    "comment": "仓库商品信息分拣表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "order_no",
+        "type": "STRING",
+        "comment": "orderno"
+      },
+      {
+        "name": "item_no",
+        "type": "STRING",
+        "comment": "itemno"
+      },
+      {
+        "name": "good_id",
+        "type": "STRING",
+        "comment": "商品ID"
+      },
+      {
+        "name": "storage_no",
+        "type": "BIGINT",
+        "comment": "仓库ID"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品名字"
+      },
+      {
+        "name": "item_pic",
+        "type": "STRING",
+        "comment": "商品图片"
+      },
+      {
+        "name": "item_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "mail_limit_pid",
+        "type": "BIGINT",
+        "comment": "邮限父ID"
+      },
+      {
+        "name": "mail_limit_id",
+        "type": "BIGINT",
+        "comment": "邮限ID"
+      },
+      {
+        "name": "brand_info",
+        "type": "STRING",
+        "comment": "商品品牌信息"
+      },
+      {
+        "name": "licence_info",
+        "type": "STRING",
+        "comment": "授权信息"
+      },
+      {
+        "name": "status",
+        "type": "BIGINT",
+        "comment": "状态1=正常 2=待确认 3=异常"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "更新人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_subscription_pallet_relation_item_ri": {
+    "comment": "订阅货盘用户关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "subscription_pallet_id",
+        "type": "BIGINT",
+        "comment": "订阅货盘id"
+      },
+      {
+        "name": "biz_id",
+        "type": "BIGINT",
+        "comment": "业务ID"
+      },
+      {
+        "name": "biz_type",
+        "type": "BIGINT",
+        "comment": "业务关联类型：0：类目，1:关联F100店铺，2:关联货盘"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_subscription_pallet_relation_user_ri": {
+    "comment": "订阅货盘用户关联表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "subscription_pallet_id",
+        "type": "BIGINT",
+        "comment": "订阅货盘id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户名称"
+      },
+      {
+        "name": "user_name",
+        "type": "STRING",
+        "comment": "用户名称"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_subscription_pallet_ri": {
+    "comment": "订阅货盘",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "中文名称"
+      },
+      {
+        "name": "name_lang_json",
+        "type": "STRING",
+        "comment": "多语言名称"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_external_item_ri": {
+    "comment": "外部商品库",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "外部商品id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品名"
+      },
+      {
+        "name": "main_picture",
+        "type": "STRING",
+        "comment": "商品主图"
+      },
+      {
+        "name": "item_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "店铺id"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "分类id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": ""
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识"
+      },
+      {
+        "name": "adjust_num",
+        "type": "BIGINT",
+        "comment": "净重尺校准次数"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_external_item_sku_ri": {
+    "comment": "外部sku表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "sku_id",
+        "type": "STRING",
+        "comment": "外部skuId"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "商品id"
+      },
+      {
+        "name": "attribute_names",
+        "type": "STRING",
+        "comment": "属性名"
+      },
+      {
+        "name": "measure_info_json",
+        "type": "STRING",
+        "comment": "测量信息"
+      },
+      {
+        "name": "photo_info_json",
+        "type": "STRING",
+        "comment": "拍照信息"
+      },
+      {
+        "name": "item_limit_json",
+        "type": "STRING",
+        "comment": "邮限信息"
+      },
+      {
+        "name": "measure_show_status",
+        "type": "BIGINT",
+        "comment": "测量信息展示状态"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识"
+      },
+      {
+        "name": "order_item_no",
+        "type": "STRING",
+        "comment": "来源订单pi编号"
+      },
+      {
+        "name": "sku_mark",
+        "type": "STRING",
+        "comment": "sku标识"
+      },
+      {
+        "name": "remark",
+        "type": "STRING",
+        "comment": "备注"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_external_store_ri": {
+    "comment": "外部店铺表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "store_id",
+        "type": "STRING",
+        "comment": "外部店铺id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "store_name",
+        "type": "STRING",
+        "comment": "店铺名称"
+      },
+      {
+        "name": "store_url",
+        "type": "STRING",
+        "comment": "店铺链接"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_item_mail_limit_config_ri": {
+    "comment": "商品邮限管理",
+    "columns": [
+      {
+        "name": "config_id",
+        "type": "BIGINT",
+        "comment": "商品邮限管理id"
+      },
+      {
+        "name": "item_name",
+        "type": "STRING",
+        "comment": "商品中文名"
+      },
+      {
+        "name": "item_name_en",
+        "type": "STRING",
+        "comment": "商品英文名"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "商品id"
+      },
+      {
+        "name": "main_picture",
+        "type": "STRING",
+        "comment": "商品主图"
+      },
+      {
+        "name": "quality_inspection_photos",
+        "type": "STRING",
+        "comment": "质检照片"
+      },
+      {
+        "name": "seven_days_modifications",
+        "type": "BIGINT",
+        "comment": "7日修改次数"
+      },
+      {
+        "name": "brand",
+        "type": "BIGINT",
+        "comment": "品牌信息"
+      },
+      {
+        "name": "type",
+        "type": "BIGINT",
+        "comment": "类型"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间\n"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0正常，1逻辑删除\n"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      },
+      {
+        "name": "mail_limit_json",
+        "type": "STRING",
+        "comment": "邮寄限制json"
+      },
+      {
+        "name": "service_item_json",
+        "type": "STRING",
+        "comment": "服务项目json"
+      },
+      {
+        "name": "modifications_refresh_time",
+        "type": "TIMESTAMP",
+        "comment": "修改次数刷新时间"
+      },
+      {
+        "name": "item_url",
+        "type": "STRING",
+        "comment": "商品链接"
+      },
+      {
+        "name": "category_id",
+        "type": "BIGINT",
+        "comment": "分类id"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_item_mail_limit_history_ri": {
+    "comment": "商品邮限管理操作记录",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "Id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "config_id",
+        "type": "BIGINT",
+        "comment": "配置id"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "商品id"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0正常，1逻辑删除\n"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "content",
+        "type": "STRING",
+        "comment": "操作内容"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_t_item_mapping_ri": {
+    "comment": "商品链接变更提醒",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "id"
+      },
+      {
+        "name": "provider_type",
+        "type": "STRING",
+        "comment": "平台类型"
+      },
+      {
+        "name": "origin_item_id",
+        "type": "STRING",
+        "comment": "原商品id"
+      },
+      {
+        "name": "origin_item_url",
+        "type": "STRING",
+        "comment": "原商品链接"
+      },
+      {
+        "name": "new_item_id",
+        "type": "STRING",
+        "comment": "新商品ID"
+      },
+      {
+        "name": "new_provider_type",
+        "type": "STRING",
+        "comment": "新商品渠道"
+      },
+      {
+        "name": "new_url",
+        "type": "STRING",
+        "comment": "新商品链接"
+      },
+      {
+        "name": "reason",
+        "type": "STRING",
+        "comment": "原因"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间\n"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "0正常，1逻辑删除\n"
+      },
+      {
+        "name": "create_by",
+        "type": "STRING",
+        "comment": "创建人"
+      },
+      {
+        "name": "update_by",
+        "type": "STRING",
+        "comment": "修改人"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_trend_product_score_ri": {
+    "comment": "大家都在买商品得分表",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键ID"
+      },
+      {
+        "name": "item_id",
+        "type": "STRING",
+        "comment": "大家都在买商品ID"
+      },
+      {
+        "name": "trend_comprehensive_score",
+        "type": "DECIMAL(38,18)",
+        "comment": "大家都在买推荐得分"
+      }
+    ],
+    "partitions": []
+  },
+  "ods_mysql_tang_product_user_subscription_pallet_ri": {
+    "comment": "用户自定义货盘",
+    "columns": [
+      {
+        "name": "id",
+        "type": "BIGINT",
+        "comment": "主键id"
+      },
+      {
+        "name": "user_id",
+        "type": "BIGINT",
+        "comment": "用户id"
+      },
+      {
+        "name": "name",
+        "type": "STRING",
+        "comment": "名称"
+      },
+      {
+        "name": "trend_name",
+        "type": "STRING",
+        "comment": "榜单名称"
+      },
+      {
+        "name": "ranking_type_name",
+        "type": "STRING",
+        "comment": "榜单类型"
+      },
+      {
+        "name": "min_sales_m",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小月销量"
+      },
+      {
+        "name": "max_sales_m",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小月销量"
+      },
+      {
+        "name": "min_sales_m_total",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小销售额"
+      },
+      {
+        "name": "max_sales_m_total",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大销售额"
+      },
+      {
+        "name": "min_sales_m_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小效率增长"
+      },
+      {
+        "name": "max_sales_m_ratio",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大效率增长"
+      },
+      {
+        "name": "min_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最小价格"
+      },
+      {
+        "name": "max_price",
+        "type": "DECIMAL(38,18)",
+        "comment": "最大价格"
+      },
+      {
+        "name": "relation_category_list",
+        "type": "STRING",
+        "comment": "类目ID列表"
+      },
+      {
+        "name": "relation_label_list",
+        "type": "STRING",
+        "comment": "标签id列表"
+      },
+      {
+        "name": "show_status",
+        "type": "BIGINT",
+        "comment": "删除标识：0展示，1不展示"
+      },
+      {
+        "name": "del_flag",
+        "type": "BIGINT",
+        "comment": "删除标识：0未删除，1删除"
+      },
+      {
+        "name": "create_time",
+        "type": "TIMESTAMP",
+        "comment": "创建时间"
+      },
+      {
+        "name": "update_time",
+        "type": "TIMESTAMP",
+        "comment": "修改时间"
+      }
+    ],
+    "partitions": []
+  }
+}
